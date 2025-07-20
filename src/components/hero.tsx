@@ -15,11 +15,11 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-6">
             Hi, I&apos;m{' '}
             <span className="text-gradient bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Your Name
+              Nick Granados
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-            A passionate developer creating amazing digital experiences with modern technologies
+            A passionate Full Stack Developer creating amazing digital experiences with modern technologies
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a
@@ -43,28 +43,31 @@ export default function Hero() {
               Contact Me
             </a>
           </div>
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center gap-6 mb-8">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/internick2017"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
+              aria-label="GitHub Profile"
             >
-              <Github size={24} className="text-slate-600 dark:text-slate-300" />
+              <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/nick-granados/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin size={24} className="text-slate-600 dark:text-slate-300" />
+              <Linkedin size={24} />
             </a>
             <a
-              href="mailto:your.email@example.com"
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              href="mailto:nickgranados01@gmail.com"
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
+              aria-label="Email Contact"
             >
-              <Mail size={24} className="text-slate-600 dark:text-slate-300" />
+              <Mail size={24} />
             </a>
           </div>
         </motion.div>

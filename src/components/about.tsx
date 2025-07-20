@@ -43,29 +43,21 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-              I&apos;m a passionate developer with a love for creating innovative solutions
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-              With over X years of experience in web development, I specialize in creating
-              modern, responsive applications using the latest technologies. I&apos;m passionate
-              about clean code, user experience, and continuous learning.
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              As a Full Stack Developer, I bring a comprehensive approach to web development, 
+              combining expertise in both frontend and backend technologies to create robust, 
+              scalable, and user-friendly web applications.
             </p>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new technologies, contributing
-              to open-source projects, or sharing my knowledge through blog posts and tutorials.
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              My passion lies in solving complex technical challenges and delivering 
+              innovative solutions that not only meet but exceed client expectations. 
+              I thrive on continuous learning and staying up-to-date with the latest 
+              technologies and best practices in the ever-evolving world of web development.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
-                Problem Solver
-              </span>
-              <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">
-                Team Player
-              </span>
-              <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">
-                Fast Learner
-              </span>
-            </div>
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              With a strong foundation in modern web technologies and a creative problem-solving 
+              approach, I aim to build digital experiences that are both functional and engaging.
+            </p>
           </motion.div>
         </div>
       </div>

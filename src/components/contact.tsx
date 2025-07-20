@@ -48,24 +48,28 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-slate-900 dark:text-white font-medium">Email</p>
-                  <a href="mailto:your.email@example.com" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    your.email@example.com
+                  <a 
+                    href="mailto:nickgranados01@gmail.com" 
+                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    nickgranados01@gmail.com
                   </a>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
                   <Phone className="text-green-600 dark:text-green-400" size={20} />
                 </div>
                 <div>
                   <p className="text-slate-900 dark:text-white font-medium">Phone</p>
-                  <a href="tel:+1234567890" className="text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                    +1 (234) 567-890
+                  <a 
+                    href="tel:+46991096679" 
+                    className="text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                  >
+                    +46 991 096 679
                   </a>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
                   <MapPin className="text-purple-600 dark:text-purple-400" size={20} />
@@ -73,7 +77,7 @@ export default function Contact() {
                 <div>
                   <p className="text-slate-900 dark:text-white font-medium">Location</p>
                   <p className="text-slate-600 dark:text-slate-300">
-                    Your City, Your Country
+                    Paraná, Brazil
                   </p>
                 </div>
               </div>

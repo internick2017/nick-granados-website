@@ -1,37 +1,46 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { Github, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Projects() {
   const projects = [
     {
-      id: 1,
-      title: 'E-commerce Platform',
-      description: 'A modern e-commerce platform built with Next.js, featuring cart functionality, payment integration, and admin dashboard.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/yourusername/ecommerce',
-      liveUrl: 'https://your-ecommerce-demo.com',
+      title: 'Shadcn Next.js App',
+      description: 'A modern web application built with Next.js featuring a comprehensive dashboard/admin interface with user management, project management, calendar functionality, payment processing, data visualization, todo management, and dark/light theme support.',
+      technologies: [
+        'Next.js 15.4.1',
+        'React 19.1.0',
+        'TypeScript',
+        'Shadcn UI',
+        'TailwindCSS',
+        'Radix UI',
+        'Recharts',
+        'React Hook Form',
+        'Zod'
+      ],
+      github: 'https://github.com/internick2017/shadcn-nextjs-app',
+      demo: 'https://shadcn-nextjs-app-ten.vercel.app/',
+      image: '/project-shadcn.png'
     },
     {
-      id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/api/placeholder/400/300',
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-      githubUrl: 'https://github.com/yourusername/task-manager',
-      liveUrl: 'https://your-task-manager-demo.com',
-    },
-    {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard with location-based forecasts, interactive charts, and weather alerts.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
-      githubUrl: 'https://github.com/yourusername/weather-dashboard',
-      liveUrl: 'https://your-weather-demo.com',
-    },
+      title: '🏦 J.J.J Investments',
+      description: 'A comprehensive family investment management platform enabling collaborative portfolio management with real-time tracking, transaction management, and professional analytics. Features include multi-user support, enterprise-grade security, and real-time market data integration.',
+      technologies: [
+        'Next.js 14',
+        'TypeScript 5.0',
+        'Tailwind CSS',
+        'Recharts',
+        'Prisma ORM',
+        'PostgreSQL',
+        'NextAuth.js',
+        'Lucide React'
+      ],
+      github: 'https://github.com/internick2017/J.J.J-Invesments',
+      demo: 'https://family-investments.netlify.app/',
+      image: '/project-jjj.png'
+    }
   ]
 
   return (
@@ -45,62 +54,76 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            My Projects
+            Featured Projects
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300">
-            Here are some of my recent works that showcase my skills and expertise
+            Here are some of my recent projects
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-12">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-lg"
             >
-              <div className="aspect-video bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                <span className="text-slate-500 dark:text-slate-400">Project Image</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="relative h-64 md:h-auto overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    className="object-cover object-left-top w-full h-full"
+                    priority={index === 0}
+                  />
                 </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                  >
-                    <Github size={20} />
-                    <span>Code</span>
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                    <span>Live Demo</span>
-                  </a>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300 mb-6">
+                    {project.description}
+                  </p>
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                      Technologies Used:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-600 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-500 transition-colors"
+                    >
+                      <Github size={20} />
+                      <span>View Code</span>
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                      <span>Live Demo</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

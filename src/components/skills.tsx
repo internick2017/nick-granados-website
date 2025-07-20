@@ -4,21 +4,21 @@ import { motion } from 'framer-motion'
 
 export default function Skills() {
   const skills = [
-    { name: 'JavaScript', level: 95, color: 'bg-yellow-500' },
-    { name: 'TypeScript', level: 90, color: 'bg-blue-500' },
-    { name: 'React', level: 92, color: 'bg-cyan-500' },
-    { name: 'Next.js', level: 88, color: 'bg-gray-900' },
+    { name: 'JavaScript', level: 90, color: 'bg-yellow-500' },
+    { name: 'React', level: 88, color: 'bg-cyan-500' },
+    { name: 'Next.js', level: 85, color: 'bg-gray-900' },
     { name: 'Node.js', level: 85, color: 'bg-green-500' },
-    { name: 'Python', level: 80, color: 'bg-blue-600' },
-    { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
-    { name: 'MongoDB', level: 82, color: 'bg-green-600' },
+    { name: 'TypeScript', level: 82, color: 'bg-blue-500' },
+    { name: 'Tailwind CSS', level: 90, color: 'bg-teal-500' },
+    { name: 'MongoDB', level: 80, color: 'bg-green-600' },
+    { name: 'Express.js', level: 85, color: 'bg-red-500' }
   ]
 
   const technologies = [
     'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js',
-    'Vue.js', 'Node.js', 'Express.js', 'Python', 'Django', 'Flask',
-    'MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Docker', 'AWS',
-    'Git', 'GitHub', 'Figma', 'Tailwind CSS', 'SASS', 'Webpack'
+    'Node.js', 'Express.js', 'MongoDB', 'PostgreSQL', 'REST APIs',
+    'Git', 'GitHub', 'Tailwind CSS', 'Material UI', 'Redux',
+    'Jest', 'React Testing Library', 'Webpack', 'Vite'
   ]
 
   return (
