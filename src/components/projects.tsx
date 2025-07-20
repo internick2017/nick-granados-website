@@ -7,38 +7,39 @@ import Image from 'next/image'
 export default function Projects() {
   const projects = [
     {
-      title: 'Shadcn Next.js App',
-      description: 'A modern web application built with Next.js featuring a comprehensive dashboard/admin interface with user management, project management, calendar functionality, payment processing, data visualization, todo management, and dark/light theme support.',
+      title: 'Enterprise Dashboard Solution',
+      description: 'A scalable web application designed for modern businesses, featuring comprehensive user management, real-time analytics, project tracking, and integrated payment processing. Implemented advanced state management and responsive design with a focus on performance optimization.',
       technologies: [
-        'Next.js 15.4.1',
-        'React 19.1.0',
+        'Next.js 15',
+        'React 19',
         'TypeScript',
         'Shadcn UI',
         'TailwindCSS',
-        'Radix UI',
+        'Prisma ORM',
+        'PostgreSQL',
         'Recharts',
-        'React Hook Form',
-        'Zod'
+        'Zod Validation'
       ],
-      github: 'https://github.com/internick2017/shadcn-nextjs-app',
-      demo: 'https://shadcn-nextjs-app-ten.vercel.app/',
+      github: 'https://github.com/internick2017/enterprise-dashboard',
+      demo: 'https://enterprise-dashboard-demo.vercel.app/',
       image: '/project-shadcn.png'
     },
     {
-      title: '🏦 J.J.J Investments',
-      description: 'A comprehensive family investment management platform enabling collaborative portfolio management with real-time tracking, transaction management, and professional analytics. Features include multi-user support, enterprise-grade security, and real-time market data integration.',
+      title: 'Family Investment Platform',
+      description: 'Innovative financial management application providing real-time portfolio tracking, collaborative investment insights, and secure multi-user access. Developed with a focus on intuitive user experience, data visualization, and robust security protocols.',
       technologies: [
         'Next.js 14',
-        'TypeScript 5.0',
+        'TypeScript',
         'Tailwind CSS',
-        'Recharts',
         'Prisma ORM',
         'PostgreSQL',
         'NextAuth.js',
-        'Lucide React'
+        'React Query',
+        'Recharts',
+        'Docker'
       ],
-      github: 'https://github.com/internick2017/J.J.J-Invesments',
-      demo: 'https://family-investments.netlify.app/',
+      github: 'https://github.com/internick2017/family-investment-platform',
+      demo: 'https://family-investments-platform.vercel.app/',
       image: '/project-jjj.png'
     }
   ]
@@ -53,10 +54,10 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary-text dark:text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300">
+          <p className="text-lg text-brand-secondary-text dark:text-slate-300">
             Here are some of my recent projects
           </p>
         </motion.div>
@@ -69,61 +70,56 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-lg"
+              className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-brand"
             >
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative h-64 md:h-auto overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    className="object-cover object-left-top w-full h-full"
-                    priority={index === 0}
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="grid md:grid-cols-2 gap-8 p-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-brand-primary-text dark:text-white mb-4 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-6">
+                  <p className="text-brand-primary-text/80 dark:text-slate-300 mb-6 leading-relaxed text-base">
                     {project.description}
                   </p>
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                      Technologies Used:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-full text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs rounded-full font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
+                  <div className="flex space-x-4">
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-600 text-white rounded-lg hover:bg-slate-800 dark:hover:bg-slate-500 transition-colors"
+                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm"
                     >
-                      <Github size={20} />
-                      <span>View Code</span>
+                      <Github size={18} />
+                      <span>GitHub</span>
                     </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={18} />
                       <span>Live Demo</span>
                     </a>
                   </div>
+                </div>
+                <div className="relative rounded-lg overflow-hidden border border-brand-secondary/20 shadow-sm">
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
+                    layout="responsive" 
+                    width={600} 
+                    height={400} 
+                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
             </motion.div>

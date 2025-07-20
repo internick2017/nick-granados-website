@@ -23,16 +23,16 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Connect</h3>
             <ul className="space-y-2">
-              <li><a href="https://github.com/yourusername" className="text-slate-300 hover:text-white transition-colors">GitHub</a></li>
-              <li><a href="https://linkedin.com/in/yourusername" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="mailto:your.email@example.com" className="text-slate-300 hover:text-white transition-colors">Email</a></li>
+              <li><a href="https://github.com/internick2017" className="text-slate-300 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/nick-granados" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="mailto:nick.granados.dev@gmail.com" className="text-slate-300 hover:text-white transition-colors">Email</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2024 Your Name. All rights reserved.
+            © 2024 Nick Granados. All rights reserved.
           </p>
         </div>
       </div>

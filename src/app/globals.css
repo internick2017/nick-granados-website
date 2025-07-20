@@ -78,7 +78,7 @@ html {
 /* Custom utilities */
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-primary-text to-brand-accent bg-clip-text text-transparent;
   }
 
   .glass-effect {

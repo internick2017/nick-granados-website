@@ -29,13 +29,12 @@ export default function About() {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl rotate-6"></div>
-              <div className="absolute inset-0 w-80 h-80 mx-auto bg-slate-300 dark:bg-slate-700 rounded-2xl flex items-center justify-center">
-                <span className="text-slate-600 dark:text-slate-300 text-lg">Your Photo Here</span>
+              <div className="w-80 h-80 mx-auto bg-gradient-teal-navy rounded-2xl rotate-6"></div>
+              <div className="absolute inset-0 w-80 h-80 mx-auto bg-brand-secondary rounded-2xl flex items-center justify-center">
+                <span className="text-brand-primary-text dark:text-slate-300 text-lg">Your Photo Here</span>
               </div>
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -43,20 +42,19 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              As a Full Stack Developer, I bring a comprehensive approach to web development, 
-              combining expertise in both frontend and backend technologies to create robust, 
-              scalable, and user-friendly web applications.
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
+              I&apos;m a passionate Full Stack Developer with a strong background in creating robust, scalable web applications. 
+              With over 5 years of experience in the tech industry, I specialize in transforming complex business requirements 
+              into elegant, efficient digital solutions using cutting-edge technologies like React, Next.js, and Node.js.
             </p>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              My passion lies in solving complex technical challenges and delivering 
-              innovative solutions that not only meet but exceed client expectations. 
-              I thrive on continuous learning and staying up-to-date with the latest 
-              technologies and best practices in the ever-evolving world of web development.
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
+              My journey in web development began with a curiosity to solve real-world problems through technology. 
+              I&apos;ve worked with startups and enterprises, delivering high-performance applications that drive business growth 
+              and enhance user experiences.
             </p>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              With a strong foundation in modern web technologies and a creative problem-solving 
-              approach, I aim to build digital experiences that are both functional and engaging.
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
+              Beyond coding, I&apos;m a continuous learner who believes in the power of clean code, innovative design, 
+              and collaborative problem-solving.
             </p>
           </motion.div>
         </div>

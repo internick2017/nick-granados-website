@@ -38,7 +38,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#hero" className="text-xl font-bold text-slate-800 dark:text-white">
-              Portfolio
+              Nick Granados
             </a>
           </div>
 
