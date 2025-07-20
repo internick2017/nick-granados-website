@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -30,8 +31,24 @@ export default function About() {
           >
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-teal-navy rounded-2xl rotate-6"></div>
-              <div className="absolute inset-0 w-80 h-80 mx-auto bg-brand-secondary rounded-2xl flex items-center justify-center">
-                <span className="text-brand-primary-text dark:text-slate-300 text-lg">Your Photo Here</span>
+              <div className="absolute inset-0 w-80 h-80 mx-auto bg-brand-secondary rounded-2xl flex items-center justify-center overflow-hidden">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 100 100" 
+                  className="w-2/3 h-2/3"
+                >
+                  <text 
+                    x="50" 
+                    y="50" 
+                    textAnchor="middle" 
+                    alignmentBaseline="middle" 
+                    fontSize="40" 
+                    fontWeight="bold" 
+                    fill="#1e3a8a"
+                  >
+                    NG
+                  </text>
+                </svg>
               </div>
             </div>
           </motion.div>

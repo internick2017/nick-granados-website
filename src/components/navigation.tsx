@@ -37,8 +37,27 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#hero" className="text-xl font-bold text-slate-800 dark:text-white">
-              Nick Granados
+            <a href="#hero" className="flex items-center space-x-2">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 100 100" 
+                className="w-10 h-10"
+              >
+                <text 
+                  x="50" 
+                  y="50" 
+                  textAnchor="middle" 
+                  alignmentBaseline="middle" 
+                  fontSize="40" 
+                  fontWeight="bold" 
+                  fill="#0d9488"
+                >
+                  NG
+                </text>
+              </svg>
+              <span className="text-xl font-bold text-brand-primary-text dark:text-white">
+                Nick Granados
+              </span>
             </a>
           </div>
 

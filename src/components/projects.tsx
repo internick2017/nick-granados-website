@@ -22,7 +22,7 @@ export default function Projects() {
       ],
       github: 'https://github.com/internick2017/enterprise-dashboard',
       demo: 'https://enterprise-dashboard-demo.vercel.app/',
-      image: '/project-shadcn.png'
+      image: '/images/project-shadcn.png'
     },
     {
       title: 'Family Investment Platform',
@@ -40,7 +40,7 @@ export default function Projects() {
       ],
       github: 'https://github.com/internick2017/family-investment-platform',
       demo: 'https://family-investments-platform.vercel.app/',
-      image: '/project-jjj.png'
+      image: '/images/project-jjj.png'
     }
   ]
 
