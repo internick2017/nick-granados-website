@@ -7,6 +7,25 @@ import Image from 'next/image'
 export default function Projects() {
   const projects = [
     {
+      title: 'Computer Repair Shop Management System',
+      description: 'A comprehensive web-based management application for computer repair shops that handles customer management, repair ticket tracking, and technician assignment. The system features role-based access control, real-time status updates, and a modern responsive interface with dark/light theme support.',
+      technologies: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'Kinde Auth',
+        'PostgreSQL',
+        'Drizzle ORM',
+        'Sentry',
+        'Zod Validation'
+      ],
+      github: 'https://github.com/internick2017/repairshop',
+      demo: 'https://repairshop-puce.vercel.app/',
+      image: '/images/project-repairshop.png'
+    },
+    {
       title: 'Enterprise Dashboard Solution',
       description: 'A scalable web application designed for modern businesses, featuring comprehensive user management, real-time analytics, project tracking, and integrated payment processing. Implemented advanced state management and responsive design with a focus on performance optimization.',
       technologies: [
