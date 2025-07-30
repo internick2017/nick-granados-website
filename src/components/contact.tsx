@@ -63,10 +63,10 @@ export default function Contact() {
                 <div>
                   <p className="text-brand-primary-text font-medium">Phone</p>
                   <a 
-                    href="tel:+5546999999999" 
+                    href="tel:+5546991096679" 
                     className="text-brand-primary-text/80 hover:text-brand-accent transition-colors"
                   >
-                    +55 (46) 99999-9999
+                    +55 (46) 99109-6679
                   </a>
                 </div>
               </div>
