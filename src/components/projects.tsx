@@ -7,59 +7,21 @@ import Image from 'next/image'
 export default function Projects() {
   const projects = [
     {
-      title: 'Computer Repair Shop Management System',
-      description: 'A comprehensive web-based management application for computer repair shops that handles customer management, repair ticket tracking, and technician assignment. The system features role-based access control, real-time status updates, and a modern responsive interface with dark/light theme support.',
+      title: 'GramToSpoon - Kitchen Conversion Tool',
+      description: 'A cooking utility website that converts weight measurements (grams) into volume measurements (cups, tablespoons, and teaspoons) for 47 common kitchen ingredients across 9 categories. Features an interactive calculator and over 400 pre-built conversion pages optimized for SEO and bookmarking.',
       technologies: [
-        'Next.js 15',
-        'React 19',
-        'TypeScript',
-        'Tailwind CSS',
-        'Shadcn UI',
-        'Kinde Auth',
-        'PostgreSQL',
-        'Drizzle ORM',
-        'Sentry',
-        'Zod Validation'
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'SEO Optimization',
+        'Schema.org',
+        'JSON-LD',
+        'Static Site Generation',
+        'Responsive Design'
       ],
-      github: 'https://github.com/internick2017/repairshop',
-      demo: 'https://repairshop-puce.vercel.app/',
-      image: '/images/project-repairshop.png'
-    },
-    {
-      title: 'Enterprise Dashboard Solution',
-      description: 'A scalable web application designed for modern businesses, featuring comprehensive user management, real-time analytics, project tracking, and integrated payment processing. Implemented advanced state management and responsive design with a focus on performance optimization.',
-      technologies: [
-        'Next.js 15',
-        'React 19',
-        'TypeScript',
-        'Shadcn UI',
-        'TailwindCSS',
-        'Prisma ORM',
-        'PostgreSQL',
-        'Recharts',
-        'Zod Validation'
-      ],
-      github: 'https://github.com/internick2017/enterprise-dashboard',
-      demo: 'https://enterprise-dashboard-demo.vercel.app/',
-      image: '/images/project-shadcn.png'
-    },
-    {
-      title: 'Family Investment Platform',
-      description: 'Innovative financial management application providing real-time portfolio tracking, collaborative investment insights, and secure multi-user access. Developed with a focus on intuitive user experience, data visualization, and robust security protocols.',
-      technologies: [
-        'Next.js 14',
-        'TypeScript',
-        'Tailwind CSS',
-        'Prisma ORM',
-        'PostgreSQL',
-        'NextAuth.js',
-        'React Query',
-        'Recharts',
-        'Docker'
-      ],
-      github: 'https://github.com/internick2017/family-investment-platform',
-      demo: 'https://family-investments-platform.vercel.app/',
-      image: '/images/project-jjj.png'
+      github: 'https://github.com/internick2017',
+      demo: 'https://gramtospoon.nickgranados.com/',
+      image: '/images/project-gramtospoon.png'
     }
   ]
 
