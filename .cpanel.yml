@@ -3,5 +3,11 @@ deployment:
   tasks:
     - export DEPLOYDIR=/home1/nickda77/public_html
     - /bin/cp -R out/* $DEPLOYDIR/
-    - find $DEPLOYDIR -type d -exec chmod 755 {} \;
-    - find $DEPLOYDIR -type f -exec chmod 644 {} \;
+    - /bin/cp out/.htaccess $DEPLOYDIR/.htaccess
+    - chmod 755 $DEPLOYDIR
+    - chmod -R 755 $DEPLOYDIR/_next
+    - chmod -R 755 $DEPLOYDIR/images
+    - chmod -R 755 $DEPLOYDIR/404
+    - chmod 644 $DEPLOYDIR/index.html
+    - chmod 644 $DEPLOYDIR/404.html
+    - chmod 644 $DEPLOYDIR/.htaccess

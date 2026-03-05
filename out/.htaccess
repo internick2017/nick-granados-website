@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Handle 404
+  ErrorDocument 404 /404.html
+
+  # Remove trailing slash for files
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [R=301,L]
+</IfModule>
+
+# Allow access to all files
+<FilesMatch ".*">
+  Order allow,deny
+  Allow from all
+</FilesMatch>
