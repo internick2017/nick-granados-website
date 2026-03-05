@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYDIR=/home1/nickda77/public_html
+    - /bin/cp -R out/* $DEPLOYDIR/
