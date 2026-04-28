@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/components/theme-provider'
+import { LanguageProvider } from '@/context/LanguageContext'
 import Script from 'next/script'
 import './globals.css'
 
@@ -24,7 +25,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

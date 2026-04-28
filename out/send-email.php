@@ -34,14 +34,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+$config = require '/home1/nickda77/mail_config.php';
+
 $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.titan.email';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'hello@nickgranados.com';
-    $mail->Password   = 'Nig.KW.2018.$'; // ← cambia esto
+    $mail->Username   = $config['mail_username'];
+    $mail->Password   = $config['mail_password'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
     $mail->CharSet    = 'UTF-8';
