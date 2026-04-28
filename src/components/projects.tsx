@@ -3,27 +3,24 @@
 import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
+
+const projectMeta = [
+  {
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SEO Optimization', 'Schema.org', 'JSON-LD', 'Static Site Generation', 'Responsive Design'],
+    github: 'https://github.com/internick2017',
+    demo: 'https://gramtospoon.nickgranados.com/',
+    image: '/images/project-gramtospoon.png',
+  }
+]
 
 export default function Projects() {
-  const projects = [
-    {
-      title: 'GramToSpoon - Kitchen Conversion Tool',
-      description: 'A cooking utility website that converts weight measurements (grams) into volume measurements (cups, tablespoons, and teaspoons) for 47 common kitchen ingredients across 9 categories. Features an interactive calculator and over 400 pre-built conversion pages optimized for SEO and bookmarking.',
-      technologies: [
-        'HTML5',
-        'CSS3',
-        'JavaScript',
-        'SEO Optimization',
-        'Schema.org',
-        'JSON-LD',
-        'Static Site Generation',
-        'Responsive Design'
-      ],
-      github: 'https://github.com/internick2017',
-      demo: 'https://gramtospoon.nickgranados.com/',
-      image: '/images/project-gramtospoon.png'
-    }
-  ]
+  const { t } = useLanguage()
+
+  const projects = t.projects.items.map((item, i) => ({
+    ...item,
+    ...projectMeta[i],
+  }))
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800">
@@ -36,10 +33,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary-text dark:text-white mb-4">
-            Featured Projects
+            {t.projects.title}
           </h2>
           <p className="text-lg text-brand-secondary-text dark:text-slate-300">
-            Here are some of my recent projects
+            {t.projects.subtitle}
           </p>
         </motion.div>
 
@@ -63,42 +60,31 @@ export default function Projects() {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs rounded-full font-medium"
-                      >
+                      <span key={techIndex} className="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs rounded-full font-medium">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <div className="flex space-x-4">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm"
-                    >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm">
                       <Github size={18} />
-                      <span>GitHub</span>
+                      <span>{t.projects.github}</span>
                     </a>
-                    <a 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm"
-                    >
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm">
                       <ExternalLink size={18} />
-                      <span>Live Demo</span>
+                      <span>{t.projects.liveDemo}</span>
                     </a>
                   </div>
                 </div>
                 <div className="relative rounded-lg overflow-hidden border border-brand-secondary/20 shadow-sm">
-                  <Image 
-                    src={project.image} 
-                    alt={project.title} 
-                    layout="responsive" 
-                    width={600} 
-                    height={400} 
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    layout="responsive"
+                    width={600}
+                    height={400}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                   />
                 </div>

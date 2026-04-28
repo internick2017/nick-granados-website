@@ -1,9 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -15,10 +17,10 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            About Me
+            {t.about.title}
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300">
-            Get to know more about who I am and what I do
+            {t.about.subtitle}
           </p>
         </motion.div>
 
@@ -32,26 +34,13 @@ export default function About() {
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-teal-navy rounded-2xl rotate-6"></div>
               <div className="absolute inset-0 w-80 h-80 mx-auto bg-brand-secondary rounded-2xl flex items-center justify-center overflow-hidden">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 100 100" 
-                  className="w-2/3 h-2/3"
-                >
-                  <text 
-                    x="50" 
-                    y="50" 
-                    textAnchor="middle" 
-                    alignmentBaseline="middle" 
-                    fontSize="40" 
-                    fontWeight="bold" 
-                    fill="#1e3a8a"
-                  >
-                    NG
-                  </text>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-2/3 h-2/3">
+                  <text x="50" y="50" textAnchor="middle" alignmentBaseline="middle" fontSize="40" fontWeight="bold" fill="#1e3a8a">NG</text>
                 </svg>
               </div>
             </div>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,20 +48,9 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
-              I&apos;m a passionate Full Stack Developer with a strong background in creating robust, scalable web applications. 
-              With over 5 years of experience in the tech industry, I specialize in transforming complex business requirements 
-              into elegant, efficient digital solutions using cutting-edge technologies like React, Next.js, and Node.js.
-            </p>
-            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
-              My journey in web development began with a curiosity to solve real-world problems through technology. 
-              I&apos;ve worked with startups and enterprises, delivering high-performance applications that drive business growth 
-              and enhance user experiences.
-            </p>
-            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">
-              Beyond coding, I&apos;m a continuous learner who believes in the power of clean code, innovative design, 
-              and collaborative problem-solving.
-            </p>
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">{t.about.p1}</p>
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">{t.about.p2}</p>
+            <p className="text-brand-primary-text dark:text-slate-300 leading-relaxed">{t.about.p3}</p>
           </motion.div>
         </div>
       </div>
