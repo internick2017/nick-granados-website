@@ -32,8 +32,8 @@ jobs:
         with:
           server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 2222
           local_path: ./out/*
           remote_path: /home1/nickda77/public_html
-          sftpArgs: '-o ConnectTimeout=10'
+          sftpArgs: '-o ConnectTimeout=10 -o StrictHostKeyChecking=no'
