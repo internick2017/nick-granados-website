@@ -32,7 +32,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2024 Nick Granados. All rights reserved.
+            © {new Date().getFullYear()} Nick Granados. All rights reserved.
           </p>
         </div>
       </div>
