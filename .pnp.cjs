@@ -27,6 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@emailjs/browser", "npm:4.4.1"],\
           ["@types/node", "npm:20.19.9"],\
           ["@types/react", "npm:18.3.23"],\
           ["autoprefixer", "virtual:7bbe5f692cdf041e95c514ede8c3c00b79c0de369c562c3d4067e477b03e5d6fef042c498ab224dc7d5904c129939dadb32b1da1de05cdce1ddc75673545b2f9#npm:10.4.21"],\
@@ -50,6 +51,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../C:/Users/nick/AppData/Local/Yarn/Berry/cache/@alloc-quick-lru-npm-5.2.0-eb83517088-10c0.zip/node_modules/@alloc/quick-lru/",\
         "packageDependencies": [\
           ["@alloc/quick-lru", "npm:5.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@emailjs/browser", [\
+      ["npm:4.4.1", {\
+        "packageLocation": "../../../../C:/Users/nick/AppData/Local/Yarn/Berry/cache/@emailjs-browser-npm-4.4.1-64a2cb04f8-10c0.zip/node_modules/@emailjs/browser/",\
+        "packageDependencies": [\
+          ["@emailjs/browser", "npm:4.4.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4041,6 +4051,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["nick-granados-website", "workspace:."],\
+          ["@emailjs/browser", "npm:4.4.1"],\
           ["@types/node", "npm:20.19.9"],\
           ["@types/react", "npm:18.3.23"],\
           ["autoprefixer", "virtual:7bbe5f692cdf041e95c514ede8c3c00b79c0de369c562c3d4067e477b03e5d6fef042c498ab224dc7d5904c129939dadb32b1da1de05cdce1ddc75673545b2f9#npm:10.4.21"],\
