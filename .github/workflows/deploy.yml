@@ -35,5 +35,5 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 2222
           local_path: ./out/*
-          remote_path: public_html
+          remote_path: nickgranados.com
           sftpArgs: '-o ConnectTimeout=10 -o StrictHostKeyChecking=no'
