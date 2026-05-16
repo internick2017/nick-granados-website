@@ -35,7 +35,7 @@ export const projects: Project[] = [
         description: 'Um site utilitário de culinária que converte medidas de peso (gramas) em medidas de volume (xícaras, colheres de sopa e colheres de chá) para 47 ingredientes em 9 categorias. Possui calculadora interativa e mais de 400 páginas otimizadas para SEO.',
       },
     },
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SEO', 'Schema.org', 'JSON-LD', 'Responsive Design'],
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SEO Optimization', 'Schema.org', 'JSON-LD', 'Static Site Generation', 'Responsive Design'],
     github: 'https://github.com/internick2017',
     demo: 'https://gramtospoon.nickgranados.com/',
     image: '/images/project-gramtospoon.png',
