@@ -3,32 +3,38 @@ export type Language = 'en' | 'es' | 'pt'
 export const translations = {
   en: {
     nav: {
-      home: 'Home', about: 'About', projects: 'Projects', skills: 'Skills', contact: 'Contact',
+      home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', contact: 'Contact',
     },
     hero: {
       greeting: "Hi, I'm",
-      subtitle: "Innovative Full Stack Developer | Transforming Ideas into Scalable Web Solutions | React & Next.js Enthusiast",
+      subtitle: "Full Stack Developer · Building web solutions that grow your business",
       viewWork: "View My Work",
       contactMe: "Contact Me",
+      recruiterLink: "Are you a recruiter?",
     },
     about: {
       title: "About Me",
       subtitle: "Get to know more about who I am and what I do",
-      p1: "I'm a passionate Full Stack Developer with a strong background in creating robust, scalable web applications. With over 5 years of experience in the tech industry, I specialize in transforming complex business requirements into elegant, efficient digital solutions using cutting-edge technologies like React, Next.js, and Node.js.",
-      p2: "My journey in web development began with a curiosity to solve real-world problems through technology. I've worked with startups and enterprises, delivering high-performance applications that drive business growth and enhance user experiences.",
-      p3: "Beyond coding, I'm a continuous learner who believes in the power of clean code, innovative design, and collaborative problem-solving.",
+      p1: "I'm a passionate Full Stack Developer with 6+ years of experience building robust, scalable web applications. I specialize in transforming business requirements into high-performance digital solutions using React, Next.js, WordPress, PHP, and more.",
+      p2: "I've worked across a wide range of projects — from corporate sites and e-commerce to internal dashboards and REST APIs — always focused on delivering real results for the client.",
+      p3: "I believe in clean code, continuous learning, and building software that actually solves problems.",
+    },
+    services: {
+      title: "My Services",
+      subtitle: "What I can build for you",
+      cta: "Let's talk about your project",
+      items: [
+        { icon: "🌐", title: "Landing Pages & Corporate Sites", description: "Next.js or WordPress, from design to deploy, responsive and conversion-optimized." },
+        { icon: "🛒", title: "E-commerce", description: "WooCommerce or custom store with payment gateway integration." },
+        { icon: "⚡", title: "Web Apps / Full Stack", description: "Dashboards, internal systems, REST APIs, and database design." },
+        { icon: "🔧", title: "Maintenance & Support", description: "Updates, bug fixes, performance improvements, and monthly support plans." },
+      ],
     },
     projects: {
       title: "Featured Projects",
-      subtitle: "Here are some of my recent projects",
+      subtitle: "Real projects, live demos — here's what I've built",
       github: "GitHub",
       liveDemo: "Live Demo",
-      items: [
-        {
-          title: "GramToSpoon - Kitchen Conversion Tool",
-          description: "A cooking utility website that converts weight measurements (grams) into volume measurements (cups, tablespoons, and teaspoons) for 47 common kitchen ingredients across 9 categories. Features an interactive calculator and over 400 pre-built conversion pages optimized for SEO and bookmarking.",
-        }
-      ]
     },
     skills: {
       title: "Skills & Technologies",
@@ -38,13 +44,13 @@ export const translations = {
     },
     contact: {
       title: "Get In Touch",
-      subtitle: "I'm always open to discussing new opportunities and interesting projects",
+      subtitle: "Ready to start your project? Let's talk.",
       letsConnect: "Let's Connect",
-      description: "Feel free to reach out if you have any questions, want to discuss a project, or just want to say hello!",
+      description: "Tell me about your project or idea and I'll get back to you as soon as possible.",
       emailLabel: "Email", phoneLabel: "Phone", locationLabel: "Location",
       nameLabel: "Name", namePlaceholder: "Your Name",
       emailPlaceholder: "your.email@example.com",
-      messageLabel: "Message", messagePlaceholder: "Your message...",
+      messageLabel: "Message", messagePlaceholder: "Tell me about your project...",
       send: "Send Message", sending: "Sending...",
       successTitle: "Message sent!",
       successDesc: "Thanks for reaching out. I'll get back to you as soon as possible.",
@@ -53,38 +59,44 @@ export const translations = {
     },
     footer: {
       portfolio: "Portfolio",
-      tagline: "Building amazing digital experiences with passion and precision.",
+      tagline: "Building digital solutions that make your business grow.",
       quickLinks: "Quick Links", connect: "Connect", rights: "All rights reserved.",
     },
   },
   es: {
     nav: {
-      home: 'Inicio', about: 'Sobre mí', projects: 'Proyectos', skills: 'Habilidades', contact: 'Contacto',
+      home: 'Inicio', about: 'Sobre mí', services: 'Servicios', projects: 'Proyectos', skills: 'Habilidades', contact: 'Contacto',
     },
     hero: {
       greeting: "Hola, soy",
-      subtitle: "Desarrollador Full Stack Innovador | Transformando Ideas en Soluciones Web Escalables | Entusiasta de React & Next.js",
+      subtitle: "Desarrollador Full Stack · Construyo soluciones web que hacen crecer tu negocio",
       viewWork: "Ver mi trabajo",
       contactMe: "Contáctame",
+      recruiterLink: "¿Sos reclutador?",
     },
     about: {
       title: "Sobre mí",
       subtitle: "Conóceme mejor, quién soy y qué hago",
-      p1: "Soy un apasionado Desarrollador Full Stack con sólida experiencia en la creación de aplicaciones web robustas y escalables. Con más de 5 años de experiencia en la industria tecnológica, me especializo en transformar requerimientos de negocio complejos en soluciones digitales elegantes usando tecnologías como React, Next.js y Node.js.",
-      p2: "Mi camino en el desarrollo web comenzó con la curiosidad de resolver problemas del mundo real a través de la tecnología. He trabajado con startups y empresas, entregando aplicaciones de alto rendimiento que impulsan el crecimiento del negocio y mejoran la experiencia del usuario.",
-      p3: "Más allá del código, soy un aprendiz continuo que cree en el poder del código limpio, el diseño innovador y la resolución colaborativa de problemas.",
+      p1: "Soy un Desarrollador Full Stack con más de 6 años de experiencia construyendo aplicaciones web robustas y escalables. Me especializo en transformar requerimientos de negocio en soluciones digitales de alto rendimiento usando React, Next.js, WordPress, PHP y más.",
+      p2: "Trabajé en proyectos muy variados — desde sitios corporativos y e-commerce hasta dashboards internos y APIs REST — siempre enfocado en entregar resultados reales para el cliente.",
+      p3: "Creo en el código limpio, el aprendizaje continuo y en construir software que realmente resuelve problemas.",
+    },
+    services: {
+      title: "Mis Servicios",
+      subtitle: "Lo que puedo construir para vos",
+      cta: "Hablemos de tu proyecto",
+      items: [
+        { icon: "🌐", title: "Landing Pages y Sitios Corporativos", description: "Next.js o WordPress, desde el diseño hasta el deploy, responsive y optimizado para conversión." },
+        { icon: "🛒", title: "E-commerce", description: "WooCommerce o tienda custom con integración de pasarelas de pago." },
+        { icon: "⚡", title: "Aplicaciones Web / Full Stack", description: "Dashboards, sistemas internos, APIs REST y diseño de base de datos." },
+        { icon: "🔧", title: "Mantenimiento y Soporte", description: "Actualizaciones, corrección de bugs, mejoras de rendimiento y planes de soporte mensual." },
+      ],
     },
     projects: {
       title: "Proyectos Destacados",
-      subtitle: "Aquí están algunos de mis proyectos recientes",
+      subtitle: "Proyectos reales, demos en vivo — esto es lo que construí",
       github: "GitHub",
       liveDemo: "Demo en vivo",
-      items: [
-        {
-          title: "GramToSpoon - Herramienta de Conversión de Cocina",
-          description: "Un sitio web utilitario de cocina que convierte medidas de peso (gramos) a medidas de volumen (tazas, cucharadas y cucharaditas) para 47 ingredientes comunes en 9 categorías. Incluye una calculadora interactiva y más de 400 páginas de conversión optimizadas para SEO.",
-        }
-      ]
     },
     skills: {
       title: "Habilidades y Tecnologías",
@@ -94,53 +106,59 @@ export const translations = {
     },
     contact: {
       title: "Ponte en Contacto",
-      subtitle: "Siempre estoy abierto a discutir nuevas oportunidades y proyectos interesantes",
+      subtitle: "¿Listo para empezar tu proyecto? Hablemos.",
       letsConnect: "Conectemos",
-      description: "No dudes en contactarme si tienes preguntas, quieres discutir un proyecto, o simplemente quieres saludar.",
+      description: "Contame sobre tu proyecto o idea y te respondo a la brevedad.",
       emailLabel: "Correo", phoneLabel: "Teléfono", locationLabel: "Ubicación",
       nameLabel: "Nombre", namePlaceholder: "Tu nombre",
       emailPlaceholder: "tu.correo@ejemplo.com",
-      messageLabel: "Mensaje", messagePlaceholder: "Tu mensaje...",
+      messageLabel: "Mensaje", messagePlaceholder: "Contame sobre tu proyecto...",
       send: "Enviar mensaje", sending: "Enviando...",
       successTitle: "¡Mensaje enviado!",
-      successDesc: "Gracias por contactarme. Te responderé lo antes posible.",
+      successDesc: "Gracias por contactarme. Te respondo a la brevedad.",
       sendAnother: "Enviar otro mensaje",
-      error: "Algo salió mal. Por favor intenta de nuevo o escríbeme directamente.",
+      error: "Algo salió mal. Intentá de nuevo o escribime directamente.",
     },
     footer: {
       portfolio: "Portafolio",
-      tagline: "Construyendo experiencias digitales increíbles con pasión y precisión.",
+      tagline: "Construyendo soluciones digitales que hacen crecer tu negocio.",
       quickLinks: "Enlaces rápidos", connect: "Conectar", rights: "Todos los derechos reservados.",
     },
   },
   pt: {
     nav: {
-      home: 'Início', about: 'Sobre', projects: 'Projetos', skills: 'Habilidades', contact: 'Contato',
+      home: 'Início', about: 'Sobre', services: 'Serviços', projects: 'Projetos', skills: 'Habilidades', contact: 'Contato',
     },
     hero: {
       greeting: "Olá, sou",
-      subtitle: "Desenvolvedor Full Stack Inovador | Transformando Ideias em Soluções Web Escaláveis | Entusiasta de React & Next.js",
+      subtitle: "Desenvolvedor Full Stack · Construo soluções web que fazem seu negócio crescer",
       viewWork: "Ver meu trabalho",
       contactMe: "Fale comigo",
+      recruiterLink: "É recrutador?",
     },
     about: {
       title: "Sobre mim",
       subtitle: "Conheça mais sobre quem sou e o que faço",
-      p1: "Sou um apaixonado Desenvolvedor Full Stack com forte experiência na criação de aplicações web robustas e escaláveis. Com mais de 5 anos de experiência na indústria de tecnologia, me especializo em transformar requisitos de negócio complexos em soluções digitais elegantes usando tecnologias como React, Next.js e Node.js.",
-      p2: "Minha jornada no desenvolvimento web começou com a curiosidade de resolver problemas do mundo real através da tecnologia. Trabalhei com startups e empresas, entregando aplicações de alto desempenho que impulsionam o crescimento dos negócios e melhoram as experiências dos usuários.",
-      p3: "Além de programar, sou um aprendiz contínuo que acredita no poder do código limpo, design inovador e resolução colaborativa de problemas.",
+      p1: "Sou um Desenvolvedor Full Stack com mais de 6 anos de experiência construindo aplicações web robustas e escaláveis. Me especializo em transformar requisitos de negócio em soluções digitais de alto desempenho usando React, Next.js, WordPress, PHP e mais.",
+      p2: "Trabalhei em projetos variados — de sites corporativos e e-commerce a dashboards internos e APIs REST — sempre focado em entregar resultados reais para o cliente.",
+      p3: "Acredito em código limpo, aprendizado contínuo e em construir software que realmente resolve problemas.",
+    },
+    services: {
+      title: "Meus Serviços",
+      subtitle: "O que posso construir para você",
+      cta: "Vamos falar do seu projeto",
+      items: [
+        { icon: "🌐", title: "Landing Pages e Sites Corporativos", description: "Next.js ou WordPress, do design ao deploy, responsivo e otimizado para conversão." },
+        { icon: "🛒", title: "E-commerce", description: "WooCommerce ou loja personalizada com integração de meios de pagamento." },
+        { icon: "⚡", title: "Aplicações Web / Full Stack", description: "Dashboards, sistemas internos, APIs REST e modelagem de banco de dados." },
+        { icon: "🔧", title: "Manutenção e Suporte", description: "Atualizações, correção de bugs, melhorias de desempenho e planos de suporte mensal." },
+      ],
     },
     projects: {
       title: "Projetos em Destaque",
-      subtitle: "Aqui estão alguns dos meus projetos recentes",
+      subtitle: "Projetos reais, demos ao vivo — veja o que construí",
       github: "GitHub",
       liveDemo: "Demo ao vivo",
-      items: [
-        {
-          title: "GramToSpoon - Ferramenta de Conversão Culinária",
-          description: "Um site utilitário de culinária que converte medidas de peso (gramas) em medidas de volume (xícaras, colheres de sopa e colheres de chá) para 47 ingredientes comuns em 9 categorias. Possui uma calculadora interativa e mais de 400 páginas de conversão otimizadas para SEO.",
-        }
-      ]
     },
     skills: {
       title: "Habilidades e Tecnologias",
@@ -150,22 +168,22 @@ export const translations = {
     },
     contact: {
       title: "Entre em Contato",
-      subtitle: "Estou sempre aberto a discutir novas oportunidades e projetos interessantes",
+      subtitle: "Pronto para iniciar seu projeto? Vamos conversar.",
       letsConnect: "Vamos nos Conectar",
-      description: "Fique à vontade para entrar em contato se tiver dúvidas, quiser discutir um projeto ou apenas quiser dizer olá!",
+      description: "Me conte sobre seu projeto ou ideia e responderei o mais breve possível.",
       emailLabel: "E-mail", phoneLabel: "Telefone", locationLabel: "Localização",
       nameLabel: "Nome", namePlaceholder: "Seu nome",
       emailPlaceholder: "seu.email@exemplo.com",
-      messageLabel: "Mensagem", messagePlaceholder: "Sua mensagem...",
+      messageLabel: "Mensagem", messagePlaceholder: "Me conte sobre seu projeto...",
       send: "Enviar mensagem", sending: "Enviando...",
       successTitle: "Mensagem enviada!",
       successDesc: "Obrigado pelo contato. Responderei o mais breve possível.",
       sendAnother: "Enviar outra mensagem",
-      error: "Algo deu errado. Por favor, tente novamente ou me envie um e-mail diretamente.",
+      error: "Algo deu errado. Tente novamente ou me envie um e-mail diretamente.",
     },
     footer: {
       portfolio: "Portfólio",
-      tagline: "Construindo experiências digitais incríveis com paixão e precisão.",
+      tagline: "Construindo soluções digitais que fazem seu negócio crescer.",
       quickLinks: "Links Rápidos", connect: "Conectar", rights: "Todos os direitos reservados.",
     },
   },
