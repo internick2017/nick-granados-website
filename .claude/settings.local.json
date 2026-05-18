@@ -4,7 +4,14 @@
       "Bash(rm:*)",
       "Bash(npm run build)",
       "Bash(yarn build)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(Read *)",
+      "Skill(superpowers:writing-plans)",
+      "Bash(git *)",
+      "Bash(Get-ChildItem -Path src -Recurse)",
+      "Bash(Select-Object FullName)",
+      "Bash(yarn tsc *)",
+      "Bash(npx tsc *)"
     ],
     "deny": []
   },
@@ -15,10 +22,10 @@
         "hooks": [
           {
             "type": "command",
-            "if": "Bash(git push:*)",
             "command": "OUT=/f/proyects-to-sell/portfolio-template/nick-granados-website/out/index.html; if ! test -f \"$OUT\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ No hay build. Corre yarn build antes de hacer push.\"}\\n'; exit 0; fi; NEWEST=$(find /f/proyects-to-sell/portfolio-template/nick-granados-website/src -newer \"$OUT\" -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.css\" 2>/dev/null | head -1); if test -n \"$NEWEST\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ Hay cambios en src/ sin buildear. Corre yarn build primero.\"}\\n'; else printf '{\"continue\":true}\\n'; fi",
-            "statusMessage": "Verificando build antes del push...",
-            "timeout": 10
+            "if": "Bash(git push:*)",
+            "timeout": 10,
+            "statusMessage": "Verificando build antes del push..."
           }
         ]
       }
@@ -29,10 +36,10 @@
         "hooks": [
           {
             "type": "command",
-            "if": "Bash(yarn build)",
             "command": "F=/f/proyects-to-sell/portfolio-template/nick-granados-website/out/index.html; if test -f \"$F\"; then SIZE=$(wc -c < \"$F\"); printf '{\"systemMessage\":\"✅ Build OK — out/index.html: %s bytes\"}\\n' \"$SIZE\"; else printf '{\"systemMessage\":\"❌ Build failed — out/index.html not found\"}\\n'; fi",
-            "statusMessage": "Verificando output del build...",
-            "timeout": 10
+            "if": "Bash(yarn build)",
+            "timeout": 10,
+            "statusMessage": "Verificando output del build..."
           }
         ]
       }
