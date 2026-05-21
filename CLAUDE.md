@@ -30,9 +30,9 @@ Single-page portfolio with sections:
 - Styles: `src/app/globals.css`
 
 ## Deployment
-- **Vercel**: `git push` → auto-deploy (project ID: prj_JEFkrTPByHCMvTBRdeO8kzTx4fxZ)
-- **cPanel**: `yarn build` → generates `out/` → auto-deploy via `.cpanel.yml` to `/home1/nickda77/public_html/`
+- **HostGator (cPanel)**: `yarn build` → generates `out/` → auto-deploy via `.cpanel.yml` to `/home1/nickda77/public_html/`
 - **Full deploy command**: use `/deploy` (build + commit + push in one step)
+- Note: Vercel is no longer used for this project.
 
 ## Key constraints
 - Static export ONLY — no server functions, no API routes
@@ -54,7 +54,6 @@ In `public/images/`: `project-gramtospoon.png`, `project-jjj.png`, `project-repa
 
 ## Known issues / pending improvements
 1. Contact form has no backend — needs Resend or EmailJS integration (HIGH PRIORITY for lead generation)
-2. Only 1 project shown (3 more images exist)
-3. `sitemap.xml` and `robots.txt` missing (SEO)
-4. Services section could be more prominent for freelance positioning
+2. Only 1 project shown (3 more images exist — use `/add-project` to add them)
+3. `public/cv-nick-granados.pdf` missing — needed for CV download button on /dev page
 
