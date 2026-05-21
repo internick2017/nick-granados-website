@@ -71,11 +71,26 @@
       "Bash(node -e \"const faker = require\\('@faker-js/faker'\\).faker; console.log\\(faker.location.state\\(\\)\\); console.log\\(faker.location.state\\({ abbreviated: true }\\)\\)\")",
       "Bash(yarn seed *)",
       "Bash(timeout 15 yarn db:seed)",
-      "Bash(Test-Path \"f:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\\\\out\\\\index.html\")"
+      "Bash(Test-Path \"f:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\\\\out\\\\index.html\")",
+      "Bash(mkdir -p /e/Users/nick_/Documents/Cursos/repairshop/src/app/demo)",
+      "Bash(node verify-dates.mjs)",
+      "PowerShell(cd \"F:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\"; node verify-dates.mjs; Write-Host \"Exit code: $LASTEXITCODE\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"f:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\\\\src\\\\app\\\\dev\\\\cv\")",
+      "Bash(Select-String -Pattern \"dev/cv|error|Error|Compiled|Route\")",
+      "Bash(Select-Object -First 20)",
+      "Bash(yarn dev *)",
+      "PowerShell($conn = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($conn\\) { $conn | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue; \"Stopped PID $_\" } } else { \"No process on port 3000\" })",
+      "Bash(curl -s -o /dev/null -w \"dev/cv: %{http_code}\\\\n\" http://localhost:3000/dev/cv/)",
+      "Bash(curl -s -o /dev/null -w \"dev: %{http_code}\\\\n\" http://localhost:3000/dev/)",
+      "PowerShell($conn = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($conn\\) { $conn | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }; \"dev server stopped\")",
+      "Bash(curl -s -o /dev/null -w \"warmup dev/cv: %{http_code}\\\\n\" http://localhost:3000/dev/cv/)",
+      "PowerShell(Start-Sleep -Seconds 3; $edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; $base = \"f:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\"; & $edge --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"$base\\\\cv-margin.pdf\" --virtual-time-budget=7000 \"http://localhost:3000/dev/cv/\" | Out-Null; Start-Sleep -Seconds 2; if \\(Test-Path \"$base\\\\cv-margin.pdf\"\\) { \"PDF created: \" + \\(\\(Get-Item \"$base\\\\cv-margin.pdf\"\\).Length\\) + \" bytes\" } else { \"FAILED\" })",
+      "PowerShell(Start-Sleep -Seconds 4; $edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; $base = \"f:\\\\proyects-to-sell\\\\portfolio-template\\\\nick-granados-website\"; & $edge --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"$base\\\\cv-m2.pdf\" --virtual-time-budget=7000 \"http://localhost:3000/dev/cv/\" | Out-Null; Start-Sleep -Seconds 2; if \\(Test-Path \"$base\\\\cv-m2.pdf\"\\) { \"PDF created: \" + \\(\\(Get-Item \"$base\\\\cv-m2.pdf\"\\).Length\\) + \" bytes\" } else { \"FAILED\" })"
     ],
     "deny": [],
     "additionalDirectories": [
-      "E:\\Users\\nick_\\Documents\\Cursos\\repairshop\\docs\\superpowers"
+      "E:\\Users\\nick_\\Documents\\Cursos\\repairshop\\docs\\superpowers",
+      "E:\\Users\\nick_\\Documents\\Cursos\\repairshop\\src\\app"
     ]
   },
   "hooks": {
