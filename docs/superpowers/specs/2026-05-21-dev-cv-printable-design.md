@@ -54,9 +54,16 @@ recalcula automáticamente en cada build (deploy), sin editar fechas a mano.
 ### 4. Estructura cliente/servidor, botón Print y toggle
 - `src/app/dev/cv/page.tsx` queda **Server Component** y solo exporta `metadata`
   (`title: "Nick Granados - CV"`, `robots: noindex`) y renderiza `<CvDocument />`.
-- `src/components/cv-document.tsx` es **Client Component** (`'use client'`): mantiene
-  el estado del idioma (`useState<'en'|'es'|'pt'>`, default `'en'`), renderiza el
+- `src/components/cv-document.tsx` es **Client Component** (`'use client'`): renderiza el
   selector de idioma, el botón "Print / Save as PDF" (`window.print()`) y todo el CV.
+- **Refinamiento (descubierto en planning):** el idioma reutiliza el `LanguageContext`
+  global ya existente (`@/context/LanguageContext`, tipo `Language` de `@/lib/translations`)
+  en vez de `useState` local — es el patrón ya usado en `navigation.tsx`. Default `'en'`
+  (el provider ya lo maneja).
+- **Refinamiento:** la fecha de referencia para roles `current` se inyecta como prop
+  `buildDate` (ISO) desde `page.tsx` (server) hacia `<CvDocument />` (client). Así el
+  render SSG y la hidratación usan el mismo valor (sin hydration mismatch) y la
+  antigüedad se refresca en cada build/deploy.
 - `@media print` (clase `print:hidden`) oculta selector + botón al imprimir; sale
   solo el CV en el idioma activo.
 - El `<title>` se setea en metadata para que el PDF guardado tome ese nombre.
