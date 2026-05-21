@@ -14,7 +14,8 @@ actualizado sin trabajo manual**, especialmente la antigüedad del trabajo actua
 ## Objetivo
 
 Crear una página de CV en HTML, optimizada para impresión / guardar como PDF,
-generada desde una única fuente de datos. La antigüedad de los roles vigentes se
+generada desde una única fuente de datos, **disponible en inglés, español y
+portugués** con un selector de idioma. La antigüedad de los roles vigentes se
 recalcula automáticamente en cada build (deploy), sin editar fechas a mano.
 
 ## Decisiones de diseño
@@ -23,20 +24,23 @@ recalcula automáticamente en cada build (deploy), sin editar fechas a mano.
 - Nueva ruta: `src/app/dev/cv/page.tsx` (Server Component, compatible con export estático).
 - Nuevo archivo de datos: `src/data/resume.ts` — contenido profesional estructurado
   (resumen, experiencia, educación, contacto, top skills). Único lugar de verdad,
-  mismo patrón que `src/data/projects.ts`.
+  mismo patrón que `src/data/projects.ts`. Los campos de texto libre llevan
+  traducción `{ en, es, pt }`; ver sección 6 (Multiidioma) para qué se traduce.
 - El **tech stack se auto-genera** con `getAllTechnologies()` de `projects.ts`
   (igual que `/dev`). Agregar un proyecto nuevo actualiza el stack del CV solo.
 
 ### 2. Cálculo automático de antigüedad
 - En `resume.ts` cada experiencia guarda `startDate: "YYYY-MM"` y, o bien
   `endDate: "YYYY-MM"`, o bien `current: true` (sin endDate).
-- Un helper `formatDuration(start, end?)` calcula los meses y los formatea como
-  `"X yrs Y mos"`. Para roles `current`, el fin es la fecha del build.
+- Un helper `formatDuration(start, end, lang)` calcula los meses y los formatea
+  según idioma: `"X yrs Y mos"` / `"X años Y meses"` / `"X anos Y meses"`. Para
+  roles `current`, el fin es la fecha del build.
 - **Convención de redondeo:** inclusiva (cuenta mes de inicio y fin), para
   coincidir con cómo LinkedIn muestra la duración. Ej: Aug 2022 → May 2026 = "3 yrs 10 mos".
-- Un helper `formatMonthYear("YYYY-MM")` produce `"Aug 2022"` con un array de
-  nombres de mes (determinista, sin locale del entorno).
-- Display por rol: `Aug 2022 - Present · 3 yrs 10 mos` (o el rango fijo si no es current).
+- Un helper `formatMonthYear("YYYY-MM", lang)` produce `"Aug 2022"` / `"ago 2022"`
+  con arrays de nombres de mes por idioma (determinista, sin locale del entorno).
+- "Present" se localiza: `Present` / `Actual` / `Atual`.
+- Display por rol (en EN): `Aug 2022 - Present · 3 yrs 10 mos` (o el rango fijo si no es current).
 - **Nota sobre export estático:** la duración se computa en build time. Como el sitio
   se reconstruye en cada `/deploy`, la antigüedad se refresca en cada despliegue.
   No es "en vivo" en el navegador, pero elimina por completo la edición manual y
@@ -47,20 +51,37 @@ recalcula automáticamente en cada build (deploy), sin editar fechas a mano.
 - Razón: un CV se imprime / guarda en PDF; fondo oscuro desperdicia tinta y se ve mal.
   Blanco es el estándar profesional y se ve idéntico en pantalla y PDF.
 
-### 4. Botón Print / Save as PDF
-- Componente cliente pequeño `PrintButton` (`'use client'`) que llama a `window.print()`.
-- La página queda Server Component; solo el botón es cliente.
-- `@media print` oculta el botón (clase `print:hidden`).
-- El `<title>` (metadata) se setea a `"Nick Granados - CV"` para que el archivo
-  guardado como PDF tome ese nombre automáticamente.
+### 4. Estructura cliente/servidor, botón Print y toggle
+- `src/app/dev/cv/page.tsx` queda **Server Component** y solo exporta `metadata`
+  (`title: "Nick Granados - CV"`, `robots: noindex`) y renderiza `<CvDocument />`.
+- `src/components/cv-document.tsx` es **Client Component** (`'use client'`): mantiene
+  el estado del idioma (`useState<'en'|'es'|'pt'>`, default `'en'`), renderiza el
+  selector de idioma, el botón "Print / Save as PDF" (`window.print()`) y todo el CV.
+- `@media print` (clase `print:hidden`) oculta selector + botón al imprimir; sale
+  solo el CV en el idioma activo.
+- El `<title>` se setea en metadata para que el PDF guardado tome ese nombre.
 
 ### 5. Conexión con `/dev`
 - En `src/app/dev/page.tsx`: el botón actual que apunta a `/cv-nick-granados.pdf`
   (404) se cambia para enlazar a `/dev/cv` y se renombra a **"View / Print CV"**.
   Se quita el atributo `download` (ahora es navegación interna, no descarga directa).
 
+### 6. Multiidioma (EN/ES/PT)
+- **Se traduce** (campos `{ en, es, pt }` en `resume.ts` o diccionario de labels):
+  summary, bullets de experiencia, ubicaciones, tipo de empleo (Contract/Freelance/…),
+  encabezados de sección (Summary/Experience/Education/Tech Stack/Top Skills),
+  "Present", unidades de duración, label de disponibilidad y de contacto.
+- **No se traduce** (nombres propios / universales): nombre, títulos de rol
+  (estándar de la industria, los reclutadores buscan en inglés), nombres de empresa,
+  nombres oficiales de títulos/instituciones educativas, y el tech stack.
+- Las traducciones ES/PT se generan a partir del contenido inglés de LinkedIn
+  durante la implementación, preservando el significado.
+- Default al cargar: **inglés** (uso principal). El toggle cambia el idioma en vivo
+  y la impresión respeta el idioma seleccionado.
+
 ## Estructura de la página (orden vertical)
 
+0. **Toggle de idioma:** `EN | ES | PT` arriba de todo (oculto al imprimir).
 1. **Header:** Nombre, título, fila de contacto:
    - 📧 internickbr@gmail.com
    - 📱 +55 46 99109-6679
@@ -85,10 +106,9 @@ Databases · WordPress · JavaScript · Back-End Web Development · Git
 > remote teams. I'm seeking remote opportunities where I can contribute to scalable
 > web platforms and continue to grow as a developer.
 
-**Nota de contenido (para revisión de Nick):** el summary dice "current
-BYU-Pathway student", pero el certificado de BYU-Idaho terminó Jun 2025. A
-mayo 2026 ya estás graduado — quizás convenga ajustar esa frase. Se deja el
-texto verbatim por ahora; cambiarlo es trivial en `resume.ts`.
+**Nota de contenido (resuelto):** se deja el summary verbatim. Nick aclaró que
+seguía estudiando otro certificado en la misma universidad, así que "current
+student" es válido. Es la versión EN; ES/PT se traducen de este texto.
 
 ### Experience (orden: fecha de inicio descendente)
 
@@ -128,20 +148,31 @@ texto verbatim por ahora; cambiarlo es trivial en `resume.ts`.
 
 - No se genera un PDF pre-renderizado ni se sube archivo binario (Nick eligió
   "página HTML imprimible", no "ambas").
-- No se traduce el CV a ES/PT — `/dev` es solo en inglés (audiencia: reclutadores).
 - No se agrega foto, ni descarga `.docx`, ni QR.
+- **No** se implementan ahora versiones del CV adaptadas a empleos específicos
+  (CV "targeted" por puesto). Es un objetivo futuro — ver "Trabajo futuro". El
+  diseño de `resume.ts` no debe impedirlo.
 
 ## Archivos afectados
 
-- **Nuevo:** `src/data/resume.ts` (datos + helpers de fecha)
-- **Nuevo:** `src/app/dev/cv/page.tsx` (página del CV)
-- **Nuevo:** `src/components/print-button.tsx` (componente cliente con `window.print()`)
+- **Nuevo:** `src/data/resume.ts` (datos multiidioma + helpers de fecha)
+- **Nuevo:** `src/app/dev/cv/page.tsx` (Server Component: metadata + `<CvDocument />`)
+- **Nuevo:** `src/components/cv-document.tsx` (Client Component: toggle idioma + print + CV)
 - **Editado:** `src/app/dev/page.tsx` (botón → `/dev/cv`, label "View / Print CV")
 
 ## Criterios de éxito
 
 - `/dev/cv` renderiza el CV completo con tema claro.
+- El toggle EN/ES/PT cambia todo el contenido traducible en vivo.
 - La antigüedad de Apiki y Freelancer se calcula sola y coincide con el estilo de LinkedIn.
-- Imprimir / Ctrl+P produce un PDF limpio (sin botones ni nav) llamado "Nick Granados - CV".
+- Imprimir / Ctrl+P produce un PDF limpio (sin toggle ni botones) en el idioma
+  activo, llamado "Nick Granados - CV".
 - El botón en `/dev` lleva a `/dev/cv` sin 404.
 - `yarn build` (export estático) pasa sin errores.
+
+## Trabajo futuro (no en este alcance)
+
+- **CV adaptado por empleo:** poder generar variantes del CV enfocadas a un puesto
+  específico (reordenar/destacar experiencia y skills relevantes, resumen a medida).
+  El modelo de datos de `resume.ts` debe mantenerse lo bastante estructurado como
+  para permitir esto más adelante sin reescribir.
