@@ -42,7 +42,7 @@ export default function CvDocument({ buildDate }: { buildDate: string }) {
       </div>
 
       {/* Hoja del CV */}
-      <article className="max-w-3xl mx-auto bg-white text-slate-800 rounded-lg shadow-sm print:shadow-none p-8 md:p-10 print:p-0">
+      <article className="max-w-3xl mx-auto bg-white text-slate-800 rounded-lg shadow-sm print:shadow-none p-8 md:p-10 print:px-[2.2cm] print:py-0">
         {/* Header */}
         <header className="border-b border-slate-200 pb-5 mb-6">
           <h1 className="text-3xl font-bold text-slate-900">{resume.name}</h1>
