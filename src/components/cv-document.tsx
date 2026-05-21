@@ -36,7 +36,7 @@ export default function CvDocument({ buildDate }: { buildDate: string }) {
           onClick={() => window.print()}
           className="flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-sm font-semibold transition-colors"
         >
-          <Printer size={16} />
+          <Printer size={16} aria-hidden="true" />
           {labels.print}
         </button>
       </div>
@@ -49,19 +49,19 @@ export default function CvDocument({ buildDate }: { buildDate: string }) {
           <p className="text-teal-600 font-medium mt-0.5">{resume.title[lang]}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-sm text-slate-600">
             <a href={`mailto:${resume.contact.email}`} className="flex items-center gap-1 hover:text-teal-600">
-              <Mail size={14} /> {resume.contact.email}
+              <Mail size={14} aria-hidden="true" /> {resume.contact.email}
             </a>
             <a href={`tel:${resume.contact.phone.replace(/\s/g, '')}`} className="flex items-center gap-1 hover:text-teal-600">
-              <Phone size={14} /> {resume.contact.phone}
+              <Phone size={14} aria-hidden="true" /> {resume.contact.phone}
             </a>
             <span className="flex items-center gap-1">
-              <MapPin size={14} /> {resume.contact.location[lang]}
+              <MapPin size={14} aria-hidden="true" /> {resume.contact.location[lang]}
             </span>
             <a href={resume.contact.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-teal-600">
-              <Linkedin size={14} /> LinkedIn
+              <Linkedin size={14} aria-hidden="true" /> LinkedIn
             </a>
             <a href={resume.contact.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-teal-600">
-              <Github size={14} /> GitHub
+              <Github size={14} aria-hidden="true" /> GitHub
             </a>
           </div>
           <p className="text-xs text-slate-500 mt-2">{resume.contact.availability[lang]}</p>
