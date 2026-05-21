@@ -37,6 +37,15 @@ export interface ResumeData {
   education: ResumeEducation[]
 }
 
+export interface CvLabels {
+  summary: string
+  topSkills: string
+  techStack: string
+  experience: string
+  education: string
+  print: string
+}
+
 export const resume: ResumeData = {
   name: 'Nick Granados',
   title: {
@@ -221,17 +230,7 @@ export const resume: ResumeData = {
   ],
 }
 
-export const cvLabels: Record<
-  Language,
-  {
-    summary: string
-    topSkills: string
-    techStack: string
-    experience: string
-    education: string
-    print: string
-  }
-> = {
+export const cvLabels: Record<Language, CvLabels> = {
   en: {
     summary: 'Summary',
     topSkills: 'Top Skills',
