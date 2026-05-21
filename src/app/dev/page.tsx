@@ -51,11 +51,10 @@ export default function DevPage() {
             LinkedIn
           </a>
           <a
-            href="/cv-nick-granados.pdf"
-            download
+            href="/dev/cv/"
             className="flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg font-semibold transition-colors text-sm"
           >
-            Download CV
+            View / Print CV
           </a>
         </div>
 
