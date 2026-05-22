@@ -70,11 +70,11 @@ export const resume: ResumeData = {
     github: 'https://github.com/internick2017',
   },
   summary: {
-    en: "With over 6 years of experience in backend and full-stack development, I specialize in PHP, WordPress, and JavaScript frameworks like React. I build performance-focused applications and work effectively with remote teams. I'm also completing a certificate in Web and Computer Programming at BYU-Pathway Worldwide. I'm seeking remote opportunities where I can contribute to scalable web platforms and continue to grow as a developer.",
-    es: 'Con más de 6 años de experiencia en desarrollo backend y full-stack, me especializo en PHP, WordPress y frameworks de JavaScript como React. Construyo aplicaciones enfocadas en el rendimiento y trabajo eficazmente con equipos remotos. Además, estoy cursando un certificado en Programación Web y de Computadoras en BYU-Pathway Worldwide. Busco oportunidades remotas donde pueda contribuir a plataformas web escalables y seguir creciendo como desarrollador.',
-    pt: 'Com mais de 6 anos de experiência em desenvolvimento backend e full-stack, sou especializado em PHP, WordPress e frameworks JavaScript como React. Construo aplicações focadas em desempenho e trabalho de forma eficaz com equipes remotas. Além disso, estou cursando um certificado em Programação Web e de Computadores na BYU-Pathway Worldwide. Busco oportunidades remotas onde eu possa contribuir para plataformas web escaláveis e continuar crescendo como desenvolvedor.',
+    en: "I build full-stack web applications with PHP, WordPress, and React — from custom plugins and REST API integrations to modern front-end interfaces. With 6+ years across agencies, remote teams, and direct clients, I deliver reliable, performance-focused solutions and communicate clearly across time zones.",
+    es: 'Construyo aplicaciones web full-stack con PHP, WordPress y React — desde plugins personalizados e integraciones REST API hasta interfaces modernas de front-end. Con más de 6 años trabajando en agencias, equipos remotos y clientes directos, entrego soluciones confiables y orientadas al rendimiento, comunicándome con claridad en diferentes zonas horarias.',
+    pt: 'Desenvolvo aplicações web full-stack com PHP, WordPress e React — desde plugins personalizados e integrações REST API até interfaces modernas de front-end. Com mais de 6 anos trabalhando em agências, equipes remotas e clientes diretos, entrego soluções confiáveis e focadas em performance, comunicando-me claramente em diferentes fusos horários.',
   },
-  topSkills: ['Databases', 'WordPress', 'JavaScript', 'Back-End Web Development', 'Git'],
+  topSkills: ['WordPress', 'PHP', 'JavaScript / React', 'REST API', 'Git'],
   experience: [
     {
       role: 'WordPress Back-End Developer',
@@ -132,9 +132,9 @@ export const resume: ResumeData = {
           pt: 'Construí um sistema de avaliação robusto que aprimorou as capacidades de gestão de dados.',
         },
         {
-          en: 'Strengthened skills in PHP, WordPress and Laravel.',
-          es: 'Fortalecí mis habilidades en PHP, WordPress y Laravel.',
-          pt: 'Fortaleci minhas habilidades em PHP, WordPress e Laravel.',
+          en: 'Delivered and maintained bespoke evaluation and data management systems for regional clients using PHP and WordPress.',
+          es: 'Desarrollé y mantuve sistemas de evaluación y gestión de datos a medida para clientes regionales con PHP y WordPress.',
+          pt: 'Desenvolvi e mantive sistemas de avaliação e gestão de dados personalizados para clientes regionais usando PHP e WordPress.',
         },
       ],
     },
@@ -156,9 +156,9 @@ export const resume: ResumeData = {
           pt: 'Concluí mais de 20 projetos com uma taxa de entrega no prazo de 100%.',
         },
         {
-          en: 'Built custom WordPress themes and plugins that improved client satisfaction.',
-          es: 'Desarrollé temas y plugins personalizados de WordPress que mejoraron la satisfacción del cliente.',
-          pt: 'Desenvolvi temas e plugins personalizados de WordPress que melhoraram a satisfação do cliente.',
+          en: 'Built custom WordPress themes and plugins for clients across retail, services, and education sectors.',
+          es: 'Desarrollé temas y plugins personalizados de WordPress para clientes en sectores de retail, servicios y educación.',
+          pt: 'Desenvolvi temas e plugins personalizados de WordPress para clientes nos setores de varejo, serviços e educação.',
         },
         {
           en: 'Developed expertise in project management, web development, and client communication.',
@@ -180,9 +180,9 @@ export const resume: ResumeData = {
       endDate: '2020-05',
       bullets: [
         {
-          en: 'Established Aresmkt focusing on client-centric strategies and innovative solutions.',
-          es: 'Fundé Aresmkt enfocándome en estrategias centradas en el cliente y soluciones innovadoras.',
-          pt: 'Fundei a Aresmkt com foco em estratégias centradas no cliente e soluções inovadoras.',
+          en: 'Founded a digital marketing agency, acquiring first clients within 3 months and managing web and campaign projects end-to-end.',
+          es: 'Fundé una agencia de marketing digital, adquiriendo los primeros clientes en 3 meses y gestionando proyectos web y de campaña de extremo a extremo.',
+          pt: 'Fundei uma agência de marketing digital, conquistando os primeiros clientes em 3 meses e gerenciando projetos web e de campanha de ponta a ponta.',
         },
       ],
     },
