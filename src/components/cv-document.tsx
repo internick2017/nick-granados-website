@@ -1,36 +1,74 @@
 'use client'
 
+import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import type { Language } from '@/lib/translations'
-import { resume, cvLabels } from '@/data/resume'
+import { cvLabels } from '@/data/resume'
+import { resumeVersions, type ResumeVersion } from '@/data/resumes'
 import { getAllTechnologies } from '@/data/projects'
 import { formatDateRange, formatDuration } from '@/data/date-utils'
 import { Mail, Phone, MapPin, Linkedin, Github, Printer } from 'lucide-react'
 
 export default function CvDocument({ buildDate }: { buildDate: string }) {
   const { lang, setLang } = useLanguage()
+  const searchParams = useSearchParams()
   const technologies = getAllTechnologies()
   const labels = cvLabels[lang]
   const refDate = new Date(buildDate)
+
+  const paramVersion = searchParams.get('v') as ResumeVersion | null
+  const [version, setVersion] = useState<ResumeVersion>(
+    paramVersion && paramVersion in resumeVersions ? paramVersion : 'default'
+  )
+
+  const resume = resumeVersions[version].data
+
+  const handleVersionChange = (v: ResumeVersion) => {
+    setVersion(v)
+    const url = new URL(window.location.href)
+    if (v === 'default') url.searchParams.delete('v')
+    else url.searchParams.set('v', v)
+    window.history.pushState({}, '', url.toString())
+  }
 
   return (
     <main className="min-h-screen bg-slate-100 print:bg-white py-10 px-4 print:p-0">
       {/* Controles — ocultos al imprimir */}
       <div className="max-w-3xl mx-auto mb-4 flex items-center justify-between print:hidden">
-        <div className="flex items-center space-x-1">
-          {(['en', 'es', 'pt'] as Language[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`px-3 py-1 rounded text-xs font-semibold uppercase transition-colors ${
-                lang === l
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-slate-500 hover:text-slate-900 border border-slate-300'
-              }`}
-            >
-              {l}
-            </button>
-          ))}
+        <div className="flex items-center gap-3">
+          {/* Language selector */}
+          <div className="flex items-center space-x-1">
+            {(['en', 'es', 'pt'] as Language[]).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1 rounded text-xs font-semibold uppercase transition-colors ${
+                  lang === l
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-slate-500 hover:text-slate-900 border border-slate-300'
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+          {/* Version selector */}
+          <div className="flex items-center space-x-1">
+            {(Object.keys(resumeVersions) as ResumeVersion[]).map((v) => (
+              <button
+                key={v}
+                onClick={() => handleVersionChange(v)}
+                className={`px-3 py-1 rounded text-xs font-semibold transition-colors ${
+                  version === v
+                    ? 'bg-[#1e3a8a] text-white'
+                    : 'bg-white text-slate-500 hover:text-slate-900 border border-slate-300'
+                }`}
+              >
+                {resumeVersions[v].label[lang]}
+              </button>
+            ))}
+          </div>
         </div>
         <button
           onClick={() => window.print()}
