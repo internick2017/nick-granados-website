@@ -1,5 +1,6 @@
 // src/data/resumes/index.ts
 import { resume } from '@/data/resume'
+import { resumeWordpress } from '@/data/resumes/resume-wordpress'
 import type { ResumeData } from '@/data/resume'
 import type { Language } from '@/lib/translations'
 
@@ -17,6 +18,6 @@ export const resumeVersions: Record<ResumeVersion, ResumeVersionMeta> = {
   },
   wordpress: {
     label: { en: 'WordPress', es: 'WordPress', pt: 'WordPress' },
-    data: resume, // temporary placeholder — replaced in Task 3
+    data: resumeWordpress,
   },
 }
