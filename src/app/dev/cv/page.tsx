@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import CvDocument from '@/components/cv-document'
 
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 
 export default function CvPage() {
   const buildDate = new Date().toISOString()
-  return <CvDocument buildDate={buildDate} />
+  return (
+    <Suspense fallback={null}>
+      <CvDocument buildDate={buildDate} />
+    </Suspense>
+  )
 }
