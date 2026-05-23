@@ -121,7 +121,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "OUT=/f/proyects-to-sell/portfolio-template/nick-granados-website/out/index.html; if ! test -f \"$OUT\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ No hay build. Corre yarn build antes de hacer push.\"}\\n'; exit 0; fi; NEWEST=$(find /f/proyects-to-sell/portfolio-template/nick-granados-website/src -newer \"$OUT\" -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.css\" 2>/dev/null | head -1); if test -n \"$NEWEST\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ Hay cambios en src/ sin buildear. Corre yarn build primero.\"}\\n'; else printf '{\"continue\":true}\\n'; fi",
+            "command": "REPO=$(git rev-parse --show-toplevel 2>/dev/null); if [ \"$REPO\" != \"/f/proyects-to-sell/portfolio-template/nick-granados-website\" ]; then printf '{\"continue\":true}\\n'; exit 0; fi; OUT=/f/proyects-to-sell/portfolio-template/nick-granados-website/out/index.html; if ! test -f \"$OUT\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ No hay build. Corre yarn build antes de hacer push.\"}\\n'; exit 0; fi; NEWEST=$(find /f/proyects-to-sell/portfolio-template/nick-granados-website/src -newer \"$OUT\" \\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.css\" \\) 2>/dev/null | head -1); if test -n \"$NEWEST\"; then printf '{\"continue\":false,\"stopReason\":\"⚠️ Hay cambios en src/ sin buildear. Corre yarn build primero.\"}\\n'; else printf '{\"continue\":true}\\n'; fi",
             "if": "Bash(git push:*)",
             "timeout": 10,
             "statusMessage": "Verificando build antes del push..."
