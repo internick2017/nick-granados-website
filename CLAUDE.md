@@ -52,8 +52,10 @@ Single-page portfolio with sections:
 ## Available project images
 In `public/images/`: `project-gramtospoon.png`, `project-jjj.png`, `project-repairshop.png`, `project-shadcn.png`
 
+## Contact form
+Posts to `https://nickgranados.com/send-email.php` (PHP backend hosted on the same HostGator domain). No Next.js API routes — static export.
+
 ## Known issues / pending improvements
-1. Contact form has no backend — needs Resend or EmailJS integration (HIGH PRIORITY for lead generation)
-2. Only 1 project shown (3 more images exist — use `/add-project` to add them)
-3. `public/cv-nick-granados.pdf` missing — needed for CV download button on /dev page
+1. **Demos de proyectos full-stack sin pulir** (repairshop, J.J.J Investments) — falta cuenta demo con credenciales visibles + datos ficticios pre-cargados para que clientes/reclutadores puedan probar sin registrarse.
+2. **No hay proyectos WordPress en el portfolio** — alta prioridad para respaldar el CV WordPress (plugin custom, tema desde cero, REST API, multisite).
 
