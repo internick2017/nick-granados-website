@@ -104,6 +104,27 @@ export const projects: Project[] = [
     image: '/images/project-lanny.png',
   },
   {
+    id: 'dose-time',
+    translations: {
+      en: {
+        title: 'DoseTime — Medication Reminder App',
+        description: 'Android app that generates automatic push notifications from doctor-prescribed medication schedules. Features a daily dose timeline, medication management, history with adherence tracking, and local SQLite storage — no backend or account needed.',
+      },
+      es: {
+        title: 'DoseTime — App de Recordatorio de Medicamentos',
+        description: 'App Android que genera notificaciones push automáticas a partir de horarios médicos. Incluye línea de tiempo diaria de dosis, gestión de medicamentos, historial con porcentaje de adherencia y almacenamiento local SQLite — sin backend ni cuenta requerida.',
+      },
+      pt: {
+        title: 'DoseTime — App de Lembretes de Medicamentos',
+        description: 'App Android que gera notificações push automáticas a partir de horários médicos. Inclui linha do tempo diária de doses, gestão de medicamentos, histórico com aderência e armazenamento local SQLite — sem backend ou conta necessária.',
+      },
+    },
+    technologies: ['React Native', 'Expo SDK 52', 'TypeScript', 'SQLite', 'Zustand', 'expo-notifications', 'React Navigation', 'EAS Build'],
+    github: null,
+    demo: 'https://expo.dev/accounts/internick/projects/dose-time/builds/7087ee49-0135-4e69-aa96-95b0a9068a57',
+    image: '/images/project-dosetime.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
