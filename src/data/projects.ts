@@ -83,6 +83,27 @@ export const projects: Project[] = [
     image: '/images/project-jjj.png',
   },
   {
+    id: 'lanny-herrera',
+    translations: {
+      en: {
+        title: 'Lanny Herrera — Language Teacher Website',
+        description: 'Multilingual one-page website for an online language teacher. Built on WordPress with a custom Astra child theme, Polylang (PT/ES/EN), custom testimonials CPT, Contact Form 7, Yoast SEO with per-language meta, and CI/CD auto-deploy via GitHub Actions + SFTP.',
+      },
+      es: {
+        title: 'Lanny Herrera — Sitio Web para Profesora de Idiomas',
+        description: 'Sitio web one-page multilingüe para una profesora de idiomas online. Construido en WordPress con tema hijo personalizado de Astra, Polylang (PT/ES/EN), CPT de testimonios, Contact Form 7, Yoast SEO con meta por idioma y deploy automático via GitHub Actions + SFTP.',
+      },
+      pt: {
+        title: 'Lanny Herrera — Site para Professora de Idiomas',
+        description: 'Site one-page multilíngue para professora de idiomas online. Construído em WordPress com tema filho Astra customizado, Polylang (PT/ES/EN), CPT de depoimentos, Contact Form 7, Yoast SEO com meta por idioma e deploy automático via GitHub Actions + SFTP.',
+      },
+    },
+    technologies: ['WordPress', 'PHP', 'Astra', 'Polylang', 'Contact Form 7', 'Yoast SEO', 'GitHub Actions', 'CSS3'],
+    github: null,
+    demo: 'https://lanny.nickgranados.com',
+    image: '/images/project-lanny.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
