@@ -69,14 +69,13 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-                <div className="relative rounded-lg overflow-hidden border border-brand-secondary/20 shadow-sm">
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-brand-secondary/20 shadow-sm">
                   <Image
                     src={project.image}
                     alt={project.translations[lang].title}
-                    layout="responsive"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </div>
