@@ -125,6 +125,27 @@ export const projects: Project[] = [
     image: '/images/project-dosetime.png',
   },
   {
+    id: 'event-planner-api',
+    translations: {
+      en: {
+        title: 'Event Planner API',
+        description: 'RESTful API for managing events, venues, and RSVPs. Built as BYU CSE341 final project with OAuth2 Google authentication, full CRUD operations, Swagger/OpenAPI interactive docs, and a Jest test suite. Deployed on Render.',
+      },
+      es: {
+        title: 'API de Planificación de Eventos',
+        description: 'API RESTful para gestionar eventos, venues y RSVPs. Proyecto final BYU CSE341 con autenticación OAuth2 Google, operaciones CRUD completas, documentación interactiva Swagger/OpenAPI y suite de pruebas Jest. Desplegada en Render.',
+      },
+      pt: {
+        title: 'API de Planejamento de Eventos',
+        description: 'API RESTful para gerenciar eventos, venues e RSVPs. Projeto final BYU CSE341 com autenticação OAuth2 Google, operações CRUD completas, documentação interativa Swagger/OpenAPI e suite de testes Jest. Implantada no Render.',
+      },
+    },
+    technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'OAuth2', 'Passport.js', 'Swagger', 'Jest'],
+    github: 'https://github.com/internick2017/event-planner-api',
+    demo: 'https://event-planner-api-oihl.onrender.com/api-docs',
+    image: '/images/project-event-planner-api.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
