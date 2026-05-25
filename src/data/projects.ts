@@ -146,6 +146,27 @@ export const projects: Project[] = [
     image: '/images/project-event-planner-api.png',
   },
   {
+    id: 'clear-path',
+    translations: {
+      en: {
+        title: 'Clear Path — Personal Finance Dashboard',
+        description: 'Full-stack personal finance app built with Laravel 12, Vue 3, and Inertia.js. Track expenses, set budgets, and monitor financial goals with an interactive dashboard.',
+      },
+      es: {
+        title: 'Clear Path — Panel de Finanzas Personales',
+        description: 'App de finanzas personales full-stack con Laravel 12, Vue 3 e Inertia.js. Registrá gastos, creá presupuestos y seguí tus metas financieras desde un dashboard interactivo.',
+      },
+      pt: {
+        title: 'Clear Path — Painel de Finanças Pessoais',
+        description: 'App de finanças pessoais full-stack com Laravel 12, Vue 3 e Inertia.js. Registre gastos, crie orçamentos e acompanhe suas metas financeiras em um dashboard interativo.',
+      },
+    },
+    technologies: ['Laravel', 'Vue 3', 'Inertia.js', 'Tailwind CSS', 'SQLite', 'PHP'],
+    github: 'https://github.com/internick2017/clear-path',
+    demo: 'https://clear-path-9008.onrender.com',
+    image: '/images/project-clear-path.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
