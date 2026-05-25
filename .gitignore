@@ -41,7 +41,22 @@ Thumbs.db
 # Misc
 .pnp
 .pnp.js
+.pnp.cjs
+.pnp.loader.mjs
 
-# Brainstorming mockups
+# Yarn state
+.yarn/install-state.gz
+
+# Deploy artifacts
+deploy.zip
+
+# Planning / AI session docs
+docs/superpowers/
+
+# Claude local settings (machine-specific)
+.claude/settings.local.json
+.claude/settings.json
+
+# AI session artifacts
 .superpowers/
 .gstack/
