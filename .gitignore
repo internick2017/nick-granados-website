@@ -60,3 +60,4 @@ docs/superpowers/
 # AI session artifacts
 .superpowers/
 .gstack/
+out/
