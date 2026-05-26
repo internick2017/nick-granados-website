@@ -167,6 +167,27 @@ export const projects: Project[] = [
     image: '/images/project-clear-path.png',
   },
   {
+    id: 'sleepouside',
+    translations: {
+      en: {
+        title: 'SleepOutside — Outdoor E-commerce',
+        description: 'Vanilla JavaScript e-commerce SPA for outdoor gear. Features product listings with live API data, shopping cart with localStorage, checkout flow, and product detail pages. Built for BYU WDD330.',
+      },
+      es: {
+        title: 'SleepOutside — E-commerce de Camping',
+        description: 'SPA de e-commerce en Vanilla JS para equipos de camping. Incluye listado de productos con API en vivo, carrito con localStorage, flujo de checkout y páginas de detalle. Proyecto final BYU WDD330.',
+      },
+      pt: {
+        title: 'SleepOutside — E-commerce de Camping',
+        description: 'SPA de e-commerce em Vanilla JS para equipamentos de camping. Inclui listagem de produtos com API ao vivo, carrinho com localStorage, fluxo de checkout e páginas de detalhe. Projeto final BYU WDD330.',
+      },
+    },
+    technologies: ['JavaScript', 'Vite', 'HTML5', 'CSS3', 'REST API', 'localStorage'],
+    github: 'https://github.com/internick2017/wdd330-sleepouside',
+    demo: 'https://internick2017.github.io/wdd330-sleepouside/',
+    image: '/images/project-sleepouside.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
