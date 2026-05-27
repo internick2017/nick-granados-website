@@ -188,6 +188,27 @@ export const projects: Project[] = [
     image: '/images/project-sleepouside.png',
   },
   {
+    id: 'drf-course-api',
+    translations: {
+      en: {
+        title: 'DRF Course API — E-commerce REST API',
+        description: 'Django REST Framework e-commerce API with JWT authentication, product/order management, filtering, pagination, and interactive Swagger docs. Built as a learning project covering DRF\'s core patterns.',
+      },
+      es: {
+        title: 'DRF Course API — REST API de E-commerce',
+        description: 'API de e-commerce con Django REST Framework, autenticación JWT, gestión de productos y órdenes, filtrado, paginación y docs Swagger interactivos.',
+      },
+      pt: {
+        title: 'DRF Course API — REST API de E-commerce',
+        description: 'API de e-commerce com Django REST Framework, autenticação JWT, gestão de produtos e pedidos, filtragem, paginação e docs Swagger interativos.',
+      },
+    },
+    technologies: ['Python', 'Django', 'Django REST Framework', 'JWT', 'PostgreSQL', 'Swagger/OpenAPI', 'django-filter'],
+    github: 'https://github.com/internick2017/drf-course-api',
+    demo: 'https://drf-course-api-o6rf.onrender.com/api/docs/',
+    image: '/images/project-drf-course-api.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
