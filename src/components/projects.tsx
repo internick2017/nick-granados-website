@@ -1,23 +1,35 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
-import { projects } from '@/data/projects'
+import { projects, type Category } from '@/data/projects'
+
+type Filter = Category | 'all'
+
+const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'mobile', 'wordpress'] as const
+type FilterKey = (typeof FILTER_KEYS)[number]
 
 export default function Projects() {
   const { t, lang } = useLanguage()
+  const [activeFilter, setActiveFilter] = useState<Filter>('all')
+
+  const filtered =
+    activeFilter === 'all' ? projects : projects.filter((p) => p.category === activeFilter)
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800">
       <div className="max-w-6xl mx-auto">
+
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary-text dark:text-white mb-4">
             {t.projects.title}
@@ -27,61 +39,127 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid gap-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-brand"
+        {/* Filter pills */}
+        <div className="flex flex-wrap gap-2 justify-center mb-10">
+          {FILTER_KEYS.map((key) => (
+            <button
+              key={key}
+              onClick={() => setActiveFilter(key as Filter)}
+              className={`px-4 py-2 rounded-full text-sm font-semibold border-2 transition-colors duration-200 ${
+                activeFilter === key
+                  ? 'bg-brand-primary border-brand-primary text-white'
+                  : 'bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 hover:border-brand-accent hover:text-brand-accent dark:hover:border-brand-accent dark:hover:text-brand-accent'
+              }`}
             >
-              <div className="grid md:grid-cols-2 gap-8 p-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-brand-primary-text dark:text-white mb-4 leading-tight">
-                    {project.translations[lang].title}
-                  </h3>
-                  <p className="text-brand-primary-text/80 dark:text-slate-300 mb-6 leading-relaxed text-base">
-                    {project.translations[lang].description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs rounded-full font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex space-x-4">
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm">
-                        <Github size={18} />
-                        <span>{t.projects.github}</span>
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-brand-primary-text hover:text-brand-accent transition-colors font-semibold text-sm">
-                        <ExternalLink size={18} />
-                        <span>{t.projects.liveDemo}</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-brand-secondary/20 shadow-sm">
+              {t.projects.filters[key as FilterKey]}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects grid */}
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project) => (
+              <motion.article
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="group bg-white dark:bg-slate-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 shadow-sm hover:-translate-y-1 transition-transform duration-200"
+              >
+                {/* Image + hover overlay */}
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.translations[lang].title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                  {/* Overlay — desktop only (touch devices have no hover) */}
+                  <div className="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:flex items-center justify-center gap-3">
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-4 py-2 bg-white text-brand-primary font-bold text-xs rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-200 hover:bg-slate-100"
+                      >
+                        <ExternalLink size={13} />
+                        {t.projects.liveDemo}
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-4 py-2 bg-transparent border border-white text-white font-bold text-xs rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-200 delay-75 hover:bg-white/10"
+                      >
+                        <Github size={13} />
+                        {t.projects.github}
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+
+                {/* Card body */}
+                <div className="p-4">
+                  <p className="text-xs font-bold uppercase tracking-wide text-brand-accent mb-1">
+                    {t.projects.filters[project.category as FilterKey]}
+                  </p>
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-3 leading-snug">
+                    {project.translations[lang].title}
+                  </h3>
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 bg-blue-50 dark:bg-slate-600 text-blue-800 dark:text-slate-200 text-xs rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="px-2 py-0.5 bg-blue-50 dark:bg-slate-600 text-blue-800 dark:text-slate-200 text-xs rounded-full">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Mobile-only links (overlay not visible on touch) */}
+                  <div className="flex gap-3 sm:hidden">
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs font-semibold text-brand-accent hover:underline"
+                      >
+                        <ExternalLink size={12} />
+                        {t.projects.liveDemo}
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-brand-accent hover:underline"
+                      >
+                        <Github size={12} />
+                        {t.projects.github}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
       </div>
     </section>
   )
