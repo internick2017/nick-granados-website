@@ -1,5 +1,7 @@
 // src/data/projects.ts
 
+export type Category = 'fullstack' | 'api' | 'frontend' | 'mobile' | 'wordpress'
+
 export type ProjectTranslation = {
   title: string
   description: string
@@ -16,6 +18,7 @@ export type Project = {
   github: string | null
   demo: string | null
   image: string
+  category: Category
 }
 
 export const projects: Project[] = [
@@ -39,6 +42,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017',
     demo: 'https://gramtospoon.nickgranados.com/',
     image: '/images/project-gramtospoon.png',
+    category: 'frontend',
   },
   {
     id: 'repairshop',
@@ -60,6 +64,7 @@ export const projects: Project[] = [
     github: null,
     demo: 'https://repairshop-puce.vercel.app/',
     image: '/images/project-repairshop.png',
+    category: 'fullstack',
   },
   {
     id: 'jjj-investments',
@@ -81,6 +86,7 @@ export const projects: Project[] = [
     github: null,
     demo: 'https://family-investments.netlify.app/',
     image: '/images/project-jjj.png',
+    category: 'fullstack',
   },
   {
     id: 'lanny-herrera',
@@ -102,6 +108,7 @@ export const projects: Project[] = [
     github: null,
     demo: 'https://lanny.nickgranados.com',
     image: '/images/project-lanny.png',
+    category: 'wordpress',
   },
   {
     id: 'dose-time',
@@ -123,6 +130,7 @@ export const projects: Project[] = [
     github: null,
     demo: 'https://expo.dev/accounts/internick/projects/dose-time/builds/7087ee49-0135-4e69-aa96-95b0a9068a57',
     image: '/images/project-dosetime.png',
+    category: 'mobile',
   },
   {
     id: 'event-planner-api',
@@ -144,6 +152,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017/event-planner-api',
     demo: 'https://event-planner-api-oihl.onrender.com/api-docs',
     image: '/images/project-event-planner-api.png',
+    category: 'api',
   },
   {
     id: 'clear-path',
@@ -165,6 +174,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017/clear-path',
     demo: 'https://clear-path-9008.onrender.com',
     image: '/images/project-clear-path.png',
+    category: 'fullstack',
   },
   {
     id: 'sleepouside',
@@ -186,6 +196,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017/wdd330-sleepouside',
     demo: 'https://internick2017.github.io/wdd330-sleepouside/',
     image: '/images/project-sleepouside.png',
+    category: 'frontend',
   },
   {
     id: 'drf-course-api',
@@ -207,6 +218,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017/drf-course-api',
     demo: 'https://drf-course-api-o6rf.onrender.com/api/docs/',
     image: '/images/project-drf-course-api.png',
+    category: 'api',
   },
   {
     id: 'laravel-image-api',
@@ -228,6 +240,7 @@ export const projects: Project[] = [
     github: 'https://github.com/internick2017/laravel-image-manipulation',
     demo: 'https://image-api.nickgranados.com/api/documentation',
     image: '/images/project-laravel-image-api.png',
+    category: 'api',
   },
   {
     id: 'shadcn-nextjs',
@@ -249,6 +262,7 @@ export const projects: Project[] = [
     github: null,
     demo: 'https://shadcn-nextjs-app-ten.vercel.app/',
     image: '/images/project-shadcn.png',
+    category: 'frontend',
   },
 ]
 
