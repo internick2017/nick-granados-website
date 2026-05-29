@@ -209,6 +209,27 @@ export const projects: Project[] = [
     image: '/images/project-drf-course-api.png',
   },
   {
+    id: 'laravel-image-api',
+    translations: {
+      en: {
+        title: 'Laravel Image Manipulation API',
+        description: 'RESTful API for image resizing and album management, built with Laravel 8 and Sanctum. Features token authentication, album grouping, and interactive Swagger/OpenAPI documentation.',
+      },
+      es: {
+        title: 'API de Manipulación de Imágenes con Laravel',
+        description: 'API REST para redimensionado de imágenes y gestión de álbumes, construida con Laravel 8 y Sanctum. Autenticación por token, agrupación en álbumes y documentación Swagger interactiva.',
+      },
+      pt: {
+        title: 'API de Manipulação de Imagens com Laravel',
+        description: 'API REST para redimensionamento de imagens e gestão de álbuns, construída com Laravel 8 e Sanctum. Autenticação por token, agrupamento em álbuns e documentação Swagger interativa.',
+      },
+    },
+    technologies: ['PHP', 'Laravel', 'Laravel Sanctum', 'MySQL', 'Swagger/OpenAPI', 'Intervention Image'],
+    github: 'https://github.com/internick2017/laravel-image-manipulation',
+    demo: 'https://image-api.nickgranados.com/api/documentation',
+    image: '/images/project-laravel-image-api.png',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
