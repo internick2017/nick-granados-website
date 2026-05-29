@@ -7,10 +7,8 @@ import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects, type Category } from '@/data/projects'
 
-type Filter = Category | 'all'
-
 const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'mobile', 'wordpress'] as const
-type FilterKey = (typeof FILTER_KEYS)[number]
+type Filter = (typeof FILTER_KEYS)[number]
 
 export default function Projects() {
   const { t, lang } = useLanguage()
@@ -40,18 +38,19 @@ export default function Projects() {
         </motion.div>
 
         {/* Filter pills */}
-        <div className="flex flex-wrap gap-2 justify-center mb-10">
+        <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-2 justify-center mb-10">
           {FILTER_KEYS.map((key) => (
             <button
               key={key}
-              onClick={() => setActiveFilter(key as Filter)}
+              onClick={() => setActiveFilter(key)}
+              aria-pressed={activeFilter === key}
               className={`px-4 py-2 rounded-full text-sm font-semibold border-2 transition-colors duration-200 ${
                 activeFilter === key
                   ? 'bg-brand-primary border-brand-primary text-white'
                   : 'bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 hover:border-brand-accent hover:text-brand-accent dark:hover:border-brand-accent dark:hover:text-brand-accent'
               }`}
             >
-              {t.projects.filters[key as FilterKey]}
+              {t.projects.filters[key]}
             </button>
           ))}
         </div>
@@ -67,7 +66,8 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="group bg-white dark:bg-slate-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 shadow-sm hover:-translate-y-1 transition-transform duration-200"
+                whileHover={{ y: -4 }}
+                className="group bg-white dark:bg-slate-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 shadow-sm"
               >
                 {/* Image + hover overlay */}
                 <div className="relative h-48 overflow-hidden">
@@ -79,7 +79,7 @@ export default function Projects() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Overlay — desktop only (touch devices have no hover) */}
-                  <div className="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:flex items-center justify-center gap-3">
+                  <div className="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 hidden sm:flex items-center justify-center gap-3">
                     {project.demo && (
                       <a
                         href={project.demo}
@@ -108,7 +108,7 @@ export default function Projects() {
                 {/* Card body */}
                 <div className="p-4">
                   <p className="text-xs font-bold uppercase tracking-wide text-brand-accent mb-1">
-                    {t.projects.filters[project.category as FilterKey]}
+                    {t.projects.filters[project.category]}
                   </p>
                   <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-3 leading-snug">
                     {project.translations[lang].title}
