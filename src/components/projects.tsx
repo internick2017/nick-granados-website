@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
-import { projects, type Category } from '@/data/projects'
+import { projects } from '@/data/projects'
 
 const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'mobile', 'wordpress'] as const
 type Filter = (typeof FILTER_KEYS)[number]
@@ -38,7 +38,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Filter pills */}
-        <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-2 justify-center mb-10">
+        <div role="group" aria-label={t.projects.filtersLabel} className="flex flex-wrap gap-2 justify-center mb-10">
           {FILTER_KEYS.map((key) => (
             <button
               key={key}
