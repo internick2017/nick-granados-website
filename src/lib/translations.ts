@@ -35,6 +35,14 @@ export const translations = {
       subtitle: "Real projects, live demos — here's what I've built",
       github: "GitHub",
       liveDemo: "Live Demo",
+      filters: {
+        all: "All",
+        fullstack: "Full-Stack",
+        api: "APIs",
+        frontend: "Frontend",
+        mobile: "Mobile",
+        wordpress: "WordPress",
+      },
     },
     skills: {
       title: "Skills & Technologies",
@@ -97,6 +105,14 @@ export const translations = {
       subtitle: "Proyectos reales, demos en vivo — esto es lo que construí",
       github: "GitHub",
       liveDemo: "Demo en vivo",
+      filters: {
+        all: "Todos",
+        fullstack: "Full-Stack",
+        api: "APIs",
+        frontend: "Frontend",
+        mobile: "Móvil",
+        wordpress: "WordPress",
+      },
     },
     skills: {
       title: "Habilidades y Tecnologías",
@@ -159,6 +175,14 @@ export const translations = {
       subtitle: "Projetos reais, demos ao vivo — veja o que construí",
       github: "GitHub",
       liveDemo: "Demo ao vivo",
+      filters: {
+        all: "Todos",
+        fullstack: "Full-Stack",
+        api: "APIs",
+        frontend: "Frontend",
+        mobile: "Mobile",
+        wordpress: "WordPress",
+      },
     },
     skills: {
       title: "Habilidades e Tecnologias",
