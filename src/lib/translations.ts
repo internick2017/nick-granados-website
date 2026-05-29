@@ -35,6 +35,7 @@ export const translations = {
       subtitle: "Real projects, live demos — here's what I've built",
       github: "GitHub",
       liveDemo: "Live Demo",
+      filtersLabel: "Filter projects",
       filters: {
         all: "All",
         fullstack: "Full-Stack",
@@ -105,6 +106,7 @@ export const translations = {
       subtitle: "Proyectos reales, demos en vivo — esto es lo que construí",
       github: "GitHub",
       liveDemo: "Demo en vivo",
+      filtersLabel: "Filtrar proyectos",
       filters: {
         all: "Todos",
         fullstack: "Full-Stack",
@@ -175,6 +177,7 @@ export const translations = {
       subtitle: "Projetos reais, demos ao vivo — veja o que construí",
       github: "GitHub",
       liveDemo: "Demo ao vivo",
+      filtersLabel: "Filtrar projetos",
       filters: {
         all: "Todos",
         fullstack: "Full-Stack",
