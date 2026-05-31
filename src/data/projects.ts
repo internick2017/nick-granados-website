@@ -243,6 +243,28 @@ export const projects: Project[] = [
     category: 'api',
   },
   {
+    id: 'wp-ai-alt-text',
+    translations: {
+      en: {
+        title: 'AI Alt Text Generator — WordPress Plugin',
+        description: 'WordPress plugin that automatically generates descriptive alt text for images using AI. Supports WordPress 7.0 AI Connectors and OpenAI API, with Gutenberg block editor integration, bulk processing, and REST API.',
+      },
+      es: {
+        title: 'AI Alt Text Generator — Plugin WordPress',
+        description: 'Plugin de WordPress que genera automáticamente alt text descriptivo para imágenes usando IA. Compatible con WordPress 7.0 AI Connectors y OpenAI API, con integración en el editor de bloques, generación masiva y REST API.',
+      },
+      pt: {
+        title: 'AI Alt Text Generator — Plugin WordPress',
+        description: 'Plugin WordPress que gera automaticamente alt text descritivo para imagens usando IA. Suporta WordPress 7.0 AI Connectors e OpenAI API, com integração no editor de blocos, processamento em lote e REST API.',
+      },
+    },
+    technologies: ['WordPress', 'PHP', 'React', 'Gutenberg', 'OpenAI API', 'REST API', 'PHPUnit', 'Docker'],
+    github: 'https://github.com/internick2017/ai-alt-text-generator',
+    demo: null,
+    image: '/images/project-wp-ai-alt-text.png',
+    category: 'wordpress',
+  },
+  {
     id: 'shadcn-nextjs',
     translations: {
       en: {
