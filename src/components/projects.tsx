@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 
-const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'mobile', 'wordpress'] as const
+const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'ecommerce', 'mobile', 'wordpress'] as const
 type Filter = (typeof FILTER_KEYS)[number]
 
 export default function Projects() {
