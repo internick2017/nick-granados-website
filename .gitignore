@@ -61,3 +61,10 @@ docs/superpowers/
 .superpowers/
 .gstack/
 out/
+
+# Personal notes / interview prep (not for public portfolio repo)
+CHULETA-*.md
+ENTREVISTA-*.md
+NOTAS-*.md
+PLAN-*.md
+RESPUESTAS-*.md
