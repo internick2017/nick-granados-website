@@ -23,6 +23,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'ecommerce-data-warehouse',
+    translations: {
+      en: {
+        title: 'E-commerce Data Warehouse — ELT Pipeline on AWS',
+        description: 'End-to-end ELT pipeline running against a live Shopify store and real AWS infrastructure. Extracts orders via the Shopify GraphQL API (cursor pagination, throttle-aware retries), stages raw JSON in S3, loads into PostgreSQL on AWS RDS with idempotent incremental upserts and load auditing, then builds a star schema in pure SQL (CTEs + window functions) feeding a Power BI dashboard. 48 tests, SQL data-quality gates, and boto3 infrastructure automation.',
+      },
+      es: {
+        title: 'E-commerce Data Warehouse — Pipeline ELT en AWS',
+        description: 'Pipeline ELT de extremo a extremo contra una tienda Shopify real e infraestructura AWS. Extrae pedidos vía Shopify GraphQL API (paginación por cursor, reintentos con manejo de throttle), almacena JSON crudo en S3, carga en PostgreSQL sobre AWS RDS con upserts incrementales idempotentes y auditoría, y construye un esquema en estrella en SQL puro (CTEs + window functions) que alimenta un dashboard Power BI. 48 tests, quality gates en SQL y automatización de infraestructura con boto3.',
+      },
+      pt: {
+        title: 'E-commerce Data Warehouse — Pipeline ELT na AWS',
+        description: 'Pipeline ELT de ponta a ponta contra uma loja Shopify real e infraestrutura AWS. Extrai pedidos via Shopify GraphQL API (paginação por cursor, retries com tratamento de throttle), armazena JSON bruto no S3, carrega em PostgreSQL no AWS RDS com upserts incrementais idempotentes e auditoria, e constrói um star schema em SQL puro (CTEs + window functions) que alimenta um dashboard Power BI. 48 testes, quality gates em SQL e automação de infraestrutura com boto3.',
+      },
+    },
+    technologies: ['Python', 'AWS RDS', 'AWS S3', 'PostgreSQL', 'ETL/ELT', 'Shopify GraphQL', 'Star Schema', 'Power BI', 'boto3', 'pytest'],
+    github: 'https://github.com/internick2017/ecommerce-data-warehouse',
+    demo: null,
+    image: '/images/project-ecommerce-dw.png',
+    category: 'api',
+  },
+  {
     id: 'gramtospoon',
     translations: {
       en: {
