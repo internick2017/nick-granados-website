@@ -1,6 +1,6 @@
 // src/data/projects.ts
 
-export type Category = 'fullstack' | 'api' | 'frontend' | 'mobile' | 'wordpress'
+export type Category = 'fullstack' | 'api' | 'frontend' | 'ecommerce' | 'mobile' | 'wordpress'
 
 export type ProjectTranslation = {
   title: string
@@ -307,6 +307,28 @@ export const projects: Project[] = [
     demo: 'https://shadcn-nextjs-app-ten.vercel.app/',
     image: '/images/project-shadcn.png',
     category: 'frontend',
+  },
+  {
+    id: 'store-up',
+    translations: {
+      en: {
+        title: 'Store Up — Shopify E-commerce Store',
+        description: 'Live Shopify store I built and run end-to-end: custom Liquid theme, conversion-focused product landing, multi-language (ES/EN/PT) and multi-currency checkout, and Node.js automation against the Shopify Admin API. It\'s also the live data source behind my E-commerce Data Warehouse project.',
+      },
+      es: {
+        title: 'Store Up — Tienda E-commerce en Shopify',
+        description: 'Tienda Shopify en vivo que construí y opero de punta a punta: tema Liquid personalizado, landing de producto orientada a conversión, checkout multi-idioma (ES/EN/PT) y multi-moneda, y automatización en Node.js contra la Shopify Admin API. Además es la fuente de datos real detrás de mi proyecto E-commerce Data Warehouse.',
+      },
+      pt: {
+        title: 'Store Up — Loja E-commerce no Shopify',
+        description: 'Loja Shopify ao vivo que construí e opero de ponta a ponta: tema Liquid customizado, landing de produto focada em conversão, checkout multilíngue (ES/EN/PT) e multi-moeda, e automação em Node.js contra a Shopify Admin API. É também a fonte de dados real por trás do meu projeto E-commerce Data Warehouse.',
+      },
+    },
+    technologies: ['Shopify', 'Liquid', 'Shopify Admin API', 'Node.js', 'CSS3', 'E-commerce', 'Conversion Optimization'],
+    github: null,
+    demo: 'https://storeup.store',
+    image: '/images/project-store-up.png',
+    category: 'ecommerce',
   },
 ]
 
