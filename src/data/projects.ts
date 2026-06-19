@@ -268,21 +268,21 @@ export const projects: Project[] = [
     id: 'wp-ai-alt-text',
     translations: {
       en: {
-        title: 'AI Alt Text Generator — WordPress Plugin',
+        title: 'Internick – Smart Alt Generator — WordPress Plugin',
         description: 'WordPress plugin that automatically generates descriptive alt text for images using AI. Supports WordPress 7.0 AI Connectors and OpenAI API, with Gutenberg block editor integration, bulk processing, and REST API.',
       },
       es: {
-        title: 'AI Alt Text Generator — Plugin WordPress',
+        title: 'Internick – Smart Alt Generator — Plugin WordPress',
         description: 'Plugin de WordPress que genera automáticamente alt text descriptivo para imágenes usando IA. Compatible con WordPress 7.0 AI Connectors y OpenAI API, con integración en el editor de bloques, generación masiva y REST API.',
       },
       pt: {
-        title: 'AI Alt Text Generator — Plugin WordPress',
+        title: 'Internick – Smart Alt Generator — Plugin WordPress',
         description: 'Plugin WordPress que gera automaticamente alt text descritivo para imagens usando IA. Suporta WordPress 7.0 AI Connectors e OpenAI API, com integração no editor de blocos, processamento em lote e REST API.',
       },
     },
     technologies: ['WordPress', 'PHP', 'React', 'Gutenberg', 'OpenAI API', 'REST API', 'PHPUnit', 'Docker'],
     github: 'https://github.com/internick2017/ai-alt-text-generator',
-    demo: null,
+    demo: 'https://wordpress.org/plugins/internick-smart-alt-generator/',
     image: '/images/project-wp-ai-alt-text.png',
     category: 'wordpress',
   },
