@@ -9,7 +9,7 @@ export const resumeWordpress: ResumeData = {
     pt: 'Desenvolvedor WordPress',
   },
   contact: {
-    email: 'internickbr@gmail.com',
+    email: 'nickgranados01@gmail.com',
     phone: '+55 46 99109-6679',
     location: {
       en: 'Paraná, Brazil',
@@ -17,9 +17,9 @@ export const resumeWordpress: ResumeData = {
       pt: 'Paraná, Brasil',
     },
     availability: {
-      en: 'Available for remote / freelance (part-time)',
-      es: 'Disponible para remoto / freelance (medio tiempo)',
-      pt: 'Disponível para remoto / freelance (meio período)',
+      en: 'Open to full-time remote and freelance',
+      es: 'Abierto a full-time remoto y freelance',
+      pt: 'Aberto a full-time remoto e freelance',
     },
     linkedin: 'https://www.linkedin.com/in/nick-granados',
     github: 'https://github.com/internick2017',
