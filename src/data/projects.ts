@@ -281,7 +281,7 @@ export const projects: Project[] = [
       },
     },
     technologies: ['WordPress', 'PHP', 'React', 'Gutenberg', 'OpenAI API', 'REST API', 'PHPUnit', 'Docker'],
-    github: 'https://github.com/internick2017/ai-alt-text-generator',
+    github: 'https://github.com/internick2017/smart-alt-generator',
     demo: 'https://wordpress.org/plugins/internick-smart-alt-generator/',
     image: '/images/project-wp-ai-alt-text.png',
     category: 'wordpress',
