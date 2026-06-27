@@ -45,6 +45,28 @@ export const projects: Project[] = [
     category: 'api',
   },
   {
+    id: 'kindly-theme',
+    translations: {
+      en: {
+        title: 'Kindly — Nonprofit WordPress Block Theme',
+        description: 'Custom Full Site Editing (FSE) block theme built from scratch for nonprofits and churches. Lightweight with zero external requests (self-hosted fonts), WCAG 2.2 AA out of the box, a theme.json v3 design system with a semantic palette and fluid typography, 7 block templates, 15 block patterns, and 3 style variations, all using core blocks and no page builder. Passes the official Theme Check with 0 required issues.',
+      },
+      es: {
+        title: 'Kindly — Tema de Bloques WordPress para ONGs',
+        description: 'Tema de bloques Full Site Editing (FSE) hecho desde cero para ONGs e iglesias. Liviano y sin requests externos (fuentes self-hosted), WCAG 2.2 AA de fábrica, sistema de diseño theme.json v3 con paleta semántica y tipografía fluida, 7 plantillas de bloques, 15 patrones y 3 variaciones de estilo, todo con bloques del core y sin page builder. Pasa el Theme Check oficial con 0 errores requeridos.',
+      },
+      pt: {
+        title: 'Kindly — Tema de Blocos WordPress para ONGs',
+        description: 'Tema de blocos Full Site Editing (FSE) feito do zero para ONGs e igrejas. Leve e sem requests externos (fontes self-hosted), WCAG 2.2 AA de fábrica, sistema de design theme.json v3 com paleta semântica e tipografia fluida, 7 templates de blocos, 15 patterns e 3 variações de estilo, tudo com blocos do core e sem page builder. Passa no Theme Check oficial com 0 erros obrigatórios.',
+      },
+    },
+    technologies: ['WordPress', 'PHP', 'Full Site Editing', 'theme.json', 'Block Patterns', 'HTML', 'CSS', 'WCAG 2.2 AA'],
+    github: 'https://github.com/internick2017/kindly',
+    demo: 'https://kindly.nickgranados.com',
+    image: '/images/project-kindly.png',
+    category: 'wordpress',
+  },
+  {
     id: 'gramtospoon',
     translations: {
       en: {
