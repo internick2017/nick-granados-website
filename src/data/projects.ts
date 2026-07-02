@@ -23,6 +23,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'fixflow',
+    translations: {
+      en: {
+        title: 'FixFlow — QR Service Intake with 3-Tier RLS',
+        description: 'QR-based service-request intake built on Supabase. Customers scan a per-location QR code and file a ticket anonymously; staff triage behind authentication. Security is enforced in Postgres by 3-tier Row Level Security (anonymous can only create, técnicos see only the tickets assigned to them, admins see everything), covered by an integration test suite. Uses Supabase Auth, Storage for photo uploads, and an Edge Function that emails staff on each new ticket. Deployed on Vercel with a hosted Supabase backend.',
+      },
+      es: {
+        title: 'FixFlow — Intake de Servicio con QR y RLS de 3 Niveles',
+        description: 'Intake de solicitudes de servicio con QR construido sobre Supabase. El cliente escanea un QR por sucursal y crea un ticket de forma anónima; el staff lo gestiona detrás de login. La seguridad la impone Postgres con Row Level Security de 3 niveles (anónimo solo crea, el técnico ve solo sus tickets asignados, el admin ve todo), cubierta por una suite de tests de integración. Usa Supabase Auth, Storage para subir fotos y una Edge Function que avisa por email al staff en cada ticket nuevo. Desplegado en Vercel con backend Supabase en la nube.',
+      },
+      pt: {
+        title: 'FixFlow — Intake de Serviço com QR e RLS de 3 Níveis',
+        description: 'Intake de solicitações de serviço com QR construído sobre Supabase. O cliente escaneia um QR por filial e cria um ticket de forma anônima; a equipe gerencia atrás de login. A segurança é imposta pelo Postgres com Row Level Security de 3 níveis (anônimo só cria, o técnico vê apenas seus tickets atribuídos, o admin vê tudo), coberta por uma suíte de testes de integração. Usa Supabase Auth, Storage para upload de fotos e uma Edge Function que avisa a equipe por email a cada novo ticket. Implantado em Vercel com backend Supabase na nuvem.',
+      },
+    },
+    technologies: ['Supabase', 'Row Level Security', 'Next.js 16', 'Edge Functions', 'TypeScript', 'PostgreSQL', 'Auth', 'Vitest'],
+    github: 'https://github.com/internick2017/fixflow',
+    demo: 'https://fixflow-jade.vercel.app',
+    image: '/images/project-fixflow.png',
+    category: 'fullstack',
+  },
+  {
     id: 'ecommerce-data-warehouse',
     translations: {
       en: {
