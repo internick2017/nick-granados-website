@@ -89,6 +89,28 @@ export const projects: Project[] = [
     category: 'wordpress',
   },
   {
+    id: 'shopgraph',
+    translations: {
+      en: {
+        title: 'ShopGraph — AI-Ready Products for WooCommerce',
+        description: 'WooCommerce plugin that makes a store\'s products discoverable by AI shopping agents (ChatGPT, Gemini, Perplexity, Claude). It builds complete schema.org Product JSON-LD from live WooCommerce data and, crucially, coexists with the store\'s existing schema: it merges into WooCommerce Core\'s own Product node (and Yoast / Rank Math when present) via the woocommerce_structured_data_product filter instead of printing a duplicate. Adds AI product attributes (Q&A, compatible accessories, substitutes) in the product editor, serves an /llms.txt catalog index, and adds AI-crawler robots.txt directives. OOP PHP with PSR-4, a DDEV dev environment, and a PHPUnit + WooCommerce test suite; passes the official Plugin Check with zero errors.',
+      },
+      es: {
+        title: 'ShopGraph — Productos Listos para IA en WooCommerce',
+        description: 'Plugin de WooCommerce que hace los productos de una tienda descubribles por agentes de IA de compras (ChatGPT, Gemini, Perplexity, Claude). Construye JSON-LD schema.org Product completo desde los datos en vivo de WooCommerce y, lo más importante, coexiste con el schema existente de la tienda: fusiona en el nodo Product del propio WooCommerce (y de Yoast / Rank Math cuando están) vía el filtro woocommerce_structured_data_product en vez de imprimir un duplicado. Agrega atributos de IA de producto (Q&A, accesorios compatibles, substitutos) en el editor, sirve un índice de catálogo en /llms.txt y agrega directivas de robots.txt para crawlers de IA. PHP OOP con PSR-4, entorno DDEV y suite de tests PHPUnit + WooCommerce; pasa el Plugin Check oficial con cero errores.',
+      },
+      pt: {
+        title: 'ShopGraph — Produtos Prontos para IA no WooCommerce',
+        description: 'Plugin de WooCommerce que torna os produtos de uma loja descobríveis por agentes de IA de compras (ChatGPT, Gemini, Perplexity, Claude). Constrói JSON-LD schema.org Product completo a partir dos dados ao vivo do WooCommerce e, o mais importante, coexiste com o schema existente da loja: mescla no nó Product do próprio WooCommerce (e do Yoast / Rank Math quando presentes) via o filtro woocommerce_structured_data_product em vez de imprimir um duplicado. Adiciona atributos de IA de produto (Q&A, acessórios compatíveis, substitutos) no editor, serve um índice de catálogo em /llms.txt e adiciona diretivas de robots.txt para crawlers de IA. PHP OOP com PSR-4, ambiente DDEV e suíte de testes PHPUnit + WooCommerce; passa no Plugin Check oficial com zero erros.',
+      },
+    },
+    technologies: ['WordPress', 'WooCommerce', 'PHP 8', 'PSR-4', 'JSON-LD', 'Schema.org', 'llms.txt', 'PHPUnit', 'DDEV'],
+    github: 'https://github.com/internick2017/shopgraph',
+    demo: null,
+    image: '/images/project-shopgraph.png',
+    category: 'wordpress',
+  },
+  {
     id: 'gramtospoon',
     translations: {
       en: {
