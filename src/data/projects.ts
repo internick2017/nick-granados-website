@@ -325,7 +325,7 @@ export const projects: Project[] = [
       },
     },
     technologies: ['PHP', 'Laravel', 'Laravel Sanctum', 'MySQL', 'Swagger/OpenAPI', 'Intervention Image'],
-    github: 'https://github.com/internick2017/laravel-image-manipulation',
+    github: 'https://github.com/internick2017/laravel-image-manipulation-api',
     demo: 'https://image-api.nickgranados.com/api/documentation',
     image: '/images/project-laravel-image-api.png',
     category: 'api',
