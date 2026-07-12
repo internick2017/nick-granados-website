@@ -56,15 +56,10 @@ In `public/images/`: `project-gramtospoon.png`, `project-jjj.png`, `project-repa
 Posts to `https://nickgranados.com/send-email.php` (PHP backend hosted on the same HostGator domain). No Next.js API routes — static export.
 
 ## Known issues / pending improvements
-_(Actualizado 2026-07-11. Los dos issues anteriores — "demos full-stack sin pulir" y "no hay proyectos
-WordPress" — están RESUELTOS: repairshop y JJJ ya tienen demo con credenciales visibles + datos ficticios,
-y el portfolio tiene 17 proyectos, 4 de ellos WordPress: Kindly, ShopGraph, Lanny, Alt Generator.)_
+_(Actualizado 2026-07-12. Los issues anteriores — "demos full-stack sin pulir", "no hay proyectos
+WordPress", cold-start de Render, y las credenciales reales hardcodeadas en el seed de JJJ — están
+RESUELTOS. El portfolio tiene 17 proyectos, 4 de ellos WordPress: Kindly, ShopGraph, Lanny, Alt Generator.)_
 
 1. **ShopGraph tiene `demo: null`** en `src/data/projects.ts` — agregar el link de demo cuando el plugin
-   sea aprobado en WordPress.org (hoy en cola de revisión).
-2. ✅ **RESUELTO (2026-07-11): cold-start de Render.** Las 3 demos en Render free tier (clear-path,
-   event-planner-api, drf-course-api) tenían pings cada 5 min desde UptimeRobot (cuenta free,
-   nickgranados01@gmail.com) para que no se duerman. Ver [[project_portfolio]] para credenciales y detalle.
-3. **JJJ Investments** (repo aparte `E:\dev\01-web-apps\nextjs--jjj-investments`) tiene opcionales de bajo
-   impacto: página `/reports` stubbeada y sacar el password real del seed.
+   sea aprobado en WordPress.org (enviado 2026-07-06, en cola de revisión).
 
