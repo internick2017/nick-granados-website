@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad — DoseTime',
+  title: 'Política de Privacidad de DoseTime',
   description: 'Política de privacidad de la app DoseTime.',
 }
 
@@ -9,7 +9,7 @@ export default function DoseTimePrivacyPage() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-16 text-slate-800 dark:text-slate-200">
       <h1 className="text-3xl font-bold text-brand-primary-text dark:text-white">
-        Política de Privacidad — DoseTime
+        Política de Privacidad de DoseTime
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
         Última actualización: 12 de julio de 2026
@@ -27,7 +27,7 @@ export default function DoseTimePrivacyPage() {
         DoseTime no requiere cuenta ni inicio de sesión. Los medicamentos, horarios y el
         historial de dosis que registrás se guardan únicamente en tu dispositivo, en una base
         de datos local. Ningún dato de tus medicamentos, horarios o historial de dosis se
-        envía a nuestros servidores ni a terceros — no tenemos servidores propios que reciban
+        envía a nuestros servidores ni a terceros: no tenemos servidores propios que reciban
         esa información.
       </p>
 
@@ -55,7 +55,7 @@ export default function DoseTimePrivacyPage() {
         >
           policies.google.com/privacy
         </a>
-        . Nosotros no recibimos ni almacenamos esos datos — los procesa Google directamente.
+        . Nosotros no recibimos ni almacenamos esos datos, los procesa Google directamente.
       </p>
 
       <h2 className="mt-10 text-xl font-semibold text-brand-primary-text dark:text-white">
