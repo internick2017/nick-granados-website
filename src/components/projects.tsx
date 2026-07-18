@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
@@ -128,6 +128,17 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
+
+                  {/* Case study link (flagship projects only) */}
+                  {project.caseStudy && (
+                    <a
+                      href={`/work/${project.id}/`}
+                      className="group/cs inline-flex items-center gap-1 text-sm font-semibold text-brand-accent hover:underline mb-3"
+                    >
+                      {t.caseStudy.readCaseStudy}
+                      <ArrowRight size={14} className="transition-transform group-hover/cs:translate-x-0.5" />
+                    </a>
+                  )}
 
                   {/* Mobile-only links (overlay not visible on touch) */}
                   <div className="flex gap-3 sm:hidden">
