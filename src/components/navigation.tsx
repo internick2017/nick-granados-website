@@ -25,7 +25,12 @@ export default function Navigation() {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // Not on the homepage (e.g. a /work/[slug] case study): go to the home anchor
+      window.location.href = `/${href}`
+    }
     setIsOpen(false)
   }
 
@@ -36,7 +41,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <a href="#hero" className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-10 h-10">
                 <text x="50" y="50" textAnchor="middle" alignmentBaseline="middle" fontSize="40" fontWeight="bold" fill="#0d9488">NG</text>
               </svg>

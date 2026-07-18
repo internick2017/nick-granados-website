@@ -7,6 +7,13 @@ export type ProjectTranslation = {
   description: string
 }
 
+export type CaseStudyContent = {
+  summary: string      // one-line hook
+  problem: string      // context / challenge (short prose)
+  approach: string[]   // what was built and how
+  outcome: string[]    // what it proves: verifiable outcomes
+}
+
 export type Project = {
   id: string
   translations: {
@@ -19,6 +26,11 @@ export type Project = {
   demo: string | null
   image: string
   category: Category
+  caseStudy?: {
+    en: CaseStudyContent
+    es: CaseStudyContent
+    pt: CaseStudyContent
+  }
 }
 
 export const projects: Project[] = [
@@ -43,6 +55,53 @@ export const projects: Project[] = [
     demo: 'https://fixflow-jade.vercel.app',
     image: '/images/project-fixflow.png',
     category: 'fullstack',
+    caseStudy: {
+      en: {
+        summary: 'A QR-based service intake app where security is enforced in the database itself, not just the UI.',
+        problem: 'A repair or service business wants customers to file a request by scanning a QR code, with zero friction and no account. But that same data must stay locked down: a customer must never see another customer\'s ticket, and a technician must only see the jobs assigned to them. Enforcing that only in application code is fragile, one missed check leaks data.',
+        approach: [
+          'Customers scan a per-location QR code and file a ticket anonymously; staff triage behind authentication.',
+          'Access is enforced in Postgres with three-tier Row Level Security: anonymous can only create, technicians see only tickets assigned to them, admins see everything.',
+          'Uses Supabase Auth, Storage for photo uploads, and an Edge Function to email staff on each new ticket.',
+          'The security rules are covered by an integration test suite, so a policy regression fails the build.',
+        ],
+        outcome: [
+          'Live demo deployed on Vercel with a hosted Supabase backend.',
+          'Three-tier Row Level Security verified live against each role.',
+          'Security policies covered by automated integration tests.',
+        ],
+      },
+      es: {
+        summary: 'Una app de intake de servicio por QR donde la seguridad la impone la base de datos, no solo la interfaz.',
+        problem: 'Un negocio de reparación o servicio quiere que el cliente cargue una solicitud escaneando un QR, sin fricción y sin cuenta. Pero esos datos tienen que quedar protegidos: un cliente nunca debe ver el ticket de otro, y un técnico solo debe ver los trabajos que tiene asignados. Imponer eso solo en el código de la app es frágil: un solo chequeo olvidado filtra datos.',
+        approach: [
+          'El cliente escanea un QR por sucursal y crea un ticket de forma anónima; el staff lo gestiona detrás de login.',
+          'El acceso lo impone Postgres con Row Level Security de 3 niveles: anónimo solo crea, el técnico ve solo sus tickets asignados, el admin ve todo.',
+          'Usa Supabase Auth, Storage para subir fotos y una Edge Function para avisar por email al staff en cada ticket nuevo.',
+          'Las reglas de seguridad están cubiertas por una suite de tests de integración, así una regresión de política rompe el build.',
+        ],
+        outcome: [
+          'Demo en vivo desplegada en Vercel con backend Supabase en la nube.',
+          'Row Level Security de 3 niveles verificada en vivo contra cada rol.',
+          'Políticas de seguridad cubiertas por tests de integración automatizados.',
+        ],
+      },
+      pt: {
+        summary: 'Um app de intake de serviço por QR onde a segurança é imposta pelo banco de dados, não apenas pela interface.',
+        problem: 'Um negócio de reparo ou serviço quer que o cliente abra uma solicitação escaneando um QR, sem fricção e sem conta. Mas esses dados precisam ficar protegidos: um cliente nunca deve ver o ticket de outro, e um técnico só deve ver os trabalhos atribuídos a ele. Impor isso apenas no código do app é frágil: um único check esquecido vaza dados.',
+        approach: [
+          'O cliente escaneia um QR por filial e cria um ticket de forma anônima; a equipe gerencia atrás de login.',
+          'O acesso é imposto pelo Postgres com Row Level Security de 3 níveis: anônimo só cria, o técnico vê apenas seus tickets atribuídos, o admin vê tudo.',
+          'Usa Supabase Auth, Storage para upload de fotos e uma Edge Function para avisar a equipe por email a cada novo ticket.',
+          'As regras de segurança são cobertas por uma suíte de testes de integração, então uma regressão de política quebra o build.',
+        ],
+        outcome: [
+          'Demo ao vivo implantada na Vercel com backend Supabase na nuvem.',
+          'Row Level Security de 3 níveis verificada ao vivo contra cada função.',
+          'Políticas de segurança cobertas por testes de integração automatizados.',
+        ],
+      },
+    },
   },
   {
     id: 'ecommerce-data-warehouse',
@@ -87,6 +146,53 @@ export const projects: Project[] = [
     demo: 'https://kindly.nickgranados.com',
     image: '/images/project-kindly.png',
     category: 'wordpress',
+    caseStudy: {
+      en: {
+        summary: 'A from-scratch WordPress block theme for nonprofits and congregations, accessible and lightweight by default.',
+        problem: 'Nonprofits and churches usually reach for heavy multipurpose themes that load a page builder, make external font requests, lock features behind a Pro upgrade, and ship inaccessible markup. Small organizations end up with slow, non-compliant sites they cannot fully control.',
+        approach: [
+          'A Full Site Editing (FSE) block theme built from scratch using only core blocks, with no page builder.',
+          'A theme.json v3 design system: semantic color palette, fluid typography, and a consistent spacing scale.',
+          '7 block templates, 15 block patterns for the sections these sites actually need, and 3 style variations, every one passing WCAG AA color contrast.',
+          'Fonts self-hosted so the theme makes zero external requests.',
+        ],
+        outcome: [
+          'Live and running at kindly.nickgranados.com.',
+          'WCAG 2.2 AA out of the box; passes the official Theme Check with zero required issues.',
+          'Submitted to the WordPress.org theme directory (in review).',
+        ],
+      },
+      es: {
+        summary: 'Un tema de bloques de WordPress hecho desde cero para ONGs y congregaciones, accesible y liviano de fábrica.',
+        problem: 'Las ONGs e iglesias suelen recurrir a temas multipropósito pesados que cargan un page builder, hacen requests externos de fuentes, lockean funciones tras un Pro y publican marcado inaccesible. Las organizaciones chicas terminan con sitios lentos, no conformes y que no pueden controlar del todo.',
+        approach: [
+          'Un tema de bloques Full Site Editing (FSE) hecho desde cero usando solo bloques del core, sin page builder.',
+          'Un sistema de diseño theme.json v3: paleta de color semántica, tipografía fluida y una escala de espaciado consistente.',
+          '7 plantillas de bloques, 15 patrones para las secciones que estos sitios de verdad necesitan y 3 variaciones de estilo, todas pasando el contraste de color WCAG AA.',
+          'Fuentes self-hosted para que el tema no haga ningún request externo.',
+        ],
+        outcome: [
+          'En vivo y funcionando en kindly.nickgranados.com.',
+          'WCAG 2.2 AA de fábrica; pasa el Theme Check oficial con cero errores requeridos.',
+          'Enviado al directorio de temas de WordPress.org (en revisión).',
+        ],
+      },
+      pt: {
+        summary: 'Um tema de blocos do WordPress feito do zero para ONGs e congregações, acessível e leve por padrão.',
+        problem: 'ONGs e igrejas costumam recorrer a temas multipropósito pesados que carregam um page builder, fazem requests externos de fontes, travam recursos atrás de um Pro e publicam marcação inacessível. Organizações pequenas acabam com sites lentos, não conformes e que não conseguem controlar totalmente.',
+        approach: [
+          'Um tema de blocos Full Site Editing (FSE) feito do zero usando apenas blocos do core, sem page builder.',
+          'Um sistema de design theme.json v3: paleta de cores semântica, tipografia fluida e uma escala de espaçamento consistente.',
+          '7 templates de blocos, 15 patterns para as seções que esses sites realmente precisam e 3 variações de estilo, todas passando no contraste de cor WCAG AA.',
+          'Fontes self-hosted para que o tema não faça nenhum request externo.',
+        ],
+        outcome: [
+          'Ao vivo e funcionando em kindly.nickgranados.com.',
+          'WCAG 2.2 AA por padrão; passa no Theme Check oficial com zero erros obrigatórios.',
+          'Enviado ao diretório de temas do WordPress.org (em revisão).',
+        ],
+      },
+    },
   },
   {
     id: 'shopgraph',
@@ -109,6 +215,53 @@ export const projects: Project[] = [
     demo: null,
     image: '/images/project-shopgraph.png',
     category: 'wordpress',
+    caseStudy: {
+      en: {
+        summary: 'A WooCommerce plugin that makes a store\'s products discoverable by AI shopping agents, without breaking the store\'s existing SEO.',
+        problem: 'Shoppers increasingly ask ChatGPT, Gemini, and Perplexity where to buy things. Stores with no machine-readable product data are invisible to those agents. The usual fix, bolting on a second schema plugin, collides with the store\'s existing SEO markup and ships duplicate structured data that search engines penalize.',
+        approach: [
+          'Builds complete schema.org Product JSON-LD from live WooCommerce data: price, availability, ratings, variations.',
+          'Merges into WooCommerce Core\'s own Product schema node, and into Yoast or Rank Math when active, instead of printing a duplicate node.',
+          'Adds AI-specific product attributes in the editor (Q&A, compatible accessories, substitutes), serves an /llms.txt catalog index, and adds AI-crawler directives.',
+          'OOP PHP with PSR-4 autoloading, a DDEV dev environment, and a PHPUnit + WooCommerce integration test suite.',
+        ],
+        outcome: [
+          'Shipped and submitted to the official WordPress.org plugin directory (in review).',
+          '31 passing tests; passes the official Plugin Check with zero errors.',
+          'Verified live against real Rank Math and Yoast installs: a single merged schema node, no duplication.',
+        ],
+      },
+      es: {
+        summary: 'Un plugin de WooCommerce que hace los productos de una tienda descubribles por agentes de IA de compras, sin romper el SEO existente.',
+        problem: 'Cada vez más gente le pregunta a ChatGPT, Gemini y Perplexity dónde comprar algo. Las tiendas sin datos de producto legibles por máquina son invisibles para esos agentes. El arreglo típico, sumar un segundo plugin de schema, choca con el marcado SEO existente y publica datos estructurados duplicados que los buscadores penalizan.',
+        approach: [
+          'Construye JSON-LD schema.org Product completo desde los datos en vivo de WooCommerce: precio, disponibilidad, ratings, variaciones.',
+          'Fusiona en el nodo Product del propio WooCommerce, y en Yoast o Rank Math cuando están activos, en vez de imprimir un nodo duplicado.',
+          'Agrega atributos de producto para IA en el editor (Q&A, accesorios compatibles, substitutos), sirve un índice de catálogo /llms.txt y agrega directivas para crawlers de IA.',
+          'PHP OOP con autoloading PSR-4, entorno DDEV y suite de tests PHPUnit + WooCommerce.',
+        ],
+        outcome: [
+          'Terminado y enviado al directorio oficial de plugins de WordPress.org (en revisión).',
+          '31 tests verdes; pasa el Plugin Check oficial con cero errores.',
+          'Verificado en vivo contra instalaciones reales de Rank Math y Yoast: un único nodo de schema fusionado, sin duplicación.',
+        ],
+      },
+      pt: {
+        summary: 'Um plugin de WooCommerce que torna os produtos de uma loja descobríveis por agentes de IA de compras, sem quebrar o SEO existente.',
+        problem: 'Cada vez mais gente pergunta ao ChatGPT, Gemini e Perplexity onde comprar algo. Lojas sem dados de produto legíveis por máquina são invisíveis para esses agentes. A correção comum, adicionar um segundo plugin de schema, colide com a marcação de SEO existente e publica dados estruturados duplicados que os buscadores penalizam.',
+        approach: [
+          'Constrói JSON-LD schema.org Product completo a partir dos dados ao vivo do WooCommerce: preço, disponibilidade, avaliações, variações.',
+          'Mescla no nó Product do próprio WooCommerce, e no Yoast ou Rank Math quando ativos, em vez de imprimir um nó duplicado.',
+          'Adiciona atributos de produto para IA no editor (Q&A, acessórios compatíveis, substitutos), serve um índice de catálogo /llms.txt e adiciona diretivas para crawlers de IA.',
+          'PHP OOP com autoloading PSR-4, ambiente DDEV e suíte de testes PHPUnit + WooCommerce.',
+        ],
+        outcome: [
+          'Concluído e enviado ao diretório oficial de plugins do WordPress.org (em revisão).',
+          '31 testes verdes; passa no Plugin Check oficial com zero erros.',
+          'Verificado ao vivo contra instalações reais de Rank Math e Yoast: um único nó de schema mesclado, sem duplicação.',
+        ],
+      },
+    },
   },
   {
     id: 'gramtospoon',
@@ -351,6 +504,53 @@ export const projects: Project[] = [
     demo: 'https://wordpress.org/plugins/internick-smart-alt-generator/',
     image: '/images/project-wp-ai-alt-text.png',
     category: 'wordpress',
+    caseStudy: {
+      en: {
+        summary: 'A published WordPress plugin that writes descriptive alt text for images with AI, and audits what is missing across a whole site.',
+        problem: 'Missing image alt text is one of the most common accessibility and SEO failures on WordPress sites. Writing it by hand across hundreds of images is tedious, so it never gets done, and site owners have no view of how bad the gap is.',
+        approach: [
+          'Generates descriptive alt text with AI, supporting both the WordPress 7.0 AI Connectors and the OpenAI API.',
+          'Integrates directly into the Gutenberg block editor, with bulk processing and a REST API for automation.',
+          'Adds an alt-text audit dashboard that surfaces every image missing alt text across the site.',
+          'Ships full Spanish and Portuguese translations and a non-intrusive review prompt, built test-first.',
+        ],
+        outcome: [
+          'Live on the WordPress.org directory since June 2026, with 185+ downloads.',
+          '70 passing tests, developed test-first.',
+          'Shipping real releases on a public cadence (currently v1.2.1).',
+        ],
+      },
+      es: {
+        summary: 'Un plugin de WordPress publicado que escribe alt text descriptivo para imágenes con IA, y audita lo que falta en todo el sitio.',
+        problem: 'El alt text faltante en imágenes es una de las fallas de accesibilidad y SEO más comunes en sitios WordPress. Escribirlo a mano en cientos de imágenes es tedioso, así que nunca se hace, y el dueño del sitio no tiene visibilidad de cuán grande es el problema.',
+        approach: [
+          'Genera alt text descriptivo con IA, soportando tanto los AI Connectors de WordPress 7.0 como la API de OpenAI.',
+          'Se integra directo en el editor de bloques Gutenberg, con procesamiento masivo y una REST API para automatización.',
+          'Agrega un dashboard de auditoría que muestra cada imagen sin alt text en todo el sitio.',
+          'Incluye traducciones completas al español y portugués y un aviso de reseña no intrusivo, construido test-first.',
+        ],
+        outcome: [
+          'En vivo en el directorio de WordPress.org desde junio de 2026, con 185+ descargas.',
+          '70 tests verdes, desarrollado test-first.',
+          'Publicando releases reales en cadencia pública (actualmente v1.2.1).',
+        ],
+      },
+      pt: {
+        summary: 'Um plugin de WordPress publicado que escreve alt text descritivo para imagens com IA, e audita o que está faltando em todo o site.',
+        problem: 'Alt text faltando em imagens é uma das falhas de acessibilidade e SEO mais comuns em sites WordPress. Escrevê-lo à mão em centenas de imagens é tedioso, então nunca é feito, e o dono do site não tem visibilidade de quão grande é o problema.',
+        approach: [
+          'Gera alt text descritivo com IA, suportando tanto os AI Connectors do WordPress 7.0 quanto a API da OpenAI.',
+          'Integra-se direto no editor de blocos Gutenberg, com processamento em lote e uma REST API para automação.',
+          'Adiciona um dashboard de auditoria que mostra cada imagem sem alt text em todo o site.',
+          'Inclui traduções completas para espanhol e português e um aviso de avaliação não intrusivo, construído test-first.',
+        ],
+        outcome: [
+          'Ao vivo no diretório do WordPress.org desde junho de 2026, com 185+ downloads.',
+          '70 testes verdes, desenvolvido test-first.',
+          'Publicando releases reais em cadência pública (atualmente v1.2.1).',
+        ],
+      },
+    },
   },
   {
     id: 'shadcn-nextjs',

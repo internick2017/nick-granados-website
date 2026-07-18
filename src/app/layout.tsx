@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { Inter } from 'next/font/google'
@@ -5,6 +6,12 @@ import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
+
+// Base URL so Open Graph / Twitter images resolve to absolute production URLs
+// (used by the shareable /work/[slug] case study pages).
+export const metadata: Metadata = {
+  metadataBase: new URL('https://nickgranados.com'),
+}
 
 export default function RootLayout({
   children,

@@ -56,6 +56,15 @@ export const translations = {
         wordpress: "WordPress",
       },
     },
+    caseStudy: {
+      back: "Back to portfolio",
+      readCaseStudy: "Read case study",
+      problemHeading: "The problem",
+      approachHeading: "Approach",
+      outcomeHeading: "What it proves",
+      ctaTitle: "Building something like this?",
+      ctaButton: "Let's talk",
+    },
     skills: {
       title: "Skills & Technologies",
       subtitle: "Here are the technologies I work with and my proficiency levels",
@@ -138,6 +147,15 @@ export const translations = {
         wordpress: "WordPress",
       },
     },
+    caseStudy: {
+      back: "Volver al portfolio",
+      readCaseStudy: "Ver el caso",
+      problemHeading: "El problema",
+      approachHeading: "Enfoque",
+      outcomeHeading: "Qué demuestra",
+      ctaTitle: "¿Necesitás algo así?",
+      ctaButton: "Hablemos",
+    },
     skills: {
       title: "Habilidades y Tecnologías",
       subtitle: "Estas son las tecnologías con las que trabajo y mis niveles de competencia",
@@ -219,6 +237,15 @@ export const translations = {
         mobile: "Mobile",
         wordpress: "WordPress",
       },
+    },
+    caseStudy: {
+      back: "Voltar ao portfólio",
+      readCaseStudy: "Ver o caso",
+      problemHeading: "O problema",
+      approachHeading: "Abordagem",
+      outcomeHeading: "O que comprova",
+      ctaTitle: "Precisa de algo assim?",
+      ctaButton: "Vamos conversar",
     },
     skills: {
       title: "Habilidades e Tecnologias",
