@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/hero'
+import SocialProof from '@/components/social-proof'
 import About from '@/components/about'
 import Services from '@/components/services'
 import Projects from '@/components/projects'
@@ -35,6 +36,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <Navigation />
       <Hero />
+      <SocialProof />
       <Services />
       <About />
       <Projects />

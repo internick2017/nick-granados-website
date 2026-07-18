@@ -22,10 +22,13 @@ export default function Hero() {
               Nick Granados
             </span>
           </h1>
-          <p className="text-xl sm:text-2xl text-brand-primary-text/80 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-brand-primary-text/80 dark:text-slate-300 mb-4 max-w-2xl mx-auto leading-relaxed">
             {t.hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <p className="text-sm sm:text-base text-brand-accent font-medium mb-8 max-w-2xl mx-auto">
+            {t.hero.proofLine}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-3">
             <a
               href="#projects"
               className="px-8 py-3 bg-brand-accent hover:bg-brand-accent-hover text-white rounded-lg font-semibold transition-colors"
@@ -47,6 +50,10 @@ export default function Hero() {
               {t.hero.contactMe}
             </a>
           </div>
+          <p className="flex items-center justify-center gap-1.5 text-sm text-brand-primary-text/50 dark:text-slate-400 mb-12">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true" />
+            {t.hero.repliesIn}
+          </p>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center space-x-6 text-brand-primary-text/80">
               <a href="https://github.com/internick2017" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors">
