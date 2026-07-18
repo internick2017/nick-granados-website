@@ -7,10 +7,20 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      subtitle: "Full Stack Developer · Building web solutions that grow your business",
+      subtitle: "I build web apps, WordPress sites, and WooCommerce stores that grow your business, from design to deploy.",
+      proofLine: "Published WordPress.org author · 6+ years · Working in US-friendly hours (GMT-3)",
       viewWork: "View My Work",
       contactMe: "Contact Me",
+      repliesIn: "Replies within 24h",
       recruiterLink: "Are you a recruiter?",
+    },
+    socialProof: {
+      items: [
+        { value: "6+", label: "Years building for the web" },
+        { value: "180+", label: "WordPress.org plugin downloads" },
+        { value: "10+", label: "Projects live in production" },
+        { value: "GMT-3", label: "Real-time overlap with US teams" },
+      ],
     },
     about: {
       title: "About Me",
@@ -24,10 +34,10 @@ export const translations = {
       subtitle: "What I can build for you",
       cta: "Let's talk about your project",
       items: [
-        { icon: "🌐", title: "Landing Pages & Corporate Sites", description: "Next.js or WordPress, from design to deploy, responsive and conversion-optimized." },
-        { icon: "🛒", title: "E-commerce", description: "WooCommerce or custom store with payment gateway integration." },
-        { icon: "⚡", title: "Web Apps / Full Stack", description: "Dashboards, internal systems, REST APIs, and database design." },
-        { icon: "🔧", title: "Maintenance & Support", description: "Updates, bug fixes, performance improvements, and monthly support plans." },
+        { icon: "🌐", title: "Sites that convert", description: "Landing pages and corporate sites, design to deploy, built to turn visitors into leads." },
+        { icon: "🛒", title: "Your store, selling online", description: "WooCommerce or a custom store, with payments integrated and ready to scale." },
+        { icon: "⚡", title: "Custom web apps", description: "Dashboards, internal tools, and REST APIs tailored to how your business runs." },
+        { icon: "🔧", title: "Your ongoing dev partner", description: "Updates, fixes, and performance care so your site keeps earning." },
       ],
     },
     projects: {
@@ -79,10 +89,20 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      subtitle: "Desarrollador Full Stack · Construyo soluciones web que hacen crecer tu negocio",
+      subtitle: "Construyo aplicaciones web, sitios WordPress y tiendas WooCommerce que hacen crecer tu negocio, del diseño al deploy.",
+      proofLine: "Autor publicado en WordPress.org · 6+ años · Trabajo en horario compatible con USA (GMT-3)",
       viewWork: "Ver mi trabajo",
       contactMe: "Contáctame",
+      repliesIn: "Respondo en 24h",
       recruiterLink: "¿Sos reclutador?",
+    },
+    socialProof: {
+      items: [
+        { value: "6+", label: "Años construyendo para la web" },
+        { value: "180+", label: "Descargas de mi plugin en WordPress.org" },
+        { value: "10+", label: "Proyectos en producción" },
+        { value: "GMT-3", label: "Overlap en tiempo real con equipos de USA" },
+      ],
     },
     about: {
       title: "Sobre mí",
@@ -96,10 +116,10 @@ export const translations = {
       subtitle: "Lo que puedo construir para vos",
       cta: "Hablemos de tu proyecto",
       items: [
-        { icon: "🌐", title: "Landing Pages y Sitios Corporativos", description: "Next.js o WordPress, desde el diseño hasta el deploy, responsive y optimizado para conversión." },
-        { icon: "🛒", title: "E-commerce", description: "WooCommerce o tienda custom con integración de pasarelas de pago." },
-        { icon: "⚡", title: "Aplicaciones Web / Full Stack", description: "Dashboards, sistemas internos, APIs REST y diseño de base de datos." },
-        { icon: "🔧", title: "Mantenimiento y Soporte", description: "Actualizaciones, corrección de bugs, mejoras de rendimiento y planes de soporte mensual." },
+        { icon: "🌐", title: "Sitios que convierten", description: "Landing pages y sitios corporativos, del diseño al deploy, hechos para transformar visitantes en clientes." },
+        { icon: "🛒", title: "Tu tienda, vendiendo online", description: "WooCommerce o tienda a medida, con pagos integrados y lista para escalar." },
+        { icon: "⚡", title: "Aplicaciones web a medida", description: "Dashboards, sistemas internos y APIs REST adaptados a cómo funciona tu negocio." },
+        { icon: "🔧", title: "Tu partner de desarrollo continuo", description: "Actualizaciones, arreglos y cuidado de la performance para que tu sitio siga rindiendo." },
       ],
     },
     projects: {
@@ -151,10 +171,20 @@ export const translations = {
     },
     hero: {
       greeting: "Olá, sou",
-      subtitle: "Desenvolvedor Full Stack · Construo soluções web que fazem seu negócio crescer",
+      subtitle: "Construo aplicações web, sites WordPress e lojas WooCommerce que fazem seu negócio crescer, do design ao deploy.",
+      proofLine: "Autor publicado no WordPress.org · 6+ anos · Trabalho em horário compatível com os EUA (GMT-3)",
       viewWork: "Ver meu trabalho",
       contactMe: "Fale comigo",
+      repliesIn: "Respondo em 24h",
       recruiterLink: "É recrutador?",
+    },
+    socialProof: {
+      items: [
+        { value: "6+", label: "Anos construindo para a web" },
+        { value: "180+", label: "Downloads do meu plugin no WordPress.org" },
+        { value: "10+", label: "Projetos em produção" },
+        { value: "GMT-3", label: "Overlap em tempo real com equipes dos EUA" },
+      ],
     },
     about: {
       title: "Sobre mim",
@@ -168,10 +198,10 @@ export const translations = {
       subtitle: "O que posso construir para você",
       cta: "Vamos falar do seu projeto",
       items: [
-        { icon: "🌐", title: "Landing Pages e Sites Corporativos", description: "Next.js ou WordPress, do design ao deploy, responsivo e otimizado para conversão." },
-        { icon: "🛒", title: "E-commerce", description: "WooCommerce ou loja personalizada com integração de meios de pagamento." },
-        { icon: "⚡", title: "Aplicações Web / Full Stack", description: "Dashboards, sistemas internos, APIs REST e modelagem de banco de dados." },
-        { icon: "🔧", title: "Manutenção e Suporte", description: "Atualizações, correção de bugs, melhorias de desempenho e planos de suporte mensal." },
+        { icon: "🌐", title: "Sites que convertem", description: "Landing pages e sites corporativos, do design ao deploy, feitos para transformar visitantes em clientes." },
+        { icon: "🛒", title: "Sua loja, vendendo online", description: "WooCommerce ou loja sob medida, com pagamentos integrados e pronta para escalar." },
+        { icon: "⚡", title: "Aplicações web sob medida", description: "Dashboards, sistemas internos e APIs REST adaptados a como seu negócio funciona." },
+        { icon: "🔧", title: "Seu parceiro de desenvolvimento contínuo", description: "Atualizações, correções e cuidado de performance para seu site continuar rendendo." },
       ],
     },
     projects: {
