@@ -38,15 +38,15 @@ export const projects: Project[] = [
     id: 'fixflow',
     translations: {
       en: {
-        title: 'FixFlow — QR Service Intake with 3-Tier RLS',
+        title: 'FixFlow - QR Service Intake with 3-Tier RLS',
         description: 'QR-based service-request intake built on Supabase. Customers scan a per-location QR code and file a ticket anonymously; staff triage behind authentication. Security is enforced in Postgres by 3-tier Row Level Security (anonymous can only create, técnicos see only the tickets assigned to them, admins see everything), covered by an integration test suite. Uses Supabase Auth, Storage for photo uploads, and an Edge Function that emails staff on each new ticket. Deployed on Vercel with a hosted Supabase backend.',
       },
       es: {
-        title: 'FixFlow — Intake de Servicio con QR y RLS de 3 Niveles',
+        title: 'FixFlow - Intake de Servicio con QR y RLS de 3 Niveles',
         description: 'Intake de solicitudes de servicio con QR construido sobre Supabase. El cliente escanea un QR por sucursal y crea un ticket de forma anónima; el staff lo gestiona detrás de login. La seguridad la impone Postgres con Row Level Security de 3 niveles (anónimo solo crea, el técnico ve solo sus tickets asignados, el admin ve todo), cubierta por una suite de tests de integración. Usa Supabase Auth, Storage para subir fotos y una Edge Function que avisa por email al staff en cada ticket nuevo. Desplegado en Vercel con backend Supabase en la nube.',
       },
       pt: {
-        title: 'FixFlow — Intake de Serviço com QR e RLS de 3 Níveis',
+        title: 'FixFlow - Intake de Serviço com QR e RLS de 3 Níveis',
         description: 'Intake de solicitações de serviço com QR construído sobre Supabase. O cliente escaneia um QR por filial e cria um ticket de forma anônima; a equipe gerencia atrás de login. A segurança é imposta pelo Postgres com Row Level Security de 3 níveis (anônimo só cria, o técnico vê apenas seus tickets atribuídos, o admin vê tudo), coberta por uma suíte de testes de integração. Usa Supabase Auth, Storage para upload de fotos e uma Edge Function que avisa a equipe por email a cada novo ticket. Implantado em Vercel com backend Supabase na nuvem.',
       },
     },
@@ -107,15 +107,15 @@ export const projects: Project[] = [
     id: 'ecommerce-data-warehouse',
     translations: {
       en: {
-        title: 'E-commerce Data Warehouse — ELT Pipeline on AWS',
+        title: 'E-commerce Data Warehouse - ELT Pipeline on AWS',
         description: 'End-to-end ELT pipeline running against a live Shopify store and real AWS infrastructure. Extracts orders via the Shopify GraphQL API (cursor pagination, throttle-aware retries), stages raw JSON in S3, loads into PostgreSQL on AWS RDS with idempotent incremental upserts and load auditing, then builds a star schema in pure SQL (CTEs + window functions) feeding a Power BI dashboard. 48 tests, SQL data-quality gates, and boto3 infrastructure automation.',
       },
       es: {
-        title: 'E-commerce Data Warehouse — Pipeline ELT en AWS',
+        title: 'E-commerce Data Warehouse - Pipeline ELT en AWS',
         description: 'Pipeline ELT de extremo a extremo contra una tienda Shopify real e infraestructura AWS. Extrae pedidos vía Shopify GraphQL API (paginación por cursor, reintentos con manejo de throttle), almacena JSON crudo en S3, carga en PostgreSQL sobre AWS RDS con upserts incrementales idempotentes y auditoría, y construye un esquema en estrella en SQL puro (CTEs + window functions) que alimenta un dashboard Power BI. 48 tests, quality gates en SQL y automatización de infraestructura con boto3.',
       },
       pt: {
-        title: 'E-commerce Data Warehouse — Pipeline ELT na AWS',
+        title: 'E-commerce Data Warehouse - Pipeline ELT na AWS',
         description: 'Pipeline ELT de ponta a ponta contra uma loja Shopify real e infraestrutura AWS. Extrai pedidos via Shopify GraphQL API (paginação por cursor, retries com tratamento de throttle), armazena JSON bruto no S3, carrega em PostgreSQL no AWS RDS com upserts incrementais idempotentes e auditoria, e constrói um star schema em SQL puro (CTEs + window functions) que alimenta um dashboard Power BI. 48 testes, quality gates em SQL e automação de infraestrutura com boto3.',
       },
     },
@@ -129,15 +129,15 @@ export const projects: Project[] = [
     id: 'kindly-theme',
     translations: {
       en: {
-        title: 'Kindly — Nonprofit WordPress Block Theme',
+        title: 'Kindly - Nonprofit WordPress Block Theme',
         description: 'Custom Full Site Editing (FSE) block theme built from scratch for nonprofits and churches. Lightweight with zero external requests (self-hosted fonts), WCAG 2.2 AA out of the box, a theme.json v3 design system with a semantic palette and fluid typography, 7 block templates, 15 block patterns, and 3 style variations, all using core blocks and no page builder. Passes the official Theme Check with 0 required issues.',
       },
       es: {
-        title: 'Kindly — Tema de Bloques WordPress para ONGs',
+        title: 'Kindly - Tema de Bloques WordPress para ONGs',
         description: 'Tema de bloques Full Site Editing (FSE) hecho desde cero para ONGs e iglesias. Liviano y sin requests externos (fuentes self-hosted), WCAG 2.2 AA de fábrica, sistema de diseño theme.json v3 con paleta semántica y tipografía fluida, 7 plantillas de bloques, 15 patrones y 3 variaciones de estilo, todo con bloques del core y sin page builder. Pasa el Theme Check oficial con 0 errores requeridos.',
       },
       pt: {
-        title: 'Kindly — Tema de Blocos WordPress para ONGs',
+        title: 'Kindly - Tema de Blocos WordPress para ONGs',
         description: 'Tema de blocos Full Site Editing (FSE) feito do zero para ONGs e igrejas. Leve e sem requests externos (fontes self-hosted), WCAG 2.2 AA de fábrica, sistema de design theme.json v3 com paleta semântica e tipografia fluida, 7 templates de blocos, 15 patterns e 3 variações de estilo, tudo com blocos do core e sem page builder. Passa no Theme Check oficial com 0 erros obrigatórios.',
       },
     },
@@ -198,15 +198,15 @@ export const projects: Project[] = [
     id: 'shopgraph',
     translations: {
       en: {
-        title: 'ShopGraph — AI-Ready Products for WooCommerce',
+        title: 'ShopGraph - AI-Ready Products for WooCommerce',
         description: 'WooCommerce plugin that makes a store\'s products discoverable by AI shopping agents (ChatGPT, Gemini, Perplexity, Claude). It builds complete schema.org Product JSON-LD from live WooCommerce data and, crucially, coexists with the store\'s existing schema: it merges into WooCommerce Core\'s own Product node (and Yoast / Rank Math when present) via the woocommerce_structured_data_product filter instead of printing a duplicate. Adds AI product attributes (Q&A, compatible accessories, substitutes) in the product editor, serves an /llms.txt catalog index, and adds AI-crawler robots.txt directives. OOP PHP with PSR-4, a DDEV dev environment, and a PHPUnit + WooCommerce test suite; passes the official Plugin Check with zero errors.',
       },
       es: {
-        title: 'ShopGraph — Productos Listos para IA en WooCommerce',
+        title: 'ShopGraph - Productos Listos para IA en WooCommerce',
         description: 'Plugin de WooCommerce que hace los productos de una tienda descubribles por agentes de IA de compras (ChatGPT, Gemini, Perplexity, Claude). Construye JSON-LD schema.org Product completo desde los datos en vivo de WooCommerce y, lo más importante, coexiste con el schema existente de la tienda: fusiona en el nodo Product del propio WooCommerce (y de Yoast / Rank Math cuando están) vía el filtro woocommerce_structured_data_product en vez de imprimir un duplicado. Agrega atributos de IA de producto (Q&A, accesorios compatibles, substitutos) en el editor, sirve un índice de catálogo en /llms.txt y agrega directivas de robots.txt para crawlers de IA. PHP OOP con PSR-4, entorno DDEV y suite de tests PHPUnit + WooCommerce; pasa el Plugin Check oficial con cero errores.',
       },
       pt: {
-        title: 'ShopGraph — Produtos Prontos para IA no WooCommerce',
+        title: 'ShopGraph - Produtos Prontos para IA no WooCommerce',
         description: 'Plugin de WooCommerce que torna os produtos de uma loja descobríveis por agentes de IA de compras (ChatGPT, Gemini, Perplexity, Claude). Constrói JSON-LD schema.org Product completo a partir dos dados ao vivo do WooCommerce e, o mais importante, coexiste com o schema existente da loja: mescla no nó Product do próprio WooCommerce (e do Yoast / Rank Math quando presentes) via o filtro woocommerce_structured_data_product em vez de imprimir um duplicado. Adiciona atributos de IA de produto (Q&A, acessórios compatíveis, substitutos) no editor, serve um índice de catálogo em /llms.txt e adiciona diretivas de robots.txt para crawlers de IA. PHP OOP com PSR-4, ambiente DDEV e suíte de testes PHPUnit + WooCommerce; passa no Plugin Check oficial com zero erros.',
       },
     },
@@ -311,15 +311,15 @@ export const projects: Project[] = [
     id: 'jjj-investments',
     translations: {
       en: {
-        title: 'J.J.J Investments — Family Portfolio Platform',
+        title: 'J.J.J Investments - Family Portfolio Platform',
         description: 'Professional family investment management platform with real-time portfolio tracking, transaction history, performance analytics, and sector distribution charts. Built with enterprise-grade security and role-based access control.',
       },
       es: {
-        title: 'J.J.J Investments — Plataforma de Portafolio Familiar',
+        title: 'J.J.J Investments - Plataforma de Portafolio Familiar',
         description: 'Plataforma profesional de gestión de inversiones familiares con seguimiento de portafolio en tiempo real, historial de transacciones, análisis de rendimiento y gráficos de distribución por sector.',
       },
       pt: {
-        title: 'J.J.J Investments — Plataforma de Portfólio Familiar',
+        title: 'J.J.J Investments - Plataforma de Portfólio Familiar',
         description: 'Plataforma profissional de gestão de investimentos familiares com acompanhamento de portfólio em tempo real, histórico de transações, análise de desempenho e gráficos de distribuição setorial.',
       },
     },
@@ -333,15 +333,15 @@ export const projects: Project[] = [
     id: 'lanny-herrera',
     translations: {
       en: {
-        title: 'Lanny Herrera — Language Teacher Website',
+        title: 'Lanny Herrera - Language Teacher Website',
         description: 'Multilingual one-page website for an online language teacher. Built on WordPress with a custom Astra child theme, Polylang (PT/ES/EN), custom testimonials CPT, Contact Form 7, Yoast SEO with per-language meta, and CI/CD auto-deploy via GitHub Actions + SFTP.',
       },
       es: {
-        title: 'Lanny Herrera — Sitio Web para Profesora de Idiomas',
+        title: 'Lanny Herrera - Sitio Web para Profesora de Idiomas',
         description: 'Sitio web one-page multilingüe para una profesora de idiomas online. Construido en WordPress con tema hijo personalizado de Astra, Polylang (PT/ES/EN), CPT de testimonios, Contact Form 7, Yoast SEO con meta por idioma y deploy automático via GitHub Actions + SFTP.',
       },
       pt: {
-        title: 'Lanny Herrera — Site para Professora de Idiomas',
+        title: 'Lanny Herrera - Site para Professora de Idiomas',
         description: 'Site one-page multilíngue para professora de idiomas online. Construído em WordPress com tema filho Astra customizado, Polylang (PT/ES/EN), CPT de depoimentos, Contact Form 7, Yoast SEO com meta por idioma e deploy automático via GitHub Actions + SFTP.',
       },
     },
@@ -355,15 +355,15 @@ export const projects: Project[] = [
     id: 'dose-time',
     translations: {
       en: {
-        title: 'DoseTime — Medication Reminder App',
+        title: 'DoseTime - Medication Reminder App',
         description: 'Android app that generates automatic push notifications from doctor-prescribed medication schedules. Features a daily dose timeline, medication management, history with adherence tracking, and local SQLite storage — no backend or account needed.',
       },
       es: {
-        title: 'DoseTime — App de Recordatorio de Medicamentos',
+        title: 'DoseTime - App de Recordatorio de Medicamentos',
         description: 'App Android que genera notificaciones push automáticas a partir de horarios médicos. Incluye línea de tiempo diaria de dosis, gestión de medicamentos, historial con porcentaje de adherencia y almacenamiento local SQLite — sin backend ni cuenta requerida.',
       },
       pt: {
-        title: 'DoseTime — App de Lembretes de Medicamentos',
+        title: 'DoseTime - App de Lembretes de Medicamentos',
         description: 'App Android que gera notificações push automáticas a partir de horários médicos. Inclui linha do tempo diária de doses, gestão de medicamentos, histórico com aderência e armazenamento local SQLite — sem backend ou conta necessária.',
       },
     },
@@ -399,15 +399,15 @@ export const projects: Project[] = [
     id: 'clear-path',
     translations: {
       en: {
-        title: 'Clear Path — Personal Finance Dashboard',
+        title: 'Clear Path - Personal Finance Dashboard',
         description: 'Full-stack personal finance app built with Laravel 12, Vue 3, and Inertia.js. Track expenses, set budgets, and monitor financial goals with an interactive dashboard.',
       },
       es: {
-        title: 'Clear Path — Panel de Finanzas Personales',
+        title: 'Clear Path - Panel de Finanzas Personales',
         description: 'App de finanzas personales full-stack con Laravel 12, Vue 3 e Inertia.js. Registrá gastos, creá presupuestos y seguí tus metas financieras desde un dashboard interactivo.',
       },
       pt: {
-        title: 'Clear Path — Painel de Finanças Pessoais',
+        title: 'Clear Path - Painel de Finanças Pessoais',
         description: 'App de finanças pessoais full-stack com Laravel 12, Vue 3 e Inertia.js. Registre gastos, crie orçamentos e acompanhe suas metas financeiras em um dashboard interativo.',
       },
     },
@@ -421,15 +421,15 @@ export const projects: Project[] = [
     id: 'sleepouside',
     translations: {
       en: {
-        title: 'SleepOutside — Outdoor E-commerce',
+        title: 'SleepOutside - Outdoor E-commerce',
         description: 'Vanilla JavaScript e-commerce SPA for outdoor gear. Features product listings with live API data, shopping cart with localStorage, checkout flow, and product detail pages. Built for BYU WDD330.',
       },
       es: {
-        title: 'SleepOutside — E-commerce de Camping',
+        title: 'SleepOutside - E-commerce de Camping',
         description: 'SPA de e-commerce en Vanilla JS para equipos de camping. Incluye listado de productos con API en vivo, carrito con localStorage, flujo de checkout y páginas de detalle. Proyecto final BYU WDD330.',
       },
       pt: {
-        title: 'SleepOutside — E-commerce de Camping',
+        title: 'SleepOutside - E-commerce de Camping',
         description: 'SPA de e-commerce em Vanilla JS para equipamentos de camping. Inclui listagem de produtos com API ao vivo, carrinho com localStorage, fluxo de checkout e páginas de detalhe. Projeto final BYU WDD330.',
       },
     },
@@ -443,15 +443,15 @@ export const projects: Project[] = [
     id: 'drf-course-api',
     translations: {
       en: {
-        title: 'DRF Course API — E-commerce REST API',
+        title: 'DRF Course API - E-commerce REST API',
         description: 'Django REST Framework e-commerce API with JWT authentication, product/order management, filtering, pagination, and interactive Swagger docs. Built as a learning project covering DRF\'s core patterns.',
       },
       es: {
-        title: 'DRF Course API — REST API de E-commerce',
+        title: 'DRF Course API - REST API de E-commerce',
         description: 'API de e-commerce con Django REST Framework, autenticación JWT, gestión de productos y órdenes, filtrado, paginación y docs Swagger interactivos.',
       },
       pt: {
-        title: 'DRF Course API — REST API de E-commerce',
+        title: 'DRF Course API - REST API de E-commerce',
         description: 'API de e-commerce com Django REST Framework, autenticação JWT, gestão de produtos e pedidos, filtragem, paginação e docs Swagger interativos.',
       },
     },
@@ -487,15 +487,15 @@ export const projects: Project[] = [
     id: 'wp-ai-alt-text',
     translations: {
       en: {
-        title: 'Internick – Smart Alt Generator — WordPress Plugin',
+        title: 'Internick – Smart Alt Generator - WordPress Plugin',
         description: 'WordPress plugin that automatically generates descriptive alt text for images using AI. Supports WordPress 7.0 AI Connectors and OpenAI API, with Gutenberg block editor integration, bulk processing, and REST API.',
       },
       es: {
-        title: 'Internick – Smart Alt Generator — Plugin WordPress',
+        title: 'Internick – Smart Alt Generator - Plugin WordPress',
         description: 'Plugin de WordPress que genera automáticamente alt text descriptivo para imágenes usando IA. Compatible con WordPress 7.0 AI Connectors y OpenAI API, con integración en el editor de bloques, generación masiva y REST API.',
       },
       pt: {
-        title: 'Internick – Smart Alt Generator — Plugin WordPress',
+        title: 'Internick – Smart Alt Generator - Plugin WordPress',
         description: 'Plugin WordPress que gera automaticamente alt text descritivo para imagens usando IA. Suporta WordPress 7.0 AI Connectors e OpenAI API, com integração no editor de blocos, processamento em lote e REST API.',
       },
     },
@@ -578,15 +578,15 @@ export const projects: Project[] = [
     id: 'store-up',
     translations: {
       en: {
-        title: 'Store Up — Shopify E-commerce Store',
+        title: 'Store Up - Shopify E-commerce Store',
         description: 'Live Shopify store I built and run end-to-end: custom Liquid theme, conversion-focused product landing, multi-language (ES/EN/PT) and multi-currency checkout, and Node.js automation against the Shopify Admin API. It\'s also the live data source behind my E-commerce Data Warehouse project.',
       },
       es: {
-        title: 'Store Up — Tienda E-commerce en Shopify',
+        title: 'Store Up - Tienda E-commerce en Shopify',
         description: 'Tienda Shopify en vivo que construí y opero de punta a punta: tema Liquid personalizado, landing de producto orientada a conversión, checkout multi-idioma (ES/EN/PT) y multi-moneda, y automatización en Node.js contra la Shopify Admin API. Además es la fuente de datos real detrás de mi proyecto E-commerce Data Warehouse.',
       },
       pt: {
-        title: 'Store Up — Loja E-commerce no Shopify',
+        title: 'Store Up - Loja E-commerce no Shopify',
         description: 'Loja Shopify ao vivo que construí e opero de ponta a ponta: tema Liquid customizado, landing de produto focada em conversão, checkout multilíngue (ES/EN/PT) e multi-moeda, e automação em Node.js contra a Shopify Admin API. É também a fonte de dados real por trás do meu projeto E-commerce Data Warehouse.',
       },
     },
