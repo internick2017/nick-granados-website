@@ -3,7 +3,7 @@ export type Language = 'en' | 'es' | 'pt'
 export const translations = {
   en: {
     nav: {
-      home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', contact: 'Contact',
+      home: 'Home', about: 'About', services: 'Services', projects: 'Projects', skills: 'Skills', process: 'Process', contact: 'Contact',
     },
     hero: {
       greeting: "Hi, I'm",
@@ -71,6 +71,33 @@ export const translations = {
       coreSkills: "Core Skills",
       techTools: "Technologies & Tools",
     },
+    process: {
+      title: "Working with me",
+      subtitle: "Clear process, honest scope, US-friendly hours",
+      cta: "Start with a short brief",
+      items: [
+        {
+          question: "How do we start?",
+          answer: "Send a short brief: goal, deadline, and any links or references. I reply within 24 hours with a proposed approach, timeline, and next step. No long sales calls required to get moving.",
+        },
+        {
+          question: "What does a typical engagement look like?",
+          answer: "We align on scope first, then ship in visible milestones you can review. You get progress updates, demos when ready, and a clear handoff when we launch.",
+        },
+        {
+          question: "Do our time zones work?",
+          answer: "I work from GMT-3 with real overlap for US teams. Async updates cover the rest of the day so decisions do not stall overnight.",
+        },
+        {
+          question: "WordPress, WooCommerce, or custom?",
+          answer: "I pick the stack that fits the job. WordPress and WooCommerce when they are the fastest path; Next.js or a custom app when the product needs it. I am a published WordPress.org author, so plugin and theme work is production-grade.",
+        },
+        {
+          question: "How does pricing work?",
+          answer: "Fixed scope for clear projects, or a weekly retainer for ongoing work. I quote after understanding the brief so you know what you are buying before we start.",
+        },
+      ],
+    },
     contact: {
       title: "Get In Touch",
       subtitle: "Ready to start your project? Let's talk.",
@@ -94,7 +121,7 @@ export const translations = {
   },
   es: {
     nav: {
-      home: 'Inicio', about: 'Sobre mí', services: 'Servicios', projects: 'Proyectos', skills: 'Habilidades', contact: 'Contacto',
+      home: 'Inicio', about: 'Sobre mí', services: 'Servicios', projects: 'Proyectos', skills: 'Habilidades', process: 'Proceso', contact: 'Contacto',
     },
     hero: {
       greeting: "Hola, soy",
@@ -162,6 +189,33 @@ export const translations = {
       coreSkills: "Habilidades Principales",
       techTools: "Tecnologías y Herramientas",
     },
+    process: {
+      title: "Cómo trabajo conmigo",
+      subtitle: "Proceso claro, alcance honesto, horario compatible con USA",
+      cta: "Empezá con un brief corto",
+      items: [
+        {
+          question: "¿Cómo arrancamos?",
+          answer: "Mandame un brief corto: objetivo, fecha y links o referencias. Respondo en 24 horas con un enfoque propuesto, timeline y el siguiente paso. No hace falta una llamada larga para empezar.",
+        },
+        {
+          question: "¿Cómo se ve un proyecto típico?",
+          answer: "Primero alineamos el alcance y después entregamos en hitos visibles que podés revisar. Recibís updates de progreso, demos cuando están listas y un handoff claro al lanzar.",
+        },
+        {
+          question: "¿Los husos horarios funcionan?",
+          answer: "Trabajo en GMT-3 con overlap real para equipos de USA. El resto del día lo cubro con updates asíncronos para que las decisiones no se frenen de un día para el otro.",
+        },
+        {
+          question: "¿WordPress, WooCommerce o custom?",
+          answer: "Elijo el stack que encaja con el trabajo. WordPress y WooCommerce cuando son el camino más rápido; Next.js o una app a medida cuando el producto lo necesita. Soy autor publicado en WordPress.org, así que plugins y temas salen a nivel producción.",
+        },
+        {
+          question: "¿Cómo funciona el precio?",
+          answer: "Alcance fijo para proyectos claros, o retainer semanal para trabajo continuo. Cotizo después de entender el brief, para que sepas qué estás comprando antes de empezar.",
+        },
+      ],
+    },
     contact: {
       title: "Ponte en Contacto",
       subtitle: "¿Listo para empezar tu proyecto? Hablemos.",
@@ -185,7 +239,7 @@ export const translations = {
   },
   pt: {
     nav: {
-      home: 'Início', about: 'Sobre', services: 'Serviços', projects: 'Projetos', skills: 'Habilidades', contact: 'Contato',
+      home: 'Início', about: 'Sobre', services: 'Serviços', projects: 'Projetos', skills: 'Habilidades', process: 'Processo', contact: 'Contato',
     },
     hero: {
       greeting: "Olá, sou",
@@ -252,6 +306,33 @@ export const translations = {
       subtitle: "Estas são as tecnologias com que trabalho e meus níveis de proficiência",
       coreSkills: "Habilidades Principais",
       techTools: "Tecnologias e Ferramentas",
+    },
+    process: {
+      title: "Como trabalho comigo",
+      subtitle: "Processo claro, escopo honesto, horário compatível com os EUA",
+      cta: "Comece com um brief curto",
+      items: [
+        {
+          question: "Como começamos?",
+          answer: "Envie um brief curto: objetivo, prazo e links ou referências. Respondo em 24 horas com uma abordagem proposta, timeline e o próximo passo. Não precisa de uma call longa para começar.",
+        },
+        {
+          question: "Como é um projeto típico?",
+          answer: "Primeiro alinhamos o escopo e depois entregamos em marcos visíveis que você pode revisar. Você recebe updates de progresso, demos quando estiverem prontas e um handoff claro no lançamento.",
+        },
+        {
+          question: "Os fusos horários funcionam?",
+          answer: "Trabalho em GMT-3 com overlap real para equipes dos EUA. O restante do dia cubro com updates assíncronos para as decisões não travarem de um dia para o outro.",
+        },
+        {
+          question: "WordPress, WooCommerce ou custom?",
+          answer: "Escolho o stack que cabe no trabalho. WordPress e WooCommerce quando são o caminho mais rápido; Next.js ou um app sob medida quando o produto precisa. Sou autor publicado no WordPress.org, então plugins e temas saem em nível de produção.",
+        },
+        {
+          question: "Como funciona o preço?",
+          answer: "Escopo fixo para projetos claros, ou retainer semanal para trabalho contínuo. Cotizo depois de entender o brief, para você saber o que está comprando antes de começar.",
+        },
+      ],
     },
     contact: {
       title: "Entre em Contato",

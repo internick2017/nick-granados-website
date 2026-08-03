@@ -5,6 +5,7 @@ import About from '@/components/about'
 import Services from '@/components/services'
 import Projects from '@/components/projects'
 import Skills from '@/components/skills'
+import WorkingWithMe from '@/components/working-with-me'
 import Contact from '@/components/contact'
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
@@ -41,6 +42,7 @@ export default function Home() {
       <About />
       <Projects />
       <Skills />
+      <WorkingWithMe />
       <Contact />
       <Footer />
     </main>
