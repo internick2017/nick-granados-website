@@ -20,6 +20,7 @@ export default function Navigation() {
     { name: t.nav.services, href: '#services' },
     { name: t.nav.projects, href: '#projects' },
     { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.process, href: '#process' },
     { name: t.nav.contact, href: '#contact' },
   ]
 
