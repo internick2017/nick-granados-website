@@ -159,7 +159,7 @@ export const projects: Project[] = [
         outcome: [
           'Live and running at kindly.nickgranados.com.',
           'WCAG 2.2 AA out of the box; passes the official Theme Check with zero required issues.',
-          'Submitted to the WordPress.org theme directory (in review).',
+          'Published in the official WordPress.org theme directory at wordpress.org/themes/kindly, having passed both the general and accessibility-ready reviews.',
         ],
       },
       es: {
@@ -174,7 +174,7 @@ export const projects: Project[] = [
         outcome: [
           'En vivo y funcionando en kindly.nickgranados.com.',
           'WCAG 2.2 AA de fábrica; pasa el Theme Check oficial con cero errores requeridos.',
-          'Enviado al directorio de temas de WordPress.org (en revisión).',
+          'Publicado en el directorio oficial de temas de WordPress.org en wordpress.org/themes/kindly, habiendo pasado la revisión general y la de accessibility-ready.',
         ],
       },
       pt: {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
         outcome: [
           'Ao vivo e funcionando em kindly.nickgranados.com.',
           'WCAG 2.2 AA por padrão; passa no Theme Check oficial com zero erros obrigatórios.',
-          'Enviado ao diretório de temas do WordPress.org (em revisão).',
+          'Publicado no diretório oficial de temas do WordPress.org em wordpress.org/themes/kindly, tendo passado na revisão geral e na de accessibility-ready.',
         ],
       },
     },
@@ -356,15 +356,15 @@ export const projects: Project[] = [
     translations: {
       en: {
         title: 'DoseTime - Medication Reminder App',
-        description: 'Android app that generates automatic push notifications from doctor-prescribed medication schedules. Features a daily dose timeline, medication management, history with adherence tracking, and local SQLite storage — no backend or account needed.',
+        description: 'Android app that generates automatic push notifications from doctor-prescribed medication schedules. Features a daily dose timeline, medication management, history with adherence tracking, and local SQLite storage, with no backend or account needed.',
       },
       es: {
         title: 'DoseTime - App de Recordatorio de Medicamentos',
-        description: 'App Android que genera notificaciones push automáticas a partir de horarios médicos. Incluye línea de tiempo diaria de dosis, gestión de medicamentos, historial con porcentaje de adherencia y almacenamiento local SQLite — sin backend ni cuenta requerida.',
+        description: 'App Android que genera notificaciones push automáticas a partir de horarios médicos. Incluye línea de tiempo diaria de dosis, gestión de medicamentos, historial con porcentaje de adherencia y almacenamiento local SQLite, sin backend ni cuenta requerida.',
       },
       pt: {
         title: 'DoseTime - App de Lembretes de Medicamentos',
-        description: 'App Android que gera notificações push automáticas a partir de horários médicos. Inclui linha do tempo diária de doses, gestão de medicamentos, histórico com aderência e armazenamento local SQLite — sem backend ou conta necessária.',
+        description: 'App Android que gera notificações push automáticas a partir de horários médicos. Inclui linha do tempo diária de doses, gestão de medicamentos, histórico com aderência e armazenamento local SQLite, sem backend ou conta necessária.',
       },
     },
     technologies: ['React Native', 'Expo SDK 52', 'TypeScript', 'SQLite', 'Zustand', 'expo-notifications', 'React Navigation', 'EAS Build'],
@@ -487,15 +487,15 @@ export const projects: Project[] = [
     id: 'wp-ai-alt-text',
     translations: {
       en: {
-        title: 'Internick – Smart Alt Generator - WordPress Plugin',
+        title: 'Internick Smart Alt Generator - WordPress Plugin',
         description: 'WordPress plugin that automatically generates descriptive alt text for images using AI. Supports WordPress 7.0 AI Connectors and OpenAI API, with Gutenberg block editor integration, bulk processing, and REST API.',
       },
       es: {
-        title: 'Internick – Smart Alt Generator - Plugin WordPress',
+        title: 'Internick Smart Alt Generator - Plugin WordPress',
         description: 'Plugin de WordPress que genera automáticamente alt text descriptivo para imágenes usando IA. Compatible con WordPress 7.0 AI Connectors y OpenAI API, con integración en el editor de bloques, generación masiva y REST API.',
       },
       pt: {
-        title: 'Internick – Smart Alt Generator - Plugin WordPress',
+        title: 'Internick Smart Alt Generator - Plugin WordPress',
         description: 'Plugin WordPress que gera automaticamente alt text descritivo para imagens usando IA. Suporta WordPress 7.0 AI Connectors e OpenAI API, com integração no editor de blocos, processamento em lote e REST API.',
       },
     },
