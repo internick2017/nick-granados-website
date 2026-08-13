@@ -51,6 +51,9 @@ Thumbs.db
 # Deploy artifacts
 deploy.zip
 
+# Local DDEV environment (machine-specific)
+.ddev/
+
 # Planning / AI session docs
 docs/superpowers/
 
