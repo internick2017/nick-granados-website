@@ -56,10 +56,12 @@ In `public/images/`: `project-gramtospoon.png`, `project-jjj.png`, `project-repa
 Posts to `https://nickgranados.com/send-email.php` (PHP backend hosted on the same HostGator domain). No Next.js API routes — static export.
 
 ## Known issues / pending improvements
-_(Actualizado 2026-07-12. Los issues anteriores — "demos full-stack sin pulir", "no hay proyectos
-WordPress", cold-start de Render, y las credenciales reales hardcodeadas en el seed de JJJ — están
-RESUELTOS. El portfolio tiene 17 proyectos, 4 de ellos WordPress: Kindly, ShopGraph, Lanny, Alt Generator.)_
+_(Actualizado 2026-08-13. El issue anterior, "ShopGraph tiene `demo: null`", está RESUELTO: el plugin
+fue aprobado y publicado como **Internick - AI Product Schema** en wordpress.org/plugins/internick-ai-product-schema,
+y la card ya apunta ahí. El portfolio tiene 17 proyectos, 4 de ellos WordPress: Kindly, AI Product
+Schema, Lanny, Alt Generator; los 3 plugins/temas propios están publicados en WordPress.org.)_
 
-1. **ShopGraph tiene `demo: null`** en `src/data/projects.ts` — agregar el link de demo cuando el plugin
-   sea aprobado en WordPress.org (enviado 2026-07-06, en cola de revisión).
+1. **El id del proyecto sigue siendo `shopgraph`** en `src/data/projects.ts`, igual que el repo de
+   GitHub y la imagen, aunque el nombre público cambió. Se mantuvo a propósito: cambiar el id rompe
+   la URL del case study `/work/shopgraph/`. Revisar solo si se renombra el repo de GitHub.
 
