@@ -24,6 +24,8 @@ export type Project = {
   technologies: string[]
   github: string | null
   demo: string | null
+  /** Official WordPress.org listing, when the project is published there and `demo` already points somewhere else. */
+  wporg?: string
   image: string
   category: Category
   caseStudy?: {
@@ -144,6 +146,7 @@ export const projects: Project[] = [
     technologies: ['WordPress', 'PHP', 'Full Site Editing', 'theme.json', 'Block Patterns', 'HTML', 'CSS', 'WCAG 2.2 AA'],
     github: 'https://github.com/internick2017/kindly',
     demo: 'https://kindly.nickgranados.com',
+    wporg: 'https://wordpress.org/themes/kindly/',
     image: '/images/project-kindly.png',
     category: 'wordpress',
     caseStudy: {
@@ -211,7 +214,7 @@ export const projects: Project[] = [
       },
     },
     technologies: ['WordPress', 'WooCommerce', 'PHP 8', 'PSR-4', 'JSON-LD', 'Schema.org', 'llms.txt', 'PHPUnit', 'DDEV'],
-    github: 'https://github.com/internick2017/shopgraph',
+    github: 'https://github.com/internick2017/internick-ai-product-schema',
     demo: 'https://wordpress.org/plugins/internick-ai-product-schema/',
     image: '/images/project-shopgraph.png',
     category: 'wordpress',
