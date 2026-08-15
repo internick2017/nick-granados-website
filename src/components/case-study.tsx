@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowLeft, Check, ExternalLink, Github } from 'lucide-react'
+import { ArrowLeft, BadgeCheck, Check, ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import type { Project } from '@/data/projects'
@@ -120,6 +120,17 @@ export default function CaseStudy({ project }: { project: Project }) {
               >
                 <Github size={16} />
                 {t.projects.github}
+              </a>
+            )}
+            {project.wporg && (
+              <a
+                href={project.wporg}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white rounded-lg font-semibold text-sm transition-colors"
+              >
+                <BadgeCheck size={16} />
+                {t.projects.wporg}
               </a>
             )}
           </div>

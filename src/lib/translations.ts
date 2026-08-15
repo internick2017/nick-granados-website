@@ -45,6 +45,7 @@ export const translations = {
       subtitle: "Real projects, live demos — here's what I've built",
       github: "GitHub",
       liveDemo: "Live Demo",
+      wporg: "WordPress.org",
       filtersLabel: "Filter projects",
       filters: {
         all: "All",
@@ -163,6 +164,7 @@ export const translations = {
       subtitle: "Proyectos reales, demos en vivo — esto es lo que construí",
       github: "GitHub",
       liveDemo: "Demo en vivo",
+      wporg: "WordPress.org",
       filtersLabel: "Filtrar proyectos",
       filters: {
         all: "Todos",
@@ -281,6 +283,7 @@ export const translations = {
       subtitle: "Projetos reais, demos ao vivo — veja o que construí",
       github: "GitHub",
       liveDemo: "Demo ao vivo",
+      wporg: "WordPress.org",
       filtersLabel: "Filtrar projetos",
       filters: {
         all: "Todos",

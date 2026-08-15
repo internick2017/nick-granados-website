@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, BadgeCheck, ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
@@ -79,7 +79,7 @@ export default function Projects() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Overlay — desktop only (touch devices have no hover) */}
-                  <div className="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 hidden sm:flex items-center justify-center gap-3">
+                  <div className="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 hidden sm:flex flex-wrap items-center justify-center gap-2 px-3">
                     {project.demo && (
                       <a
                         href={project.demo}
@@ -100,6 +100,17 @@ export default function Projects() {
                       >
                         <Github size={13} />
                         {t.projects.github}
+                      </a>
+                    )}
+                    {project.wporg && (
+                      <a
+                        href={project.wporg}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-4 py-2 bg-transparent border border-white text-white font-bold text-xs rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-200 delay-150 hover:bg-white/10"
+                      >
+                        <BadgeCheck size={13} />
+                        {t.projects.wporg}
                       </a>
                     )}
                   </div>
@@ -141,7 +152,7 @@ export default function Projects() {
                   )}
 
                   {/* Mobile-only links (overlay not visible on touch) */}
-                  <div className="flex gap-3 sm:hidden">
+                  <div className="flex flex-wrap gap-x-3 gap-y-1.5 sm:hidden">
                     {project.demo && (
                       <a
                         href={project.demo}
@@ -162,6 +173,17 @@ export default function Projects() {
                       >
                         <Github size={12} />
                         {t.projects.github}
+                      </a>
+                    )}
+                    {project.wporg && (
+                      <a
+                        href={project.wporg}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-brand-accent hover:underline"
+                      >
+                        <BadgeCheck size={12} />
+                        {t.projects.wporg}
                       </a>
                     )}
                   </div>
