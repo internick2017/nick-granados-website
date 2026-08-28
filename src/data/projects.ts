@@ -424,6 +424,59 @@ export const projects: Project[] = [
     demo: 'https://gramtospoon.nickgranados.com/',
     image: '/images/project-gramtospoon.png',
     category: 'frontend',
+    caseStudy: {
+      en: {
+        summary: 'A kitchen converter that answers the exact question people type into a search bar, on its own page, generated in bulk.',
+        problem: 'Someone cooking does not search for a converter tool. They search for one specific thing: how many cups is 200 grams of flour. A single calculator page competes badly for that, because the page never contains the phrase the person actually typed. The interesting problem is producing hundreds of specific answer pages without hand-writing hundreds of files, and keeping them consistent when the underlying data changes.',
+        approach: [
+          'Ingredient data is the single source of truth: 47 ingredients, each carrying its grams per cup, per tablespoon and per teaspoon, so every conversion derives from one number rather than a hardcoded table.',
+          'A Node generator reads that data and writes the site: 431 conversion pages, each one dedicated to a specific amount, ingredient and unit, plus an index of all conversions and the updated homepage.',
+          'Which pages get generated is driven by a tier configuration that pairs amount ranges with units, so coverage can be widened or narrowed by editing config instead of writing files.',
+          'The output is plain static HTML with a sitemap and robots file, so the site can be hosted anywhere and indexed cleanly.',
+          'Regenerating is idempotent: correcting one ingredient value updates every page that depends on it in a single run.',
+        ],
+        outcome: [
+          '431 individual conversion pages generated from 47 ingredient records.',
+          'Adding an ingredient or fixing a ratio propagates to every affected page automatically.',
+          'Pure static output with sitemap and robots, served from its own domain.',
+          'Demonstrates programmatic content generation, not a single-page calculator.',
+        ],
+      },
+      es: {
+        summary: 'Un conversor de cocina que responde exactamente la pregunta que la gente escribe en el buscador, en su propia página, generada en masa.',
+        problem: 'Alguien que está cocinando no busca una herramienta de conversión. Busca una cosa puntual: cuántas tazas son 200 gramos de harina. Una sola página con una calculadora compite mal por esa búsqueda, porque la página nunca contiene la frase que la persona realmente escribió. El problema interesante es producir cientos de páginas de respuesta específica sin escribir a mano cientos de archivos, y mantenerlas consistentes cuando los datos de base cambian.',
+        approach: [
+          'Los datos de ingredientes son la única fuente de verdad: 47 ingredientes, cada uno con sus gramos por taza, por cucharada y por cucharadita, así cada conversión se deriva de un número y no de una tabla hardcodeada.',
+          'Un generador en Node lee esos datos y escribe el sitio: 431 páginas de conversión, cada una dedicada a una cantidad, un ingrediente y una unidad específicos, más un índice de todas las conversiones y la home actualizada.',
+          'Qué páginas se generan lo decide una configuración por niveles que combina rangos de cantidad con unidades, así la cobertura se amplía o se recorta editando configuración en lugar de escribiendo archivos.',
+          'La salida es HTML estático puro con sitemap y robots, así el sitio se puede hostear en cualquier lado y se indexa limpio.',
+          'Regenerar es idempotente: corregir el valor de un ingrediente actualiza en una sola corrida todas las páginas que dependen de él.',
+        ],
+        outcome: [
+          '431 páginas de conversión individuales generadas a partir de 47 registros de ingredientes.',
+          'Agregar un ingrediente o corregir una proporción se propaga solo a todas las páginas afectadas.',
+          'Salida estática pura con sitemap y robots, servida desde su propio dominio.',
+          'Demuestra generación programática de contenido, no una calculadora de una sola página.',
+        ],
+      },
+      pt: {
+        summary: 'Um conversor de cozinha que responde exatamente a pergunta que as pessoas digitam na busca, em sua própria página, gerada em massa.',
+        problem: 'Quem está cozinhando não procura uma ferramenta de conversão. Procura uma coisa pontual: quantas xícaras são 200 gramas de farinha. Uma única página com calculadora compete mal por essa busca, porque a página nunca contém a frase que a pessoa realmente digitou. O problema interessante é produzir centenas de páginas de resposta específica sem escrever à mão centenas de arquivos, e mantê-las consistentes quando os dados de base mudam.',
+        approach: [
+          'Os dados de ingredientes são a única fonte de verdade: 47 ingredientes, cada um com seus gramas por xícara, por colher de sopa e por colher de chá, então cada conversão deriva de um número e não de uma tabela fixa no código.',
+          'Um gerador em Node lê esses dados e escreve o site: 431 páginas de conversão, cada uma dedicada a uma quantidade, um ingrediente e uma unidade específicos, mais um índice de todas as conversões e a home atualizada.',
+          'Quais páginas são geradas é decidido por uma configuração em níveis que combina faixas de quantidade com unidades, então a cobertura se amplia ou se reduz editando configuração em vez de escrevendo arquivos.',
+          'A saída é HTML estático puro com sitemap e robots, então o site pode ser hospedado em qualquer lugar e indexado de forma limpa.',
+          'Regerar é idempotente: corrigir o valor de um ingrediente atualiza numa única execução todas as páginas que dependem dele.',
+        ],
+        outcome: [
+          '431 páginas de conversão individuais geradas a partir de 47 registros de ingredientes.',
+          'Adicionar um ingrediente ou corrigir uma proporção se propaga sozinho para todas as páginas afetadas.',
+          'Saída estática pura com sitemap e robots, servida a partir do próprio domínio.',
+          'Demonstra geração programática de conteúdo, não uma calculadora de página única.',
+        ],
+      },
+    },
   },
   {
     id: 'repairshop',
@@ -602,6 +655,59 @@ export const projects: Project[] = [
     demo: 'https://lanny.nickgranados.com',
     image: '/images/project-lanny.png',
     category: 'wordpress',
+    caseStudy: {
+      en: {
+        summary: 'A real client site in three languages, built as an Astra child theme so the client keeps a WordPress she can actually use.',
+        problem: 'A private language teacher sells in three languages to three different audiences, and her site has to speak all of them without turning into three separate sites to maintain. The constraint that shapes everything: she is not a developer. Whatever gets built has to stay editable from wp-admin after the developer leaves, which rules out both a hand-coded static site and a page builder that locks the layout behind a proprietary editor.',
+        approach: [
+          'The site is an Astra child theme rather than a from-scratch theme, so security updates keep flowing from the parent while the customization stays isolated in the child.',
+          'The homepage is a custom front-page template, so the layout is real PHP under version control instead of a page-builder blob that cannot be diffed.',
+          'Every piece of interface copy lives in one strings function keyed by language, with Portuguese as the fallback. Polylang decides the active language and the template pulls the matching set, so adding a language means adding a block of strings, not rebuilding the page.',
+          'Testimonials are a custom post type registered in the theme and explicitly opted into Polylang translation, with a custom admin column so the client can see at a glance what she is editing.',
+          'A bootstrap script creates the initial page structure through the WordPress REST API, making the site reproducible instead of hand-assembled.',
+        ],
+        outcome: [
+          'Live client site serving Portuguese, Spanish and English from one WordPress install.',
+          'The client edits her own content in wp-admin, including testimonials, with no developer involved.',
+          'Layout and copy are versioned in git as a child theme, so changes are reviewable and reversible.',
+          'Parent theme updates stay safe to apply because no core theme file was modified.',
+        ],
+      },
+      es: {
+        summary: 'Un sitio de clienta real en tres idiomas, hecho como tema hijo de Astra para que ella se quede con un WordPress que sí puede usar.',
+        problem: 'Una profesora de idiomas particular vende en tres idiomas a tres públicos distintos, y su sitio tiene que hablarlos todos sin convertirse en tres sitios separados para mantener. La restricción que ordena todo lo demás: ella no es programadora. Lo que se construya tiene que seguir siendo editable desde wp-admin después de que el desarrollador se va, lo que descarta tanto un sitio estático escrito a mano como un page builder que encierra el diseño en un editor propietario.',
+        approach: [
+          'El sitio es un tema hijo de Astra y no un tema desde cero, así las actualizaciones de seguridad siguen llegando desde el tema padre mientras la personalización queda aislada en el hijo.',
+          'La home es una plantilla front-page propia, así el diseño es PHP real bajo control de versiones y no un bloque de page builder que no se puede diffear.',
+          'Todo el texto de interfaz vive en una única función de strings indexada por idioma, con portugués como respaldo. Polylang decide el idioma activo y la plantilla toma el conjunto correspondiente, así que agregar un idioma es agregar un bloque de strings, no rehacer la página.',
+          'Los testimonios son un custom post type registrado en el tema y habilitado explícitamente para la traducción de Polylang, con una columna propia en el admin para que la clienta vea de un vistazo qué está editando.',
+          'Un script de bootstrap crea la estructura inicial de páginas por la REST API de WordPress, lo que hace el sitio reproducible en vez de armado a mano.',
+        ],
+        outcome: [
+          'Sitio de clienta en vivo sirviendo portugués, español e inglés desde una sola instalación de WordPress.',
+          'La clienta edita su propio contenido en wp-admin, testimonios incluidos, sin depender de un desarrollador.',
+          'El diseño y los textos están versionados en git como tema hijo, así los cambios son revisables y reversibles.',
+          'Las actualizaciones del tema padre se pueden aplicar sin miedo porque no se modificó ningún archivo del tema original.',
+        ],
+      },
+      pt: {
+        summary: 'Um site de cliente real em três idiomas, feito como tema filho do Astra para que ela fique com um WordPress que consegue usar de verdade.',
+        problem: 'Uma professora de idiomas particular vende em três idiomas para três públicos diferentes, e o site dela precisa falar todos sem virar três sites separados para manter. A restrição que ordena todo o resto: ela não é programadora. O que for construído precisa continuar editável pelo wp-admin depois que o desenvolvedor sai, o que descarta tanto um site estático escrito à mão quanto um page builder que tranca o layout dentro de um editor proprietário.',
+        approach: [
+          'O site é um tema filho do Astra, não um tema do zero, então as atualizações de segurança continuam chegando pelo tema pai enquanto a personalização fica isolada no filho.',
+          'A home é um template front-page próprio, então o layout é PHP de verdade sob controle de versão, e não um bloco de page builder que não dá para diferenciar.',
+          'Todo o texto de interface vive em uma única função de strings indexada por idioma, com português como fallback. O Polylang decide o idioma ativo e o template puxa o conjunto correspondente, então adicionar um idioma é adicionar um bloco de strings, não refazer a página.',
+          'Os depoimentos são um custom post type registrado no tema e habilitado explicitamente para a tradução do Polylang, com uma coluna própria no admin para a cliente ver de relance o que está editando.',
+          'Um script de bootstrap cria a estrutura inicial de páginas pela REST API do WordPress, o que torna o site reproduzível em vez de montado à mão.',
+        ],
+        outcome: [
+          'Site de cliente ao vivo servindo português, espanhol e inglês a partir de uma única instalação WordPress.',
+          'A cliente edita o próprio conteúdo no wp-admin, incluindo depoimentos, sem depender de um desenvolvedor.',
+          'Layout e textos ficam versionados no git como tema filho, então as mudanças são revisáveis e reversíveis.',
+          'As atualizações do tema pai podem ser aplicadas com segurança porque nenhum arquivo do tema original foi modificado.',
+        ],
+      },
+    },
   },
   {
     id: 'dose-time',
@@ -1016,6 +1122,62 @@ export const projects: Project[] = [
     demo: 'https://internick2017.github.io/wdd330-sleepouside/',
     image: '/images/project-sleepouside.png',
     category: 'frontend',
+    caseStudy: {
+      en: {
+        summary: 'A full e-commerce flow written in plain JavaScript modules, with no framework to hide the wiring.',
+        problem: 'Frameworks do a lot of invisible work: rendering on state change, routing, keeping the cart in sync across pages. Building a complete store without one means every piece of that has to be written and understood explicitly. That is the point of the exercise, and it is also where the real questions appear: where does cart state live between page loads, how does a multi-page checkout survive a refresh, and what happens when the product API is slow or fails.',
+        approach: [
+          'The application is split into ES modules with clear responsibilities: product listing, product detail, shopping cart, checkout process and a services layer, rather than one script per page.',
+          'All network access goes through a single external services module, so the API base URL is configurable through an environment variable and every request shares the same error handling.',
+          'Responses are validated before use: a non-OK status throws with the status text, and malformed JSON is caught and reported instead of failing silently deeper in the UI.',
+          'Cart state persists in localStorage, so the cart survives navigation and refreshes across a multi-page store without a server session.',
+          'The checkout process is its own module handling totals, tax and shipping separately from the cart display.',
+          'The build is bundled with Vite and deployed as a static site, with unit tests on the product logic.',
+        ],
+        outcome: [
+          'Complete store flow: listing, product detail, cart and checkout, all in vanilla JavaScript.',
+          'Cart survives page navigation and refreshes via localStorage.',
+          'Network failures surface as handled errors rather than silent breakage.',
+          'Deployed as a static build, consuming a live product API.',
+        ],
+      },
+      es: {
+        summary: 'Un flujo completo de e-commerce escrito en módulos de JavaScript puro, sin framework que esconda el cableado.',
+        problem: 'Los frameworks hacen mucho trabajo invisible: renderizar cuando cambia el estado, rutear, mantener el carrito sincronizado entre páginas. Construir una tienda completa sin uno significa que cada una de esas piezas hay que escribirla y entenderla explícitamente. Ese es el punto del ejercicio, y también donde aparecen las preguntas reales: dónde vive el estado del carrito entre cargas de página, cómo sobrevive a un refresh un checkout de varias páginas, y qué pasa cuando la API de productos está lenta o falla.',
+        approach: [
+          'La aplicación está partida en módulos ES con responsabilidades claras: listado de productos, detalle, carrito, proceso de checkout y una capa de servicios, en vez de un script por página.',
+          'Todo el acceso a red pasa por un único módulo de servicios externos, así la URL base de la API se configura por variable de entorno y todas las peticiones comparten el mismo manejo de errores.',
+          'Las respuestas se validan antes de usarse: un status no-OK lanza error con su texto, y el JSON malformado se captura y se reporta en vez de fallar en silencio más adentro de la interfaz.',
+          'El estado del carrito persiste en localStorage, así el carrito sobrevive a la navegación y a los refrescos en una tienda de varias páginas sin sesión de servidor.',
+          'El proceso de checkout es su propio módulo, que maneja totales, impuestos y envío por separado de la vista del carrito.',
+          'El build se empaqueta con Vite y se despliega como sitio estático, con tests unitarios sobre la lógica de productos.',
+        ],
+        outcome: [
+          'Flujo de tienda completo: listado, detalle, carrito y checkout, todo en JavaScript puro.',
+          'El carrito sobrevive a la navegación y a los refrescos vía localStorage.',
+          'Las fallas de red aparecen como errores manejados y no como una rotura silenciosa.',
+          'Desplegado como build estático, consumiendo una API de productos en vivo.',
+        ],
+      },
+      pt: {
+        summary: 'Um fluxo completo de e-commerce escrito em módulos de JavaScript puro, sem framework para esconder a fiação.',
+        problem: 'Frameworks fazem muito trabalho invisível: renderizar quando o estado muda, rotear, manter o carrinho sincronizado entre páginas. Construir uma loja completa sem um significa que cada uma dessas peças precisa ser escrita e entendida explicitamente. Esse é o ponto do exercício, e também onde aparecem as perguntas reais: onde mora o estado do carrinho entre carregamentos de página, como um checkout de várias páginas sobrevive a um refresh, e o que acontece quando a API de produtos está lenta ou falha.',
+        approach: [
+          'A aplicação é dividida em módulos ES com responsabilidades claras: listagem de produtos, detalhe, carrinho, processo de checkout e uma camada de serviços, em vez de um script por página.',
+          'Todo o acesso à rede passa por um único módulo de serviços externos, então a URL base da API é configurável por variável de ambiente e todas as requisições compartilham o mesmo tratamento de erros.',
+          'As respostas são validadas antes do uso: um status não-OK lança erro com o texto do status, e JSON malformado é capturado e reportado em vez de falhar em silêncio mais adiante na interface.',
+          'O estado do carrinho persiste em localStorage, então o carrinho sobrevive à navegação e aos refreshes numa loja de várias páginas sem sessão de servidor.',
+          'O processo de checkout é um módulo próprio, que trata totais, impostos e frete separadamente da exibição do carrinho.',
+          'O build é empacotado com Vite e implantado como site estático, com testes unitários sobre a lógica de produtos.',
+        ],
+        outcome: [
+          'Fluxo de loja completo: listagem, detalhe, carrinho e checkout, tudo em JavaScript puro.',
+          'O carrinho sobrevive à navegação e aos refreshes via localStorage.',
+          'Falhas de rede aparecem como erros tratados, e não como quebra silenciosa.',
+          'Implantado como build estático, consumindo uma API de produtos ao vivo.',
+        ],
+      },
+    },
   },
 ]
 
