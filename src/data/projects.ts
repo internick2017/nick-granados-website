@@ -1029,7 +1029,7 @@ export const projects: Project[] = [
       },
     },
     technologies: ['Shopify', 'Liquid', 'Shopify Admin API', 'Node.js', 'CSS3', 'E-commerce', 'Conversion Optimization'],
-    github: null,
+    github: 'https://github.com/internick2017/storeup-shopify-theme',
     demo: 'https://storeup.store',
     image: '/images/project-store-up.png',
     category: 'ecommerce',
