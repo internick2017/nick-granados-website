@@ -1033,6 +1033,62 @@ export const projects: Project[] = [
     demo: 'https://storeup.store',
     image: '/images/project-store-up.png',
     category: 'ecommerce',
+    caseStudy: {
+      en: {
+        summary: 'A real storefront run end to end, where the interesting engineering is the store configuration that no theme editor exposes.',
+        problem: 'Running a store is not the same as building one. Beyond the theme, a real storefront has to sell in several languages and currencies, keep its legal policies consistent, and manage a catalogue that changes. Much of that lives in configuration the visual editor either does not expose or makes impossibly tedious to repeat, which is exactly the part worth automating against the platform API.',
+        approach: [
+          'The storefront is a customized Shopify theme served from the store\'s own domain, not a default template.',
+          'The store serves three languages with proper hreflang signalling for English, Spanish and Portuguese plus a default fallback, so search engines resolve the right version per market.',
+          'Currency and locale are handled through Shopify\'s localization form, so pricing follows the visitor\'s market rather than one hardcoded currency.',
+          'Store configuration is automated with Node against the Shopify Admin API, covering the parts the visual editor does not reach: registering translations, updating store policies, and rewriting navigation menus.',
+          'The automation had to accommodate the API\'s real behaviour rather than its documented shape: translation registration requires the current content digest, policy updates fail silently unless the policy type is passed, and menu updates replace the entire menu instead of patching it.',
+          'Product data is configured for a dropshipping model, where inventory is not tracked locally because fulfilment happens upstream.',
+        ],
+        outcome: [
+          'Live storefront on its own domain, serving three languages and multi-currency checkout.',
+          'Store configuration reproducible through scripted Admin API calls instead of manual clicking.',
+          'Documented the API behaviours that fail silently, so the automation is repeatable rather than one-shot.',
+          'Demonstrates operating a commerce platform, not only building a front end for one.',
+        ],
+      },
+      es: {
+        summary: 'Una tienda real gestionada de punta a punta, donde lo interesante en lo técnico es la configuración que ningún editor de temas expone.',
+        problem: 'Operar una tienda no es lo mismo que construirla. Más allá del tema, una tienda real tiene que vender en varios idiomas y monedas, mantener coherentes sus políticas legales, y manejar un catálogo que cambia. Buena parte de eso vive en configuración que el editor visual o no expone o vuelve insoportablemente tedioso repetir, que es justamente la parte que vale la pena automatizar contra la API de la plataforma.',
+        approach: [
+          'La tienda es un tema de Shopify personalizado servido desde su propio dominio, no una plantilla por defecto.',
+          'Sirve tres idiomas con señalización hreflang correcta para inglés, español y portugués más un fallback por defecto, así los buscadores resuelven la versión correcta según el mercado.',
+          'La moneda y el locale se manejan con el formulario de localización de Shopify, así el precio sigue al mercado del visitante en vez de quedar fijo en una sola moneda.',
+          'La configuración de la tienda se automatiza con Node contra la Shopify Admin API, cubriendo lo que el editor visual no alcanza: registrar traducciones, actualizar las políticas de la tienda y reescribir los menús de navegación.',
+          'La automatización tuvo que acomodarse al comportamiento real de la API y no al documentado: registrar una traducción exige el digest del contenido actual, la actualización de políticas falla en silencio si no se pasa el tipo de política, y la actualización de menús reemplaza el menú entero en vez de parchearlo.',
+          'Los datos de producto están configurados para un modelo de dropshipping, donde el inventario no se rastrea localmente porque el envío ocurre aguas arriba.',
+        ],
+        outcome: [
+          'Tienda en vivo sobre su propio dominio, sirviendo tres idiomas y checkout multimoneda.',
+          'Configuración de tienda reproducible mediante llamadas scripteadas a la Admin API en lugar de clics manuales.',
+          'Quedaron documentados los comportamientos de la API que fallan en silencio, así la automatización es repetible y no de un solo uso.',
+          'Demuestra operar una plataforma de comercio, no solo construirle un front end.',
+        ],
+      },
+      pt: {
+        summary: 'Uma loja real tocada de ponta a ponta, onde a engenharia interessante é a configuração que nenhum editor de temas expõe.',
+        problem: 'Operar uma loja não é o mesmo que construí-la. Além do tema, uma loja real precisa vender em vários idiomas e moedas, manter coerentes suas políticas legais, e gerenciar um catálogo que muda. Boa parte disso vive em configuração que o editor visual ou não expõe ou torna insuportavelmente tedioso repetir, que é justamente a parte que vale automatizar contra a API da plataforma.',
+        approach: [
+          'A loja é um tema Shopify personalizado servido a partir do próprio domínio, não um template padrão.',
+          'Serve três idiomas com sinalização hreflang correta para inglês, espanhol e português mais um fallback padrão, então os buscadores resolvem a versão certa por mercado.',
+          'Moeda e locale são tratados pelo formulário de localização do Shopify, então o preço acompanha o mercado do visitante em vez de ficar fixo numa moeda só.',
+          'A configuração da loja é automatizada com Node contra a Shopify Admin API, cobrindo o que o editor visual não alcança: registrar traduções, atualizar as políticas da loja e reescrever os menus de navegação.',
+          'A automação teve que se acomodar ao comportamento real da API, e não ao documentado: registrar uma tradução exige o digest do conteúdo atual, a atualização de políticas falha em silêncio se o tipo da política não for passado, e a atualização de menus substitui o menu inteiro em vez de aplicar um patch.',
+          'Os dados de produto são configurados para um modelo de dropshipping, onde o estoque não é rastreado localmente porque o envio acontece rio acima.',
+        ],
+        outcome: [
+          'Loja ao vivo no próprio domínio, servindo três idiomas e checkout multimoeda.',
+          'Configuração de loja reproduzível por chamadas scriptadas à Admin API em vez de cliques manuais.',
+          'Ficaram documentados os comportamentos da API que falham em silêncio, então a automação é repetível e não de uso único.',
+          'Demonstra operar uma plataforma de comércio, não apenas construir um front end para uma.',
+        ],
+      },
+    },
   },
 
   {
