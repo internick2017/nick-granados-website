@@ -643,7 +643,10 @@ export const projects: Project[] = [
     },
     technologies: ['Laravel', 'Vue 3', 'Inertia.js', 'Tailwind CSS', 'SQLite', 'PHP'],
     github: 'https://github.com/internick2017/clear-path',
-    demo: 'https://clear-path-9008.onrender.com',
+    // Demo temporarily unlinked: the Render free instance is suspended ("free usage limit reached"),
+    // so the URL returns 503. Restore this line once the service is back up and verified.
+    // Live URL when available: https://clear-path-9008.onrender.com
+    demo: null,
     image: '/images/project-clear-path.png',
     category: 'fullstack',
   },
