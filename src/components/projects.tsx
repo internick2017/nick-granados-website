@@ -7,7 +7,10 @@ import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 
-const FILTER_KEYS = ['all', 'fullstack', 'api', 'frontend', 'ecommerce', 'mobile', 'wordpress'] as const
+// 'api' is intentionally absent: only one project carries that category, so a pill for it would
+// always return a single result. The category itself stays in translations because each card
+// still renders its own category as a badge.
+const FILTER_KEYS = ['all', 'fullstack', 'frontend', 'ecommerce', 'mobile', 'wordpress'] as const
 type Filter = (typeof FILTER_KEYS)[number]
 
 export default function Projects() {

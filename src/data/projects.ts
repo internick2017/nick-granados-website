@@ -760,6 +760,95 @@ export const projects: Project[] = [
     image: '/images/project-store-up.png',
     category: 'ecommerce',
   },
+
+  {
+    id: 'event-planner-api',
+    translations: {
+      en: {
+        title: 'Event Planner API',
+        description: 'RESTful API for managing events, venues, and RSVPs. Google OAuth2 authentication, full CRUD across events, venues, users and RSVPs, request validation, and a Jest test suite. The OpenAPI reference is published as a static page, so it is always reachable.',
+      },
+      es: {
+        title: 'API de Planificación de Eventos',
+        description: 'API RESTful para gestionar eventos, venues y RSVPs. Autenticación OAuth2 de Google, CRUD completo sobre eventos, venues, usuarios y RSVPs, validación de requests y suite de pruebas Jest. La referencia OpenAPI está publicada como página estática, así que siempre está disponible.',
+      },
+      pt: {
+        title: 'API de Planejamento de Eventos',
+        description: 'API RESTful para gerenciar eventos, venues e RSVPs. Autenticação OAuth2 do Google, CRUD completo sobre eventos, venues, usuários e RSVPs, validação de requests e suíte de testes Jest. A referência OpenAPI é publicada como página estática, então está sempre disponível.',
+      },
+    },
+    technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'OAuth2', 'Passport.js', 'Swagger', 'Jest'],
+    github: 'https://github.com/internick2017/event-planner-api',
+    demo: 'https://internick2017.github.io/event-planner-api/',
+    image: '/images/project-event-planner-api.png',
+    category: 'api',
+  },
+  {
+    id: 'drf-course-api',
+    translations: {
+      en: {
+        title: 'DRF Course API - E-commerce REST API',
+        description: 'Django REST Framework e-commerce API with JWT authentication, product/order management, filtering, pagination, and interactive Swagger docs. Covers DRF end to end: viewsets, serializers, permission classes, dynamic filtering and query profiling.',
+      },
+      es: {
+        title: 'DRF Course API - REST API de E-commerce',
+        description: 'API de e-commerce con Django REST Framework, autenticación JWT, gestión de productos y órdenes, filtrado dinámico, paginación y docs Swagger interactivos. Cubre DRF de punta a punta: viewsets, serializers, clases de permisos y profiling de queries.',
+      },
+      pt: {
+        title: 'DRF Course API - REST API de E-commerce',
+        description: 'API de e-commerce com Django REST Framework, autenticação JWT, gestão de produtos e pedidos, filtragem dinâmica, paginação e docs Swagger interativos. Cobre DRF de ponta a ponta: viewsets, serializers, classes de permissão e profiling de queries.',
+      },
+    },
+    technologies: ['Python', 'Django', 'Django REST Framework', 'JWT', 'PostgreSQL', 'Swagger/OpenAPI', 'django-filter'],
+    github: 'https://github.com/internick2017/drf-course-api',
+    demo: 'https://internick2017.github.io/drf-course-api/',
+    image: '/images/project-drf-course-api.png',
+    category: 'api',
+  },
+  {
+    id: 'laravel-image-api',
+    translations: {
+      en: {
+        title: 'Laravel Image Manipulation API',
+        description: 'RESTful API for image resizing and album management, built with Laravel 8 and Sanctum. Features token authentication, album grouping, and interactive Swagger/OpenAPI documentation.',
+      },
+      es: {
+        title: 'API de Manipulación de Imágenes con Laravel',
+        description: 'API REST para redimensionado de imágenes y gestión de álbumes, construida con Laravel 8 y Sanctum. Autenticación por token, agrupación en álbumes y documentación Swagger interactiva.',
+      },
+      pt: {
+        title: 'API de Manipulação de Imagens com Laravel',
+        description: 'API REST para redimensionamento de imagens e gestão de álbuns, construída com Laravel 8 e Sanctum. Autenticação por token, agrupamento em álbuns e documentação Swagger interativa.',
+      },
+    },
+    technologies: ['PHP', 'Laravel', 'Laravel Sanctum', 'MySQL', 'Swagger/OpenAPI', 'Intervention Image'],
+    github: 'https://github.com/internick2017/laravel-image-manipulation-api',
+    demo: 'https://image-api.nickgranados.com/api/documentation',
+    image: '/images/project-laravel-image-api.png',
+    category: 'api',
+  },
+  {
+    id: 'sleepouside',
+    translations: {
+      en: {
+        title: 'SleepOutside - Outdoor E-commerce',
+        description: 'Vanilla JavaScript e-commerce SPA for outdoor gear. Features product listings with live API data, shopping cart with localStorage, checkout flow, and product detail pages.',
+      },
+      es: {
+        title: 'SleepOutside - E-commerce de Camping',
+        description: 'SPA de e-commerce en Vanilla JS para equipos de camping. Incluye listado de productos con API en vivo, carrito con localStorage, flujo de checkout y páginas de detalle.',
+      },
+      pt: {
+        title: 'SleepOutside - E-commerce de Camping',
+        description: 'SPA de e-commerce em Vanilla JS para equipamentos de camping. Inclui listagem de produtos com API ao vivo, carrinho com localStorage, fluxo de checkout e páginas de detalhe.',
+      },
+    },
+    technologies: ['JavaScript', 'Vite', 'HTML5', 'CSS3', 'REST API', 'localStorage'],
+    github: 'https://github.com/internick2017/wdd330-sleepouside',
+    demo: 'https://internick2017.github.io/wdd330-sleepouside/',
+    image: '/images/project-sleepouside.png',
+    category: 'frontend',
+  },
 ]
 
 export function getAllTechnologies(): string[] {
