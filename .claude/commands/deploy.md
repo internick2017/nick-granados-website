@@ -44,6 +44,7 @@ Run `yarn build` in the project root.
   not in the build.
 
 ### Repo note
-`.cpanel.yml` still sits in the repo root and points at `/home1/nickda77/public_html`. It is a
-leftover from an earlier cPanel-git deploy and is NOT the active mechanism. Ignore it when
-diagnosing deploys, and do not "fix" the path in it expecting the live site to change.
+The GitHub Action is the ONLY deploy mechanism. An older cPanel-git route (`.cpanel.yml`, deploying
+to `/home1/nickda77/public_html/`) was superseded by the Action in April 2026; the dead file was
+deleted on 2026-08-27. Some plan documents under `docs/` still describe that old route — they are
+historical records. If a deploy misbehaves, look at the Actions run, never at cPanel config.

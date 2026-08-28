@@ -35,8 +35,9 @@ Single-page portfolio with sections:
   Takes ~2-3 minutes. Secrets used: `SSH_HOST`, `SSH_USERNAME`, `SSH_PRIVATE_KEY`.
 - **Full deploy command**: use `/deploy` (build + commit + push in one step)
 - The `out/` directory is gitignored: it is never committed, CI rebuilds it from source.
-- ⚠️ `.cpanel.yml` (pointing at `/home1/nickda77/public_html/`) is a leftover from an older
-  cPanel-git setup and is NOT the active deploy path. Do not edit it expecting the live site to change.
+- History: an older cPanel-git deploy (`.cpanel.yml` → `/home1/nickda77/public_html/`) was replaced
+  by the Action in April 2026 and the dead file was removed on 2026-08-27. Older plan docs under
+  `docs/` still describe that route; they are historical records, not current behaviour.
 - Note: Vercel is no longer used for this project.
 
 ## Key constraints
