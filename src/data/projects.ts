@@ -626,28 +626,6 @@ export const projects: Project[] = [
     category: 'mobile',
   },
   {
-    id: 'event-planner-api',
-    translations: {
-      en: {
-        title: 'Event Planner API',
-        description: 'RESTful API for managing events, venues, and RSVPs. Built as BYU CSE341 final project with OAuth2 Google authentication, full CRUD operations, Swagger/OpenAPI interactive docs, and a Jest test suite. Deployed on Render.',
-      },
-      es: {
-        title: 'API de Planificación de Eventos',
-        description: 'API RESTful para gestionar eventos, venues y RSVPs. Proyecto final BYU CSE341 con autenticación OAuth2 Google, operaciones CRUD completas, documentación interactiva Swagger/OpenAPI y suite de pruebas Jest. Desplegada en Render.',
-      },
-      pt: {
-        title: 'API de Planejamento de Eventos',
-        description: 'API RESTful para gerenciar eventos, venues e RSVPs. Projeto final BYU CSE341 com autenticação OAuth2 Google, operações CRUD completas, documentação interativa Swagger/OpenAPI e suite de testes Jest. Implantada no Render.',
-      },
-    },
-    technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'OAuth2', 'Passport.js', 'Swagger', 'Jest'],
-    github: 'https://github.com/internick2017/event-planner-api',
-    demo: 'https://event-planner-api-oihl.onrender.com/api-docs',
-    image: '/images/project-event-planner-api.png',
-    category: 'api',
-  },
-  {
     id: 'clear-path',
     translations: {
       en: {
@@ -668,72 +646,6 @@ export const projects: Project[] = [
     demo: 'https://clear-path-9008.onrender.com',
     image: '/images/project-clear-path.png',
     category: 'fullstack',
-  },
-  {
-    id: 'sleepouside',
-    translations: {
-      en: {
-        title: 'SleepOutside - Outdoor E-commerce',
-        description: 'Vanilla JavaScript e-commerce SPA for outdoor gear. Features product listings with live API data, shopping cart with localStorage, checkout flow, and product detail pages. Built for BYU WDD330.',
-      },
-      es: {
-        title: 'SleepOutside - E-commerce de Camping',
-        description: 'SPA de e-commerce en Vanilla JS para equipos de camping. Incluye listado de productos con API en vivo, carrito con localStorage, flujo de checkout y páginas de detalle. Proyecto final BYU WDD330.',
-      },
-      pt: {
-        title: 'SleepOutside - E-commerce de Camping',
-        description: 'SPA de e-commerce em Vanilla JS para equipamentos de camping. Inclui listagem de produtos com API ao vivo, carrinho com localStorage, fluxo de checkout e páginas de detalhe. Projeto final BYU WDD330.',
-      },
-    },
-    technologies: ['JavaScript', 'Vite', 'HTML5', 'CSS3', 'REST API', 'localStorage'],
-    github: 'https://github.com/internick2017/wdd330-sleepouside',
-    demo: 'https://internick2017.github.io/wdd330-sleepouside/',
-    image: '/images/project-sleepouside.png',
-    category: 'frontend',
-  },
-  {
-    id: 'drf-course-api',
-    translations: {
-      en: {
-        title: 'DRF Course API - E-commerce REST API',
-        description: 'Django REST Framework e-commerce API with JWT authentication, product/order management, filtering, pagination, and interactive Swagger docs. Built as a learning project covering DRF\'s core patterns.',
-      },
-      es: {
-        title: 'DRF Course API - REST API de E-commerce',
-        description: 'API de e-commerce con Django REST Framework, autenticación JWT, gestión de productos y órdenes, filtrado, paginación y docs Swagger interactivos.',
-      },
-      pt: {
-        title: 'DRF Course API - REST API de E-commerce',
-        description: 'API de e-commerce com Django REST Framework, autenticação JWT, gestão de produtos e pedidos, filtragem, paginação e docs Swagger interativos.',
-      },
-    },
-    technologies: ['Python', 'Django', 'Django REST Framework', 'JWT', 'PostgreSQL', 'Swagger/OpenAPI', 'django-filter'],
-    github: 'https://github.com/internick2017/drf-course-api',
-    demo: 'https://drf-course-api-o6rf.onrender.com/api/docs/',
-    image: '/images/project-drf-course-api.png',
-    category: 'api',
-  },
-  {
-    id: 'laravel-image-api',
-    translations: {
-      en: {
-        title: 'Laravel Image Manipulation API',
-        description: 'RESTful API for image resizing and album management, built with Laravel 8 and Sanctum. Features token authentication, album grouping, and interactive Swagger/OpenAPI documentation.',
-      },
-      es: {
-        title: 'API de Manipulación de Imágenes con Laravel',
-        description: 'API REST para redimensionado de imágenes y gestión de álbumes, construida con Laravel 8 y Sanctum. Autenticación por token, agrupación en álbumes y documentación Swagger interactiva.',
-      },
-      pt: {
-        title: 'API de Manipulação de Imagens com Laravel',
-        description: 'API REST para redimensionamento de imagens e gestão de álbuns, construída com Laravel 8 e Sanctum. Autenticação por token, agrupamento em álbuns e documentação Swagger interativa.',
-      },
-    },
-    technologies: ['PHP', 'Laravel', 'Laravel Sanctum', 'MySQL', 'Swagger/OpenAPI', 'Intervention Image'],
-    github: 'https://github.com/internick2017/laravel-image-manipulation-api',
-    demo: 'https://image-api.nickgranados.com/api/documentation',
-    image: '/images/project-laravel-image-api.png',
-    category: 'api',
   },
   {
     id: 'wp-ai-alt-text',
