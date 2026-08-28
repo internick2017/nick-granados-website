@@ -37,6 +37,78 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'terra',
+    translations: {
+      en: {
+        title: 'Terra - Headless Real Estate (WordPress + Next.js)',
+        description: 'Bilingual real estate site running WordPress as a headless CMS behind a Next.js front end. Listings, neighborhoods and translations are authored in wp-admin and consumed over WPGraphQL, with Polylang driving EN/PT content in parallel. The front end renders static pages with incremental revalidation, filters listings by type, status and neighborhood, and draws property locations on OpenStreetMap tiles. Covered by 112 tests and deployed with the CMS on shared hosting and the front end on Vercel.',
+      },
+      es: {
+        title: 'Terra - Inmobiliaria Headless (WordPress + Next.js)',
+        description: 'Sitio inmobiliario bilingüe que usa WordPress como CMS headless detrás de un front end en Next.js. Las propiedades, los barrios y las traducciones se cargan desde wp-admin y se consumen por WPGraphQL, con Polylang manejando el contenido EN/PT en paralelo. El front end genera páginas estáticas con revalidación incremental, filtra propiedades por tipo, estado y barrio, y ubica cada propiedad sobre tiles de OpenStreetMap. Cubierto por 112 tests, con el CMS en hosting compartido y el front end en Vercel.',
+      },
+      pt: {
+        title: 'Terra - Imobiliária Headless (WordPress + Next.js)',
+        description: 'Site imobiliário bilíngue que usa WordPress como CMS headless atrás de um front end em Next.js. Os imóveis, os bairros e as traduções são cadastrados no wp-admin e consumidos via WPGraphQL, com Polylang cuidando do conteúdo EN/PT em paralelo. O front end gera páginas estáticas com revalidação incremental, filtra imóveis por tipo, situação e bairro, e posiciona cada imóvel sobre tiles do OpenStreetMap. Coberto por 112 testes, com o CMS em hospedagem compartilhada e o front end na Vercel.',
+      },
+    },
+    technologies: ['WordPress', 'Headless CMS', 'WPGraphQL', 'Polylang', 'Next.js 15', 'TypeScript', 'ISR', 'OpenStreetMap', 'Vitest'],
+    github: 'https://github.com/internick2017/terra-headless-realestate',
+    demo: 'https://terra-headless-realestate.vercel.app',
+    image: '/images/project-terra.png',
+    category: 'wordpress',
+    caseStudy: {
+      en: {
+        summary: 'WordPress kept as the editor experience clients already know, with a Next.js front end that never touches PHP rendering.',
+        problem: 'Real estate clients want to manage their own listings, and WordPress is the admin they already understand. But a classic WP theme ties presentation to PHP templates and to whatever the host can serve. The goal was to keep wp-admin as the editing surface while the public site becomes a fast, statically rendered app, in two languages, without the CMS ever being the thing visitors load.',
+        approach: [
+          'WordPress runs as a headless CMS with custom post types for listings and neighborhoods, exposed through WPGraphQL.',
+          'Polylang keeps English and Portuguese content in parallel, and the front end resolves the right translation per route.',
+          'The Next.js front end renders static pages with incremental revalidation, so editors publish in wp-admin and the public site picks the change up on its own.',
+          'Listings are filtered by type, status and neighborhood, and each property is placed on OpenStreetMap tiles rather than a paid map provider.',
+          'The demo data seeds from inside wp-admin instead of requiring WP-CLI, so the project stays deployable on ordinary shared hosting.',
+        ],
+        outcome: [
+          'Live front end on Vercel with the WordPress CMS running on its own subdomain.',
+          '112 tests covering the GraphQL layer, filtering and translation resolution.',
+          'Verified against production, including the bilingual routes and the map rendering.',
+        ],
+      },
+      es: {
+        summary: 'WordPress se mantiene como el editor que los clientes ya conocen, con un front end en Next.js que nunca pasa por el render de PHP.',
+        problem: 'Los clientes inmobiliarios quieren manejar sus propias propiedades, y WordPress es el admin que ya entienden. Pero un tema clásico de WP ata la presentación a los templates PHP y a lo que el hosting pueda servir. La idea fue conservar wp-admin como superficie de edición mientras el sitio público se vuelve una app rápida y renderizada estáticamente, en dos idiomas, sin que el CMS sea nunca lo que carga el visitante.',
+        approach: [
+          'WordPress corre como CMS headless con custom post types para propiedades y barrios, expuestos por WPGraphQL.',
+          'Polylang mantiene el contenido en inglés y portugués en paralelo, y el front end resuelve la traducción correcta según la ruta.',
+          'El front end en Next.js genera páginas estáticas con revalidación incremental: el editor publica en wp-admin y el sitio público toma el cambio solo.',
+          'Las propiedades se filtran por tipo, estado y barrio, y cada una se ubica sobre tiles de OpenStreetMap en vez de un proveedor de mapas pago.',
+          'Los datos de demo se cargan desde adentro de wp-admin en lugar de exigir WP-CLI, así el proyecto sigue siendo desplegable en hosting compartido común.',
+        ],
+        outcome: [
+          'Front end en vivo en Vercel con el CMS WordPress corriendo en su propio subdominio.',
+          '112 tests que cubren la capa GraphQL, el filtrado y la resolución de traducciones.',
+          'Verificado contra producción, incluidas las rutas bilingües y el render del mapa.',
+        ],
+      },
+      pt: {
+        summary: 'O WordPress continua sendo o editor que os clientes já conhecem, com um front end em Next.js que nunca passa pelo render do PHP.',
+        problem: 'Clientes de imobiliária querem gerenciar os próprios imóveis, e o WordPress é o admin que eles já entendem. Mas um tema clássico de WP amarra a apresentação aos templates PHP e ao que a hospedagem consegue servir. A ideia foi manter o wp-admin como superfície de edição enquanto o site público vira um app rápido e renderizado estaticamente, em dois idiomas, sem que o CMS seja o que o visitante carrega.',
+        approach: [
+          'O WordPress roda como CMS headless com custom post types para imóveis e bairros, expostos por WPGraphQL.',
+          'O Polylang mantém o conteúdo em inglês e português em paralelo, e o front end resolve a tradução certa conforme a rota.',
+          'O front end em Next.js gera páginas estáticas com revalidação incremental: o editor publica no wp-admin e o site público absorve a mudança sozinho.',
+          'Os imóveis são filtrados por tipo, situação e bairro, e cada um é posicionado sobre tiles do OpenStreetMap em vez de um provedor de mapas pago.',
+          'Os dados de demo são carregados de dentro do wp-admin em vez de exigir WP-CLI, então o projeto continua implantável em hospedagem compartilhada comum.',
+        ],
+        outcome: [
+          'Front end ao vivo na Vercel com o CMS WordPress rodando em seu próprio subdomínio.',
+          '112 testes cobrindo a camada GraphQL, a filtragem e a resolução de traduções.',
+          'Verificado contra produção, incluindo as rotas bilíngues e o render do mapa.',
+        ],
+      },
+    },
+  },
+  {
     id: 'fixflow',
     translations: {
       en: {
