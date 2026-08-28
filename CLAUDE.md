@@ -30,8 +30,13 @@ Single-page portfolio with sections:
 - Styles: `src/app/globals.css`
 
 ## Deployment
-- **HostGator (cPanel)**: `yarn build` → generates `out/` → auto-deploy via `.cpanel.yml` to `/home1/nickda77/public_html/`
+- **HostGator via GitHub Actions**: push to `master` triggers `.github/workflows/deploy.yml`, which
+  runs `yarn build` in CI and uploads `out/*` over SFTP (port 2222) to `/home1/nickda77/nickgranados.com`.
+  Takes ~2-3 minutes. Secrets used: `SSH_HOST`, `SSH_USERNAME`, `SSH_PRIVATE_KEY`.
 - **Full deploy command**: use `/deploy` (build + commit + push in one step)
+- The `out/` directory is gitignored: it is never committed, CI rebuilds it from source.
+- ⚠️ `.cpanel.yml` (pointing at `/home1/nickda77/public_html/`) is a leftover from an older
+  cPanel-git setup and is NOT the active deploy path. Do not edit it expecting the live site to change.
 - Note: Vercel is no longer used for this project.
 
 ## Key constraints
