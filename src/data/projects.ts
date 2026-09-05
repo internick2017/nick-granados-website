@@ -351,7 +351,9 @@ export const projects: Project[] = [
       },
     },
     technologies: ['WordPress', 'WooCommerce', 'PHP 8', 'PSR-4', 'JSON-LD', 'Schema.org', 'llms.txt', 'PHPUnit', 'DDEV'],
-    github: 'https://github.com/internick2017/internick-ai-product-schema',
+    // The repo named after the plugin slug is archived at 0.1.1; the maintained
+    // source lives here. See the archived repo's README for the ShopGraph history.
+    github: 'https://github.com/internick2017/ai-product-schema',
     demo: 'https://wordpress.org/plugins/internick-ai-product-schema/',
     image: '/images/project-shopgraph.png',
     category: 'wordpress',
