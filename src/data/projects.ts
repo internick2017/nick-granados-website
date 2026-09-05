@@ -1404,6 +1404,87 @@ export const projects: Project[] = [
       },
     },
   },
+  {
+    id: 'affiliate-bot',
+    translations: {
+      en: {
+        title: 'Affiliate Deal Bot',
+        description:
+          'A Telegram bot that listens to deal channels and republishes each offer under its own affiliate link across Amazon, Shopee and Mercado Livre, verifying the discount against the live listing before it posts.',
+      },
+      es: {
+        title: 'Bot de Ofertas con Afiliados',
+        description:
+          'Un bot de Telegram que escucha canales de ofertas y republica cada una con el link de afiliado propio en Amazon, Shopee y Mercado Livre, verificando el descuento contra la publicación real antes de postear.',
+      },
+      pt: {
+        title: 'Bot de Ofertas com Afiliados',
+        description:
+          'Um bot de Telegram que escuta canais de ofertas e republica cada uma com o link de afiliado próprio na Amazon, Shopee e Mercado Livre, verificando o desconto contra o anúncio real antes de publicar.',
+      },
+    },
+    technologies: ['Python', 'Telethon', 'asyncio', 'SQLite', 'pytest', 'REST APIs', 'Web Scraping', 'Automation'],
+    github: 'https://github.com/internick2017/shopee-affiliate-bot',
+    demo: null,
+    image: '/images/project-affiliate-bot.png',
+    category: 'ecommerce',
+    caseStudy: {
+      en: {
+        summary:
+          'An automation that runs unattended against three marketplaces, where every hard problem came from the real world rather than from the design.',
+        problem:
+          'Deal channels on Telegram publish offers that someone else has already monetised: the links carry another affiliate tag. Reposting them earns nothing, and rewriting them by hand does not scale past a handful a day. The bot has to recognise an offer, work out which product it actually points at, confirm the discount is real, and rebuild the post under its own tag, without ever publishing the same deal twice or posting a product into the wrong channel.',
+        approach: [
+          'Every incoming message is offered to all handlers instead of the first one that claims it. A single post routinely mixes an Amazon block with a Mercado Livre one, and a first-match design silently dropped the rest.',
+          'Each marketplace resolves differently. Amazon shortlinks hide the ASIN, so the bot follows the redirect and canonicalises to dp/{ASIN}, which also discards the original affiliate attribution. Shopee goes through the Affiliate Open API. Mercado Livre needed the hardest work: the signed ref cannot be rewritten, so the bot reads the tracking JSON embedded in the resolved page to recover the real item id.',
+          'Deduplication is atomic, not best-effort. The store reserves a key with claim() before posting and releases it if the post fails, so two concurrent messages carrying the same offer cannot both publish it. The window is seven days.',
+          'Failures are handled where they happen: a Telegram FloodWait is waited out and retried instead of losing the offer, and a misconfigured channel stops the bot at startup rather than publishing into the wrong place.',
+        ],
+        outcome: [
+          '461 passing tests over a codebase where URL parsing and price parsing are isolated in their own modules, so adding a marketplace does not touch the pipeline.',
+          'Mercado Livre shortlink resolution validated against 43 real links, at 91% success.',
+          'A production bug found on 2026-07-17 affected roughly 58% of posts, because the recovered id is not always a catalogue id; the fix reads the real product path from the same payload.',
+          'Runs unattended in production, feeding a live Telegram channel.',
+        ],
+      },
+      es: {
+        summary:
+          'Una automatización que corre sola contra tres marketplaces, donde todos los problemas difíciles vinieron del mundo real y no del diseño.',
+        problem:
+          'Los canales de ofertas de Telegram publican promociones que ya están monetizadas por otro: los links llevan el tag de afiliado ajeno. Reenviarlos no genera nada, y reescribirlos a mano no escala más allá de un puñado por día. El bot tiene que reconocer una oferta, deducir a qué producto apunta realmente, confirmar que el descuento existe y rearmar el post con su propio tag, sin publicar dos veces la misma oferta ni mandar un producto al canal equivocado.',
+        approach: [
+          'Cada mensaje se le ofrece a todos los handlers, no al primero que lo reclama. Un solo post suele mezclar un bloque de Amazon con uno de Mercado Livre, y quedarse con el primero descartaba el resto en silencio.',
+          'Cada marketplace resuelve distinto. Los shortlinks de Amazon esconden el ASIN, así que el bot sigue el redirect y canonicaliza a dp/{ASIN}, lo que de paso descarta la atribución del afiliado de origen. Shopee va por la Affiliate Open API. Mercado Livre fue lo más difícil: el ref está firmado y no se puede reescribir, así que el bot lee el JSON de tracking embebido en la página resuelta para recuperar el id real del producto.',
+          'La deduplicación es atómica, no aproximada. El store reserva la clave con claim() antes de postear y la libera si el post falla, así dos mensajes concurrentes con la misma oferta no la publican los dos. La ventana es de siete días.',
+          'Cada falla se maneja donde ocurre: ante un FloodWait de Telegram espera y reintenta en vez de perder la oferta, y un canal mal configurado frena el bot al arrancar en lugar de publicar en el lugar equivocado.',
+        ],
+        outcome: [
+          '461 tests en verde sobre un código donde el parsing de URLs y el de precios viven aislados en sus propios módulos, así que sumar un marketplace no toca el pipeline.',
+          'La resolución de shortlinks de Mercado Livre se validó contra 43 links reales, con 91% de éxito.',
+          'Un bug de producción del 2026-07-17 afectaba cerca del 58% de los posts, porque el id recuperado no siempre es de catálogo; el fix lee la ruta real del producto del mismo payload.',
+          'Corre sin supervisión en producción, alimentando un canal de Telegram en vivo.',
+        ],
+      },
+      pt: {
+        summary:
+          'Uma automação que roda sozinha contra três marketplaces, onde todos os problemas difíceis vieram do mundo real e não do projeto.',
+        problem:
+          'Os canais de ofertas do Telegram publicam promoções já monetizadas por outra pessoa: os links levam a tag de afiliado alheia. Reencaminhá-los não gera nada, e reescrevê-los à mão não escala além de um punhado por dia. O bot precisa reconhecer uma oferta, deduzir a que produto ela aponta de verdade, confirmar que o desconto existe e remontar o post com a própria tag, sem publicar a mesma oferta duas vezes nem mandar um produto para o canal errado.',
+        approach: [
+          'Cada mensagem é oferecida a todos os handlers, não ao primeiro que a reivindica. Um único post costuma misturar um bloco da Amazon com um do Mercado Livre, e ficar com o primeiro descartava o resto em silêncio.',
+          'Cada marketplace resolve de um jeito. Os shortlinks da Amazon escondem o ASIN, então o bot segue o redirect e canonicaliza para dp/{ASIN}, o que de quebra descarta a atribuição do afiliado de origem. A Shopee vai pela Affiliate Open API. O Mercado Livre foi o mais difícil: o ref é assinado e não pode ser reescrito, então o bot lê o JSON de tracking embutido na página resolvida para recuperar o id real do produto.',
+          'A deduplicação é atômica, não aproximada. O store reserva a chave com claim() antes de publicar e a libera se o post falhar, assim duas mensagens concorrentes com a mesma oferta não publicam as duas. A janela é de sete dias.',
+          'Cada falha é tratada onde acontece: diante de um FloodWait do Telegram ele espera e tenta de novo em vez de perder a oferta, e um canal mal configurado trava o bot na inicialização em vez de publicar no lugar errado.',
+        ],
+        outcome: [
+          '461 testes passando sobre um código em que o parsing de URLs e o de preços vivem isolados em seus próprios módulos, então somar um marketplace não toca o pipeline.',
+          'A resolução de shortlinks do Mercado Livre foi validada contra 43 links reais, com 91% de sucesso.',
+          'Um bug de produção de 2026-07-17 afetava cerca de 58% dos posts, porque o id recuperado nem sempre é de catálogo; a correção lê o caminho real do produto do mesmo payload.',
+          'Roda sem supervisão em produção, alimentando um canal do Telegram ao vivo.',
+        ],
+      },
+    },
+  },
 ]
 
 export function getAllTechnologies(): string[] {
