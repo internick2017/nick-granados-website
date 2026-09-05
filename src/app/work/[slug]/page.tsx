@@ -32,6 +32,12 @@ export async function generateMetadata({
   return {
     title: `Case Study: ${title} | Nick Granados`,
     description: summary,
+    // Absolute canonical (resolved against metadataBase) so the copy served
+    // from the Vercel URL does not compete with the production domain.
+    // The trailing slash matches next.config.js `trailingSlash: true`.
+    alternates: {
+      canonical: `/work/${slug}/`,
+    },
     openGraph: {
       title: `Case Study: ${title}`,
       description: summary,

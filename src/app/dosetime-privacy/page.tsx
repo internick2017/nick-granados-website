@@ -3,6 +3,11 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Política de Privacidad de DoseTime',
   description: 'Política de privacidad de la app DoseTime.',
+  // La Play Store enlaza esta página: el canonical la fija al dominio propio
+  // para que la copia servida desde Vercel no compita con ella.
+  alternates: {
+    canonical: '/dosetime-privacy/',
+  },
 }
 
 export default function DoseTimePrivacyPage() {

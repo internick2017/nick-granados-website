@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Nick Granados' }],
   creator: 'Nick Granados',
   robots: 'index, follow',
+  // Absolute canonical so the copy served from the Vercel URL points search
+  // engines back to the production domain instead of competing with it.
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Nick Granados - Full Stack Developer',
     description: 'I build landing pages, e-commerce, web apps, and WordPress sites for businesses. 6+ years of experience.',
