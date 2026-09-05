@@ -805,10 +805,7 @@ export const projects: Project[] = [
     },
     technologies: ['Laravel', 'Vue 3', 'Inertia.js', 'Tailwind CSS', 'SQLite', 'PHP'],
     github: 'https://github.com/internick2017/clear-path',
-    // Demo temporarily unlinked: the Render free instance is suspended ("free usage limit reached"),
-    // so the URL returns 503. Restore this line once the service is back up and verified.
-    // Live URL when available: https://clear-path-9008.onrender.com
-    demo: null,
+    demo: 'https://clear-path-9008.onrender.com',
     image: '/images/project-clear-path.png',
     category: 'fullstack',
     caseStudy: {
@@ -1030,7 +1027,9 @@ export const projects: Project[] = [
     },
     technologies: ['Shopify', 'Liquid', 'Shopify Admin API', 'Node.js', 'CSS3', 'E-commerce', 'Conversion Optimization'],
     github: 'https://github.com/internick2017/storeup-shopify-theme',
-    demo: 'https://storeup.store',
+    // Storefront retired: the Shopify subscription lapsed and storeup.store no longer serves
+    // (expired certificate). The work lives on in the archived theme repo linked above.
+    demo: null,
     image: '/images/project-store-up.png',
     category: 'ecommerce',
     caseStudy: {
