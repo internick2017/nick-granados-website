@@ -1485,6 +1485,31 @@ export const projects: Project[] = [
       },
     },
   },
+  {
+    id: 'setup-justo',
+    translations: {
+      en: {
+        title: 'Setup Justo',
+        description:
+          'A Brazilian home office price comparator that tracks products across Shopee, Amazon and Mercado Livre and keeps the full price history, so you can tell whether a discount is real.',
+      },
+      es: {
+        title: 'Setup Justo',
+        description:
+          'Un comparador brasileño de precios para home office que sigue productos en Shopee, Amazon y Mercado Livre y guarda el historial completo, para saber si un descuento es real.',
+      },
+      pt: {
+        title: 'Setup Justo',
+        description:
+          'Um comparador brasileiro de preços para home office que acompanha produtos na Shopee, Amazon e Mercado Livre e guarda o histórico completo, para saber se um desconto é de verdade.',
+      },
+    },
+    technologies: ['Next.js', 'TypeScript', 'Python', 'PostgreSQL', 'Supabase', 'GitHub Actions'],
+    github: null,
+    demo: 'https://setupjusto.com.br/',
+    image: '/images/project-setup-justo.png',
+    category: 'ecommerce',
+  },
 ]
 
 export function getAllTechnologies(): string[] {
